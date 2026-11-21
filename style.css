@@ -256,9 +256,17 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 @media (prefers-reduced-motion: reduce) {
   .display-switch::before { transition: none; }
 }
-.evidence-audio { border-top: 1px solid var(--rule); margin-top: .6rem; padding: .8rem 0; }
-.evidence-audio h3 { margin: 0 0 .45rem; }
-.evidence-audio p { margin: .4rem 0 .7rem; }
+.evidence-audio { margin-top: 1.5rem; }
+.evidence-audio h3 {
+  margin: 0;
+  padding: .6rem .75rem;
+  background: var(--binding);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: .2rem;
+  color: var(--ink);
+}
+.evidence-audio .entries { margin-top: 0; }
+.evidence-audio .entry { padding-inline: .75rem; }
 
 /* Sally's handwritten case pages */
 .case-notes {

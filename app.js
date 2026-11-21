@@ -134,10 +134,20 @@ function renderVocabulary(chapter, target) {
       .find(block => block.startsWith('>') && block.includes(warning))
       ?.match(/^> \*\*(.+)\*\*$/m)?.[1];
     const evidence = node('section', '', 'evidence-audio');
+    const heading = node('h3', translation ? 'Evidence phrase' : 'Untranslated');
+    heading.id = 'evidence-heading';
+    evidence.setAttribute('aria-labelledby', heading.id);
+    const entries = node('ul', '', 'entries');
+    const entry = node('li', '', 'entry');
+    const meanings = node('div');
     const phrase = node('strong', warning);
     phrase.lang = 'es-MX';
-    evidence.append(node('h3', translation ? 'Evidence phrase' : 'Untranslated'),
-      phrase, node('p', translation ?? 'Unknown'), playbackControls(warning));
+    meanings.append(phrase, node('p', translation ?? 'Unknown'));
+    const controls = node('div', '', 'controls entry-audio');
+    controls.append(playbackControls(warning));
+    entry.append(meanings, controls);
+    entries.append(entry);
+    evidence.append(heading, entries);
     target.append(evidence);
   }
   for (const [spanish, english, context] of chapter.vocabulary) {
