@@ -1,0 +1,160 @@
+{
+  "bookVersion": "v02",
+  "latestReleasedChapter": 2,
+  "chapters": [
+    {
+      "number": 1,
+      "title": "The House with the Blue Staircase",
+      "intro": "Spanish encountered in Chapter One. These are the words and expressions Sally can begin using in the investigation.",
+      "vocabulary": [
+        [
+          "Buenas tardes",
+          "Good afternoon"
+        ],
+        [
+          "Buenas noches",
+          "Good evening / Good night"
+        ],
+        [
+          "Por favor",
+          "Please"
+        ],
+        [
+          "Gracias",
+          "Thank you"
+        ],
+        [
+          "De nada",
+          "You're welcome"
+        ],
+        [
+          "Sí / No",
+          "Yes / No"
+        ],
+        [
+          "Señora / Señor",
+          "Mrs. or ma'am / Mr. or sir"
+        ],
+        [
+          "¿Dónde está...?",
+          "Where is...?"
+        ],
+        [
+          "El hotel",
+          "The hotel"
+        ],
+        [
+          "Tenemos una reservación",
+          "We have a reservation"
+        ],
+        [
+          "Picante",
+          "Spicy"
+        ],
+        [
+          "Un poco",
+          "A little"
+        ],
+        [
+          "Despacio",
+          "Slowly"
+        ],
+        [
+          "Un momento",
+          "One moment"
+        ],
+        [
+          "La llave",
+          "The key"
+        ],
+        [
+          "Mucho gusto",
+          "Nice to meet you"
+        ],
+        [
+          "¿Usted habla español?",
+          "Do you speak Spanish?"
+        ]
+      ],
+      "notes": "**Untranslated evidence:** *No confíe en él. La llave no es suya.*\n\nSally recognizes *la llave* (the key), but does not yet understand the full warning.\n\n### Case notes\n\n**Observed:** Whitmore spoke sharply to Isabel while holding a folded paper. Tomás returned a silver key to Isabel. An elderly housekeeper spoke urgently to Sally and mentioned a key. Whitmore was discovered dead at the foot of the staircase the next morning. Sally does not know when he died or whether he fell.\n\n**Unanswered questions:** What was written on Whitmore’s paper? Why was the key important? What did the housekeeper mean? Who was on the gallery shortly before she spoke?"
+    },
+    {
+      "number": 2,
+      "title": "A Word for Dead",
+      "intro": "Day Two: Words understood, testimony translated, and facts still to establish.",
+      "vocabulary": [
+        [
+          "Buenos días",
+          "Good morning",
+          "Recognizes in context"
+        ],
+        [
+          "Muerto / muerta",
+          "Dead (masculine / feminine)",
+          "Learns from Diego"
+        ],
+        [
+          "Está muerto",
+          "He is dead",
+          "Understands from Diego's response"
+        ],
+        [
+          "La policía",
+          "The police",
+          "Recognizes immediately"
+        ],
+        [
+          "Una ambulancia",
+          "An ambulance",
+          "Recognizes by similarity"
+        ],
+        [
+          "¿Qué pasó?",
+          "What happened?",
+          "Infers from context; included here for reader reference"
+        ],
+        [
+          "¡Dios mío!",
+          "My God!",
+          "Infers from Tomás's reaction"
+        ],
+        [
+          "Fue un accidente",
+          "It was an accident",
+          "Recognizes *accidente*; full phrase included for reader reference"
+        ],
+        [
+          "Anoche",
+          "Last night",
+          "Nate suggests; Sally has not independently verified it"
+        ],
+        [
+          "Lo siento",
+          "I'm sorry",
+          "Uses with Diego"
+        ],
+        [
+          "No confíe en él",
+          "Don't trust him",
+          "Lucía translates"
+        ],
+        [
+          "La llave no es suya",
+          "The key isn't his",
+          "Lucía translates"
+        ],
+        [
+          "Él",
+          "He / him",
+          "Lucía explains in context"
+        ],
+        [
+          "¿Dónde está Rosa?",
+          "Where is Rosa?",
+          "Sally constructs independently"
+        ]
+      ],
+      "notes": "### Confirmed observations\n\n- Whitmore was found dead beside the blue staircase on the morning after the Mercers arrived. The time and cause of death have **not** been established for Sally.\n- The previous evening, Whitmore approached Sally about a matter involving documents, and later argued with Isabel while holding a folded paper.\n- Tomás returned a small silver key to Isabel on the Mercers' arrival.\n- At approximately 11:15 p.m., an elderly housekeeper spoke urgently to Sally from the courtyard. Sally heard a door close on the upper gallery shortly beforehand but did not see who used it.\n- Lucía informally translated the warning as: “Don't trust him. The key isn't his.” The man and the key are **not identified**.\n- Police have not yet located Rosa Méndez. They have not established that she is deliberately hiding.\n\n### Sally's theories, not proven facts\n\n- Rosa's warning might refer to Tomás and the silver key, but there is no proof that it does.\n- Whitmore's folded paper might concern the hotel property or its ownership.\n- Whitmore may have fallen, or someone may have caused his fall. Neither possibility is established.\n\n### Questions to carry forward\n\n1. What did Whitmore want Sally to examine?\n2. What did the folded paper say, and where is it now?\n3. Who was on the upper gallery before Rosa spoke?\n4. Which man did Rosa mean, and what key did she mean?\n5. Where is Rosa, and what else was she trying to tell Sally?\n\n### Translated evidence\n\n> *No confíe en él. La llave no es suya.*\n>\n> **Don't trust him. The key isn't his.**\n\n*The translation is clear. Its referents and relevance to Whitmore's death are not.*"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+:root {
+  color-scheme: light dark;
+  --ink: #142938;
+  --muted: #4c5b64;
+  --paper: #f8f4ec;
+  --card: #fffcf6;
+  --edge: #d9cdbf;
+  --accent: #96284a;
+  --blue: #184665;
+  --navy: #0e2435;
+  font-family: system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f3e9de;
+    --muted: #c6c4c2;
+    --paper: #132632;
+    --card: #1a303e;
+    --edge: #52616b;
+    --accent: #ff9db4;
+    --blue: #a1d5fb;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.55; }
+.shell { width: min(100% - 2rem, 58rem); margin-inline: auto; }
+.masthead { background: var(--navy); color: #f8f0e4; border-bottom: 3px solid #9b3554; }
+.brand { padding-block: 1rem; font: 1.2rem Georgia, serif; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.brand span, .eyebrow { font: 700 .75rem system-ui, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.brand span { color: #e6b8a6; }
+.intro { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: clamp(1rem, 5vw, 3rem); padding-block: 2rem; }
+.intro img { width: clamp(5.2rem, 22vw, 12rem); height: auto; border-radius: .2rem; box-shadow: 0 .45rem 1.4rem #07182145; }
+.eyebrow { color: var(--accent); }
+h1, h2, h3 { font-family: Georgia, serif; line-height: 1.15; }
+h1 { font-size: clamp(1.85rem, 6vw, 3.6rem); margin: .2em 0; letter-spacing: -.035em; }
+h2 { font-size: clamp(1.55rem, 4vw, 2.3rem); margin: .5em 0; }
+h3 { font-size: 1.3rem; }
+.lede, .muted, footer { color: var(--muted); }
+label { display: block; font-weight: 650; margin-bottom: .25rem; }
+select, button, summary { min-height: 44px; font: inherit; color: inherit; }
+button, select { background: var(--card); border: 1px solid var(--edge); border-radius: .4rem; padding: .45rem .75rem; }
+button, summary, select { cursor: pointer; }
+select { max-width: 100%; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+nav { display: flex; gap: .6rem; padding-bottom: .8rem; border-bottom: 1px solid var(--edge); }
+nav button { font-weight: 700; }
+nav button[aria-pressed="true"] { background: var(--navy); color: #fff5e8; }
+#status:empty { display: none; }
+#status { color: var(--accent); }
+.entries, .recording-list { list-style: none; padding: 0; display: grid; gap: .6rem; }
+.entry, .case-notes, .recording-list li { background: var(--card); border: 1px solid var(--edge); border-radius: .55rem; padding: .85rem 1rem; }
+.entry { display: grid; grid-template-columns: 1fr auto; gap: .6rem 1rem; align-items: center; }
+.entry strong { font: 700 1.25rem Georgia, serif; }
+.entry p { margin: .2rem 0; }
+.entry small { font-size: .9rem; color: var(--muted); }
+.mastered strong { text-decoration: line-through var(--accent) 2px; }
+.practicing strong { text-decoration: underline dotted var(--accent); text-underline-offset: .2em; }
+.controls { display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; }
+.audio { color: var(--blue); font-weight: 650; }
+.case-notes { margin-top: 1rem; }
+blockquote { margin-inline: 0; border-inline-start: 3px solid var(--accent); padding-left: 1rem; }
+footer { border-top: 1px solid var(--edge); margin-top: 2rem; padding-block: .7rem 2rem; }
+summary { padding-block: .65rem; font-weight: 650; }
+@media (max-width: 540px) {
+  .intro { align-items: start; }
+  .intro select { width: 100%; }
+  .entry { grid-template-columns: 1fr; }
+}
+
+/* Field notebook */
+:root {
+  --ink: #232d36;
+  --muted: #56564d;
+  --paper: #ede4d7;
+  --card: #fff7e7;
+  --edge: #c7b69e;
+  --accent: #9b2c49;
+  --blue: #205275;
+  --rule: #b7b5a7;
+  --binding: #dfcbb0;
+  --margin-rule: #b66f7c;
+  font-family: "Avenir Next", "Trebuchet MS", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f5e8d1;
+    --muted: #c5bdac;
+    --paper: #11232f;
+    --card: #203644;
+    --edge: #67717a;
+    --accent: #ff9cb4;
+    --blue: #aad9ff;
+    --rule: #637780;
+    --binding: #182b39;
+    --margin-rule: #bb7586;
+  }
+}
+h1, h2, h3, .entry strong { font-family: "Baskerville", "Palatino Linotype", Georgia, serif; }
+h1 { font-weight: 650; }
+.brand { font-family: "Baskerville", Georgia, serif; }
+.eyebrow { font-family: "Avenir Next", system-ui, sans-serif; }
+.intro img { transform: rotate(-2deg); }
+.intro h1::after {
+  content: "";
+  display: block;
+  width: 3.2rem;
+  height: 3px;
+  margin-top: .55rem;
+  background: var(--accent);
+  border-radius: 80% 30% 65% 25%;
+  transform: rotate(-3deg);
+}
+nav { gap: .3rem; padding: 0 0 0 .7rem; border: 0; }
+nav button {
+  border-radius: .6rem .6rem 0 0;
+  border-bottom: 0;
+  padding-inline: 1.2rem;
+  background: var(--binding);
+}
+nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
+#notebook {
+  display: grid;
+  grid-template-columns: minmax(9rem, 1fr) minmax(0, 3fr);
+  background: var(--card);
+  border: 1px solid var(--edge);
+  border-radius: .18rem .65rem .65rem .18rem;
+  box-shadow: 3px 4px 0 var(--binding), 5px 6px 0 var(--edge);
+  overflow: hidden;
+}
+.chapter-margin {
+  padding: 1.45rem 1rem;
+  border-inline-end: 1px solid var(--margin-rule);
+  background: linear-gradient(90deg, var(--binding), transparent 1rem);
+}
+.chapter-number {
+  display: inline-block;
+  margin: 0;
+  border-radius: .15rem;
+  padding: .2rem .55rem;
+  background: #205275;
+  color: #fff7e7;
+  font-family: Georgia, serif;
+  box-shadow: 2px 2px 0 var(--edge);
+}
+.chapter-margin h2 { font-size: clamp(1.5rem, 3.1vw, 2rem); overflow-wrap: break-word; }
+.chapter-page {
+  padding: 1.3rem clamp(.85rem, 3vw, 2rem);
+}
+.chapter-intro {
+  margin: 0;
+  color: var(--muted);
+  font: italic 1.1rem/1.45 "Baskerville", Georgia, serif;
+}
+.entries { gap: 0; margin: .7rem 0 0; }
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .15rem .7rem;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  padding: .85rem 0;
+  background: transparent;
+  align-items: start;
+}
+.entry strong { font-size: 1.42rem; }
+.entry-audio { grid-column: 1 / -1; margin-top: .35rem; }
+.mastery {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 44px;
+  gap: .35rem;
+  margin: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .875rem;
+}
+.mastery input { inline-size: 1.2rem; block-size: 1.2rem; margin: 0; accent-color: var(--accent); }
+.mastered .mastery { color: var(--accent); }
+.mastered strong { text-decoration: none; }
+.playback { display: inline-flex; flex-wrap: wrap; gap: .3rem; }
+.audio {
+  background: #205275;
+  color: #fff7e7;
+  border-color: #205275;
+  border-radius: .35rem;
+}
+.audio.slow { background: transparent; color: var(--blue); border-color: var(--blue); }
+.notes-font-setting {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin: .75rem 0 0;
+  font-size: .9rem;
+  cursor: pointer;
+}
+.notes-font-setting button[aria-pressed="true"] {
+  background: #205275;
+  border-color: #205275;
+  color: #fff7e7;
+}
+
+/* Sally's handwritten case pages */
+.case-notes {
+  --line-height: 2rem;
+  --rule-offset: 0.32rem;
+  --gutter: clamp(1.25rem, 4vw, 2.4rem);
+  --ruling: color-mix(in srgb, var(--blue) 25%, transparent);
+  padding: 0 .6rem var(--line-height) var(--gutter);
+  border: 0;
+  border-radius: .15rem;
+  background:
+    linear-gradient(var(--margin-rule), var(--margin-rule))
+      calc(var(--gutter) - .65rem) 0 / 1px 100% no-repeat,
+    repeating-linear-gradient(to bottom,
+      transparent 0 calc(var(--line-height) - var(--rule-offset) - 1px),
+      var(--ruling) calc(var(--line-height) - var(--rule-offset) - 1px)
+        calc(var(--line-height) - var(--rule-offset)),
+      transparent calc(var(--line-height) - var(--rule-offset)) var(--line-height));
+  font: 1.22rem/var(--line-height) "Bradley Hand", "Segoe Print", "Chalkboard SE", cursive;
+  overflow-wrap: anywhere;
+}
+.case-notes.sans-serif {
+  font-family: "Avenir Next", "Trebuchet MS", system-ui, sans-serif;
+  font-size: 1rem;
+}
+.case-notes > :is(p, ol, ul, blockquote) { margin: 0 0 var(--line-height); }
+.case-notes ol, .case-notes ul { padding-inline-start: 1.35em; }
+.case-notes h3 {
+  margin: 0;
+  color: var(--blue);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--margin-rule);
+  text-underline-offset: .25em;
+}
+.case-notes .evidence {
+  background: var(--binding);
+  /* A full line of vertical padding keeps the text below the slip on the grid. */
+  padding: calc(var(--line-height) / 2) .85rem;
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 0 .2rem .2rem 0;
+  box-shadow: 1px 2px 0 var(--edge);
+}
+.case-notes blockquote p { margin: 0; }
+.case-notes .playback {
+  display: flex;
+  align-items: center;
+  min-height: calc(2 * var(--line-height));
+  font: 1rem/1.35 "Avenir Next", "Trebuchet MS", system-ui, sans-serif;
+}
+@media (max-width: 620px) {
+  #notebook { grid-template-columns: minmax(0, 1fr); }
+  .chapter-margin {
+    padding: .9rem 1rem .7rem;
+    border-inline-end: 0;
+    border-bottom: 1px solid var(--margin-rule);
+    background: none;
+  }
+  .chapter-margin h2 { margin-bottom: 0; }
+  .intro > div { min-width: 0; }
+}
