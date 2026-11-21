@@ -60,6 +60,7 @@ nav button[aria-pressed="true"] { background: var(--navy); color: #fff5e8; }
 .case-notes { margin-top: 1rem; }
 blockquote { margin-inline: 0; border-inline-start: 3px solid var(--accent); padding-left: 1rem; }
 footer { border-top: 1px solid var(--edge); margin-top: 2rem; padding-block: .7rem 2rem; }
+.app-version { margin: 1rem 0 0; font-size: .8125rem; text-align: center; }
 summary { padding-block: .65rem; font-weight: 650; }
 @media (max-width: 540px) {
   .intro { align-items: start; }

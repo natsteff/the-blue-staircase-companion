@@ -1,6 +1,7 @@
 """Validate and package the static app or generate its local pronunciation assets."""
 import hashlib
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -62,6 +63,9 @@ def generate(entries):
     MANIFEST.write_text(json.dumps({"version": 1, "recordings": {i: old[i] for i in entries}}, ensure_ascii=False, indent=2) + "\n")
 
 def main():
+    version = (ROOT / "VERSION").read_text().strip()
+    if not re.fullmatch(r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)", version):
+        raise SystemExit("VERSION must contain a major.minor.patch app version.")
     book = read(SOURCE)
     assert [c["number"] for c in book["chapters"]] == list(range(1, book["latestReleasedChapter"] + 1))
     phrases = [
@@ -87,19 +91,22 @@ def main():
              "apple-touch-icon.png",
              "data/notebooks.json", "audio/manifest.json", "assets/the-last-witness-front-cover.jpg"]
     files += [manifest[i]["file"] for i in entries]
-    digest = hashlib.sha256()
-    for name in files:
-        target = dist / name
-        target.parent.mkdir(parents=True, exist_ok=True)
-        payload = (ROOT / name).read_bytes()
-        target.write_bytes(payload)
-        digest.update(name.encode() + payload)
     worker = (ROOT / "scripts/service-worker.js").read_text()
+    payloads = {name: (ROOT / name).read_bytes() for name in files}
+    payloads["index.html"] = payloads["index.html"].replace(b"__APP_VERSION__", version.encode())
+    digest = hashlib.sha256()
+    for name, payload in payloads.items():
+        digest.update(name.encode() + payload)
     digest.update(worker.encode())
     revision = digest.hexdigest()[:12]
+    payloads["index.html"] = payloads["index.html"].replace(b"__BUILD_REVISION__", revision.encode())
+    for name, payload in payloads.items():
+        target = dist / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(payload)
     (dist / "sw.js").write_text(worker.replace("__REVISION__", revision).replace("__FILES__", json.dumps(files)))
     (dist / ".nojekyll").touch()
-    print(f"Built {book['bookVersion']} ({revision}) with {len(entries)} recordings.")
+    print(f"Built app {version} ({revision}), book {book['bookVersion']}, with {len(entries)} recordings.")
 
 if __name__ == "__main__":
     main()

@@ -44,6 +44,10 @@ Open **Audio review** in the notebook to play the selected chapter’s cumulativ
 
 The app uses relative URLs so the same build works at a domain root or under a repository path. In an approved GitHub repository, choose **GitHub Actions** as the Pages source. The **Deploy notebook to GitHub Pages** workflow publishes on pushes to `main` and can also run manually.
 
+## App versions
+
+The footer shows the app version and its unique build ID. Update `VERSION` when preparing an app release. The build ID is generated automatically from the published app files and changes whenever their content changes. The manuscript edition is tracked separately as `bookVersion`.
+
 ## Future chapter contract
 
 Add the next contiguous chapter to `data/notebooks.json` and update `bookVersion` and `latestReleasedChapter`. Each chapter has a numeric `number`, a `title`, a one-paragraph `intro`, `vocabulary` rows in the form `[exact Spanish, exact English, optional Sally context]`, and `notes` containing chapter-specific Markdown headings, paragraphs, lists, and quotes. Preserve manuscript wording and distinctions between observations, theories, questions, and evidence. Include only released chapters. Use a space on each side of a slash when separate Spanish recordings are required.
