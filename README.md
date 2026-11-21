@@ -23,7 +23,9 @@ A long-overdue vacation in Playa del Carmen turns into a murder investigation fo
 
 **[Download EPUB — Working Draft v02 (Chapters 1–2)](https://natsteff.github.io/the-last-witness-companion/books/The_Last_Witness_-_Working_Draft_v02.epub)**
 
-This free preview is an unfinished manuscript. The chapters, translations, and covers may change substantially. To read the EPUB on a compatible Kindle, import it as a personal document. Personal documents may not be available through Family Library. [Amazon Send to Kindle](https://www.amazon.com/sendtokindle)
+This free preview is an unfinished manuscript. The chapters, translations, and covers may change substantially.
+
+**Read on iPhone or iPad.** Download the EPUB, find it in **Files → Downloads**, then choose **Share → Books** for Apple Books or **Share → Kindle** for Kindle. Kindle may ask you to edit the title and author before sending. [Step-by-step Apple Books and Kindle guide](docs/READING_ON_IPHONE.md)
 
 ## Try Sally’s Detective Notebook
 
