@@ -84,6 +84,7 @@ def main():
     dist = ROOT / "dist"
     dist.mkdir(exist_ok=True)
     files = ["index.html", "app.js", "style.css", "app.webmanifest", "icon-192.png", "icon-512.png",
+             "apple-touch-icon.png",
              "data/notebooks.json", "audio/manifest.json", "assets/the-last-witness-front-cover.jpg"]
     files += [manifest[i]["file"] for i in entries]
     digest = hashlib.sha256()

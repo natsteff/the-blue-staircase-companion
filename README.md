@@ -1,8 +1,27 @@
-# The Last Witness Companion
+# Sally’s Detective Notebook
 
-Sally’s Detective Notebook accompanies *The Last Witness: A Mystery in Playa del Carmen*. Select the chapter you’ve read to practice Mexican Spanish, review Sally’s observations, and revisit the questions she’s carrying forward.
+<p align="center">
+  <img src="assets/sallys-detective-notebook-logo.png" width="720" alt="Sally’s Detective Notebook, a companion to The Last Witness">
+</p>
 
-The v02 edition includes Chapters 1–2 and uses the supplied front cover. The warning remains untranslated in Chapter 1. Use **Listen** or **Slow** beside each Spanish expression. Tick **Mastered** when you know the entry and untick it to return it to practice. Progress belongs to this browser and website address. Use **Progress settings** to export a backup before changing devices or clearing browser data.
+<p align="center">
+  <a href="https://natsteff.github.io/the-last-witness-companion/"><img alt="Open TLW Notebook" src="https://img.shields.io/badge/Open%20TLW%20Notebook-205275?style=for-the-badge"></a>
+</p>
+
+## About the book
+
+In *The Last Witness: A Mystery in Playa del Carmen*, Sally Mercer and her husband Nate head to Mexico for a long-overdue getaway. When Sally is drawn into a murder investigation, the Spanish she came to practice becomes part of how she follows clues and makes sense of what people tell her.
+
+<p align="center">
+  <img src="assets/the-last-witness-front-cover.jpg" width="240" alt="Front cover of The Last Witness">
+  <img src="assets/the-last-witness-back-cover.jpg" width="240" alt="Back cover of The Last Witness with the book synopsis">
+</p>
+
+## About the notebook
+
+Select the chapter you’ve read to revisit Sally’s observations, theories, and unanswered questions. Practice the Mexican Spanish she encounters with **Listen** or **Slow**, and tick **Mastered** when you know an entry. The v02 notebook covers Chapters 1–2 and reveals evidence translations at the point Sally learns them.
+
+Use **Progress settings** to back up progress before changing devices or clearing browser data. On mobile, add the app to your home screen as **TLW Notebook**. Both chapter notebooks and their recordings are available offline after the first successful visit.
 
 ## Run locally
 
