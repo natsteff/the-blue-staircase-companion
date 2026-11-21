@@ -26,13 +26,8 @@
         <select id="chapter" disabled></select>
       </div>
     </section>
-    <nav aria-label="Notebook sections">
-      <button id="spanish" type="button" aria-pressed="true">Spanish</button>
-      <button id="case" type="button" aria-pressed="false">Case Notes</button>
-    </nav>
-    <p id="status" role="status">Opening notebook…</p>
-    <section id="notebook" aria-label="Chapter notebook"></section>
-    <footer>
+    <details class="notebook-tools">
+      <summary>Notebook tools</summary>
       <details id="settings">
         <summary>Progress settings</summary>
         <div class="controls">
@@ -46,6 +41,14 @@
         <summary>Audio review</summary>
         <div id="recordings"></div>
       </details>
+    </details>
+    <nav aria-label="Notebook sections">
+      <button id="spanish" type="button" aria-pressed="true">Spanish</button>
+      <button id="case" type="button" aria-pressed="false">Case Notes</button>
+    </nav>
+    <p id="status" role="status">Opening notebook…</p>
+    <section id="notebook" aria-label="Chapter notebook"></section>
+    <footer>
       <p id="offline" role="status"></p>
       <p class="app-version">TLW Notebook v__APP_VERSION__ · Build __BUILD_REVISION__</p>
     </footer>

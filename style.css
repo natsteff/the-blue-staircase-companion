@@ -60,6 +60,11 @@ nav button[aria-pressed="true"] { background: var(--navy); color: #fff5e8; }
 .case-notes { margin-top: 1rem; }
 blockquote { margin-inline: 0; border-inline-start: 3px solid var(--accent); padding-left: 1rem; }
 footer { border-top: 1px solid var(--edge); margin-top: 2rem; padding-block: .7rem 2rem; }
+.notebook-tools { margin: 0 0 1rem; color: var(--muted); }
+.notebook-tools > details { padding-inline-start: 1rem; }
+.vocabulary-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 0 .8rem; }
+.vocabulary-toolbar p { margin: .65rem 0; }
+.entry[hidden] { display: none; }
 .app-version { margin: 1rem 0 0; font-size: .8125rem; text-align: center; }
 summary { padding-block: .65rem; font-weight: 650; }
 @media (max-width: 540px) {

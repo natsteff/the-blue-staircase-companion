@@ -19,9 +19,9 @@ In *The Last Witness: A Mystery in Playa del Carmen*, Sally Mercer and her husba
 
 ## About the notebook
 
-Select the chapter you’ve read to revisit Sally’s observations, theories, and unanswered questions. Practice the Mexican Spanish she encounters with **Listen** or **Slow**, and tick **Mastered** when you know an entry. The v02 notebook covers Chapters 1–2 and reveals evidence translations at the point Sally learns them.
+Select the chapter you’ve read to revisit Sally’s observations, theories, and unanswered questions. Practice the Mexican Spanish she encounters with **Listen** or **Slow**, and tick **Mastered** when you know an entry. Use **Hide mastered** to focus on entries you’re still practicing. The v02 notebook covers Chapters 1–2 and reveals evidence translations at the point Sally learns them.
 
-Use **Progress settings** to back up progress before changing devices or clearing browser data. On mobile, add the app to your home screen as **TLW Notebook**. Both chapter notebooks and their recordings are available offline after the first successful visit.
+Use **Notebook tools → Progress settings** to back up progress before changing devices or clearing browser data. On mobile, add the app to your home screen as **TLW Notebook**. Both chapter notebooks and their recordings are available offline after the first successful visit.
 
 ## Run locally
 
@@ -38,7 +38,7 @@ Open [the local notebook](http://127.0.0.1:8767/). The service worker caches bot
 
 On macOS, run `python3 scripts/build.py --audio` to synthesize new or changed phrases with `say` and convert them to mono PCM WAV with `afconvert`. Generation prefers Paulina when available. It requires an installed Mexican Spanish voice and access to the Mac speech service. Install a voice under Accessibility system speech settings if needed. The build checks that every required WAV contains audio samples. The versioned manifest records the text, voice, locale, path, and generation status.
 
-Open **Audio review** in the notebook to play the selected chapter’s cumulative set, listen slowly to individual phrases, and flag pronunciation on this device. A voice identified as Spanish may be used as a browser fallback if a recording cannot play.
+Open **Notebook tools → Audio review** to play the selected chapter’s cumulative set, listen slowly to individual phrases, and flag pronunciation on this device. A voice identified as Spanish may be used as a browser fallback if a recording cannot play.
 
 ## GitHub Pages
 

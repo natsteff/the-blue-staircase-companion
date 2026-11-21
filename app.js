@@ -4,6 +4,7 @@ const byId = id => document.getElementById(id);
 const progressKey = 'last-witness.progress.v1';
 const reviewKey = 'last-witness.audio-review.v1';
 const notesFontKey = 'last-witness.notes-font.v1';
+const vocabularyFilterKey = 'last-witness.vocabulary-filter.v1';
 const backupStates = ['Learning', 'Practicing', 'Mastered'];
 const warning = 'No confíe en él. La llave no es suya.';
 const key = text => text.normalize('NFC').trim().toLowerCase();
@@ -14,6 +15,7 @@ let section = 'spanish';
 let progress = readStore(progressKey);
 let flags = readStore(reviewKey);
 let useSansSerif = readStore(notesFontKey).sansSerif === true;
+let hideMastered = readStore(vocabularyFilterKey).hideMastered === true;
 let playback = 0;
 const player = new Audio();
 
@@ -121,15 +123,30 @@ function selectedChapter() {
 function renderVocabulary(chapter, target) {
   const list = node('ul', '', 'entries');
   const totals = node('p', '', 'muted');
+  const filter = node('input');
+  filter.type = 'checkbox';
+  filter.checked = hideMastered;
+  const filterLabel = node('label', '', 'mastery');
+  filterLabel.append(filter, ' Hide mastered');
+  const toolbar = node('div', '', 'vocabulary-toolbar');
+  toolbar.append(totals, filterLabel);
+  const empty = node('p', 'All entries in this chapter are mastered. Uncheck Hide mastered to see them again.', 'muted');
   const ids = [...new Set(book.chapters.flatMap(item => item.vocabulary.map(row => key(row[0]))))];
   const update = () => {
     const count = rows => rows.filter(id => progress[id] === 'Mastered').length;
     totals.textContent = count(chapter.vocabulary.map(row => key(row[0]))) + ' of ' + chapter.vocabulary.length
       + ' mastered in this chapter · ' + count(ids) + ' of ' + ids.length + ' overall';
+    for (const entry of list.children) entry.hidden = hideMastered && entry.classList.contains('mastered');
+    empty.hidden = !hideMastered || Boolean(list.querySelector('.entry:not([hidden])'));
   };
+  filter.addEventListener('change', () => {
+    hideMastered = filter.checked;
+    status();
+    saveStore(vocabularyFilterKey, {hideMastered});
+    update();
+  });
   totals.setAttribute('aria-live', 'polite');
-  update();
-  target.append(totals, list);
+  target.append(toolbar, list, empty);
   for (const [spanish, english, context] of chapter.vocabulary) {
     const id = key(spanish);
     const meanings = node('div');
@@ -156,6 +173,11 @@ function renderVocabulary(chapter, target) {
       entry.classList.toggle('mastered', mastered.checked);
       status();
       saveStore(progressKey, progress);
+      if (hideMastered && mastered.checked && document.activeElement === mastered) {
+        const remaining = [...list.querySelectorAll('.entry:not(.mastered) input')];
+        const next = remaining.find(input => mastered.compareDocumentPosition(input) & Node.DOCUMENT_POSITION_FOLLOWING);
+        (next ?? remaining.at(-1) ?? filter).focus();
+      }
       update();
     });
     const phrases = alternatives(spanish);
@@ -163,6 +185,7 @@ function renderVocabulary(chapter, target) {
     entry.append(meanings, label, controls);
     list.append(entry);
   }
+  update();
 }
 
 function addInline(target, text) {
