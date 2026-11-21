@@ -10,7 +10,7 @@
 
 **WORK IN PROGRESS · Novel working draft v02 · Chapters 1–2 of 24 planned**
 
-I started this as a personal project for fun. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
+I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
 ## About the book
 
