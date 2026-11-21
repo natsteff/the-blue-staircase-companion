@@ -10,6 +10,8 @@
 
 **WORK IN PROGRESS · Novel working draft v02 · Chapters 1–2 of 24 planned**
 
+I started this as a personal project for fun. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
+
 ## About the book
 
 A long-overdue vacation in Playa del Carmen turns into a murder investigation for Sally Mercer and her husband Nate. The Mexican Spanish Sally came to practice becomes part of how she follows clues and makes sense of what people tell her. *The Last Witness: A Mystery in Playa del Carmen* is a cozy mystery with Spanish woven into the story.
