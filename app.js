@@ -118,7 +118,7 @@ function renderVocabulary(chapter, target) {
   const list = node('ul', '', 'entries');
   const totals = node('p', '', 'muted');
   const filter = byId('hide-mastered');
-  const empty = node('p', 'All entries in this chapter are mastered. Select Mastered Hidden to see them again.', 'muted');
+  const empty = node('p', 'All entries in this chapter are mastered. Switch to Show All to see them again.', 'muted');
   const ids = [...new Set(book.chapters.flatMap(item => item.vocabulary.map(row => key(row[0]))))];
   const update = () => {
     const count = rows => rows.filter(id => progress[id] === 'Mastered').length;
@@ -128,15 +128,18 @@ function renderVocabulary(chapter, target) {
     empty.hidden = !hideMastered || Boolean(list.querySelector('.entry:not([hidden])'));
   };
   totals.setAttribute('aria-live', 'polite');
-  target.append(totals);
+  target.append(totals, list, empty);
   if (chapter.notes.includes(warning)) {
+    const translation = chapter.notes.split(/\n\s*\n/)
+      .find(block => block.startsWith('>') && block.includes(warning))
+      ?.match(/^> \*\*(.+)\*\*$/m)?.[1];
     const evidence = node('section', '', 'evidence-audio');
-    const phrase = node('p', warning);
+    const phrase = node('strong', warning);
     phrase.lang = 'es-MX';
-    evidence.append(node('h3', 'Evidence audio'), phrase, playbackControls(warning));
+    evidence.append(node('h3', translation ? 'Evidence phrase' : 'Untranslated'),
+      phrase, node('p', translation ?? 'Unknown'), playbackControls(warning));
     target.append(evidence);
   }
-  target.append(list, empty);
   for (const [spanish, english, context] of chapter.vocabulary) {
     const id = key(spanish);
     const meanings = node('div');
@@ -262,14 +265,10 @@ async function start() {
   chapter.addEventListener('change', render);
   for (const id of ['spanish', 'case']) byId(id).addEventListener('click', () => { section = id; render(); });
   const filter = byId('hide-mastered');
-  const updateFilterButton = () => {
-    filter.textContent = hideMastered ? 'Mastered Hidden' : 'Hide Mastered';
-    filter.setAttribute('aria-pressed', String(hideMastered));
-  };
-  updateFilterButton();
+  filter.setAttribute('aria-checked', String(hideMastered));
   filter.addEventListener('click', () => {
     hideMastered = !hideMastered;
-    updateFilterButton();
+    filter.setAttribute('aria-checked', String(hideMastered));
     if (section === 'spanish') render();
     saveStore(vocabularyFilterKey, {hideMastered});
   });

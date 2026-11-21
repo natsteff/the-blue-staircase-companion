@@ -32,12 +32,18 @@
         <select id="chapter" aria-describedby="selected-chapter-title" disabled></select>
         <p id="selected-chapter-title"></p>
       </div>
-      <button id="hide-mastered" type="button" aria-pressed="false">Hide Mastered</button>
-      <button id="notes-font" class="font-switch" type="button" role="switch"
-        aria-checked="false" aria-label="Use standard font for Case Notes">
-        <span aria-hidden="true">Handwritten</span>
-        <span aria-hidden="true">Standard Font</span>
-      </button>
+      <div class="display-switches">
+        <button id="hide-mastered" class="display-switch" type="button" role="switch"
+          aria-checked="false" aria-label="Hide mastered vocabulary">
+          <span aria-hidden="true">Show All</span>
+          <span aria-hidden="true">Hide Mastered</span>
+        </button>
+        <button id="notes-font" class="display-switch" type="button" role="switch"
+          aria-checked="false" aria-label="Use standard font for Case Notes">
+          <span aria-hidden="true">Handwritten</span>
+          <span aria-hidden="true">Standard Font</span>
+        </button>
+      </div>
     </section>
     <nav aria-label="Notebook sections">
       <button id="spanish" type="button" aria-pressed="true">Spanish</button>
