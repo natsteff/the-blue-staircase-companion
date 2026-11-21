@@ -17,31 +17,27 @@
   <header class="masthead"><div class="shell brand">The Last Witness <span>Reading Companion</span></div></header>
   <main class="shell">
     <section class="intro" aria-labelledby="title">
-      <img src="assets/the-last-witness-front-cover.jpg" alt="The Last Witness, A Mystery in Playa del Carmen" width="724" height="1086">
+      <a class="cover-link" href="https://github.com/natsteff/the-last-witness-companion#read-the-working-draft" aria-label="Read or download The Last Witness on GitHub">
+        <img src="assets/the-last-witness-front-cover.jpg" alt="The Last Witness, A Mystery in Playa del Carmen" width="724" height="1086">
+      </a>
       <div>
         <p class="eyebrow">A Mystery in Playa del Carmen</p>
         <h1 id="title">Sally’s Detective Notebook</h1>
-        <p class="lede">Practice the Spanish Sally encounters and follow the case one chapter at a time.</p>
+      </div>
+      <p class="lede">Practice the Spanish Sally encounters and follow the case one chapter at a time.</p>
+    </section>
+    <section class="notebook-options" aria-label="Notebook display options">
+      <div class="chapter-picker">
         <label for="chapter">Your chapter</label>
-        <select id="chapter" disabled></select>
+        <select id="chapter" aria-describedby="selected-chapter-title" disabled></select>
+        <p id="selected-chapter-title"></p>
+      </div>
+      <label class="mastery"><input id="hide-mastered" type="checkbox"> Hide mastered</label>
+      <div class="notes-font-setting" role="group" aria-label="Case Notes font">
+        <button id="handwritten" type="button" aria-pressed="true">Handwritten</button>
+        <button id="standard-font" type="button" aria-pressed="false">Standard Font</button>
       </div>
     </section>
-    <details class="notebook-tools">
-      <summary>Notebook tools</summary>
-      <details id="settings">
-        <summary>Progress settings</summary>
-        <div class="controls">
-          <button id="export" type="button">Export progress</button>
-          <button id="import" type="button">Import progress</button>
-          <button id="reset" type="button">Reset progress</button>
-          <input id="backup" type="file" accept=".json,application/json" hidden>
-        </div>
-      </details>
-      <details id="qa">
-        <summary>Audio review</summary>
-        <div id="recordings"></div>
-      </details>
-    </details>
     <nav aria-label="Notebook sections">
       <button id="spanish" type="button" aria-pressed="true">Spanish</button>
       <button id="case" type="button" aria-pressed="false">Case Notes</button>

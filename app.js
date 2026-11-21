@@ -2,18 +2,15 @@
 
 const byId = id => document.getElementById(id);
 const progressKey = 'last-witness.progress.v1';
-const reviewKey = 'last-witness.audio-review.v1';
 const notesFontKey = 'last-witness.notes-font.v1';
 const vocabularyFilterKey = 'last-witness.vocabulary-filter.v1';
-const backupStates = ['Learning', 'Practicing', 'Mastered'];
 const warning = 'No confíe en él. La llave no es suya.';
 const key = text => text.normalize('NFC').trim().toLowerCase();
 const alternatives = text => text.split(' / ');
 let book;
 let recordings;
 let section = 'spanish';
-let progress = readStore(progressKey);
-let flags = readStore(reviewKey);
+const progress = readStore(progressKey);
 let useSansSerif = readStore(notesFontKey).sansSerif === true;
 let hideMastered = readStore(vocabularyFilterKey).hideMastered === true;
 let playback = 0;
@@ -57,12 +54,11 @@ function button(text, action, className) {
 function stopAudio() {
   playback += 1;
   player.pause();
-  player.onended = null;
   player.onerror = null;
   window.speechSynthesis?.cancel();
 }
 
-async function play(phrase, rate = 1, ended = () => {}) {
+async function play(phrase, rate = 1) {
   stopAudio();
   const attempt = playback;
   const recording = recordings.get(key(phrase));
@@ -80,7 +76,6 @@ async function play(phrase, rate = 1, ended = () => {}) {
     speech.voice = voice;
     speech.lang = voice.lang;
     speech.rate = rate;
-    speech.onend = () => { if (attempt === playback) ended(); };
     speech.onerror = () => { if (attempt === playback) status('The Spanish system voice could not play.'); };
     status('Using system voice · ' + voice.lang);
     window.speechSynthesis.speak(speech);
@@ -89,7 +84,6 @@ async function play(phrase, rate = 1, ended = () => {}) {
   if (!recording) return fallback();
   player.src = recording.file;
   player.playbackRate = rate;
-  player.onended = () => { if (attempt === playback) ended(); };
   try {
     await player.play();
     if (attempt === playback) player.onerror = fallback;
@@ -123,13 +117,7 @@ function selectedChapter() {
 function renderVocabulary(chapter, target) {
   const list = node('ul', '', 'entries');
   const totals = node('p', '', 'muted');
-  const filter = node('input');
-  filter.type = 'checkbox';
-  filter.checked = hideMastered;
-  const filterLabel = node('label', '', 'mastery');
-  filterLabel.append(filter, ' Hide mastered');
-  const toolbar = node('div', '', 'vocabulary-toolbar');
-  toolbar.append(totals, filterLabel);
+  const filter = byId('hide-mastered');
   const empty = node('p', 'All entries in this chapter are mastered. Uncheck Hide mastered to see them again.', 'muted');
   const ids = [...new Set(book.chapters.flatMap(item => item.vocabulary.map(row => key(row[0]))))];
   const update = () => {
@@ -139,14 +127,8 @@ function renderVocabulary(chapter, target) {
     for (const entry of list.children) entry.hidden = hideMastered && entry.classList.contains('mastered');
     empty.hidden = !hideMastered || Boolean(list.querySelector('.entry:not([hidden])'));
   };
-  filter.addEventListener('change', () => {
-    hideMastered = filter.checked;
-    status();
-    saveStore(vocabularyFilterKey, {hideMastered});
-    update();
-  });
   totals.setAttribute('aria-live', 'polite');
-  target.append(toolbar, list, empty);
+  target.append(totals, list, empty);
   for (const [spanish, english, context] of chapter.vocabulary) {
     const id = key(spanish);
     const meanings = node('div');
@@ -202,20 +184,6 @@ function addInline(target, text) {
 
 function renderNotes(chapter, target) {
   const notes = node('div', '', 'case-notes');
-  const fontSetting = node('div', '', 'notes-font-setting');
-  fontSetting.setAttribute('role', 'group');
-  fontSetting.setAttribute('aria-label', 'Case Notes font');
-  const setFont = (sansSerif, persist = false) => {
-    useSansSerif = sansSerif;
-    notes.classList.toggle('sans-serif', sansSerif);
-    handwritten.setAttribute('aria-pressed', String(!sansSerif));
-    standard.setAttribute('aria-pressed', String(sansSerif));
-    if (persist) saveStore(notesFontKey, {sansSerif});
-  };
-  const handwritten = button('Handwritten', () => setFont(false, true));
-  const standard = button('Standard Font', () => setFont(true, true));
-  fontSetting.append(handwritten, standard);
-  setFont(useSansSerif);
   for (const block of chapter.notes.split(/\n\s*\n/)) {
     if (block.startsWith('### ')) {
       notes.append(node('h3', block.slice(4)));
@@ -242,47 +210,14 @@ function renderNotes(chapter, target) {
     }
     if (block.includes(warning)) notes.append(playbackControls(warning));
   }
-  target.append(fontSetting, notes);
+  target.append(notes);
 }
 
-function renderReview(chapter) {
-  const phrases = [...new Set(book.chapters.filter(item => item.number <= chapter.number)
-    .flatMap(item => item.vocabulary.flatMap(row => alternatives(row[0])))), warning];
-  const list = node('ul', '', 'recording-list');
-  let sequence = 0;
-  const sequenceStatus = node('p', '', 'muted');
-  sequenceStatus.setAttribute('role', 'status');
-  const next = () => {
-    if (sequence >= phrases.length) {
-      sequenceStatus.textContent = 'Playback complete.';
-      return;
-    }
-    const phrase = phrases[sequence++];
-    sequenceStatus.textContent = sequence + ' of ' + phrases.length + ' · ' + phrase;
-    play(phrase, 1, next);
-  };
-  const controls = node('div', '', 'controls');
-  controls.append(button('Play in order', () => { sequence = 0; next(); }), button('Stop', () => {
-    stopAudio();
-    sequenceStatus.textContent = 'Playback stopped.';
-  }));
-  const voice = recordings.get(key(warning));
-  for (const phrase of phrases) {
-    const id = key(phrase);
-    const line = node('li', '', 'controls');
-    const label = node('label');
-    const flag = node('input');
-    flag.type = 'checkbox';
-    flag.checked = flags[id] === true;
-    flag.addEventListener('change', () => {
-      flags[id] = flag.checked;
-      saveStore(reviewKey, flags);
-    });
-    label.append(flag, ' Flag ' + phrase);
-    line.append(playButton(phrase, true), button('Slow', () => play(phrase, 0.75)), label);
-    list.append(line);
-  }
-  byId('recordings').replaceChildren(node('p', voice.voice + ' · Mexican Spanish (es-MX)'), controls, sequenceStatus, list);
+function setNotesFont(sansSerif) {
+  useSansSerif = sansSerif;
+  byId('notebook').classList.toggle('standard-notes', sansSerif);
+  byId('handwritten').setAttribute('aria-pressed', String(!sansSerif));
+  byId('standard-font').setAttribute('aria-pressed', String(sansSerif));
 }
 
 function render() {
@@ -290,6 +225,8 @@ function render() {
   status();
   const chapter = selectedChapter();
   const target = byId('notebook');
+  target.classList.toggle('case-page', section === 'case');
+  byId('selected-chapter-title').textContent = chapter.title;
   const margin = node('header', '', 'chapter-margin');
   margin.append(node('p', 'Chapter ' + chapter.number, 'chapter-number'), node('h2', chapter.title));
   const page = node('div', '', 'chapter-page');
@@ -299,7 +236,6 @@ function render() {
   byId('case').setAttribute('aria-pressed', section === 'case');
   if (section === 'spanish') renderVocabulary(chapter, page);
   else renderNotes(chapter, page);
-  renderReview(chapter);
 }
 
 async function loadJSON(url) {
@@ -314,45 +250,26 @@ async function start() {
   recordings = new Map(Object.values(audio.recordings).map(record => [key(record.text), record]));
   const chapter = byId('chapter');
   for (const item of book.chapters.filter(item => item.number <= book.latestReleasedChapter)) {
-    chapter.add(new Option('Chapter ' + item.number + ' · ' + item.title, item.number));
+    chapter.add(new Option('Chapter ' + item.number, item.number));
   }
   chapter.disabled = false;
   chapter.addEventListener('change', render);
   for (const id of ['spanish', 'case']) byId(id).addEventListener('click', () => { section = id; render(); });
-  byId('reset').onclick = () => {
-    if (!confirm('Reset all vocabulary progress on this device?')) return;
-    progress = {};
-    render();
-    saveStore(progressKey, progress);
-  };
-  byId('export').onclick = () => {
-    const file = new Blob([JSON.stringify({version: 1, progress}, null, 2)], {type: 'application/json'});
-    const link = node('a');
-    link.href = URL.createObjectURL(file);
-    link.download = 'last-witness-progress.json';
-    link.click();
-    setTimeout(() => URL.revokeObjectURL(link.href), 1000);
-  };
-  const backup = byId('backup');
-  byId('import').onclick = () => backup.click();
-  backup.onchange = async () => {
-    const file = backup.files[0];
-    backup.value = '';
-    if (!file) return;
-    try {
-      const data = JSON.parse(await file.text());
-      if (data.version !== 1 || !data.progress || Array.isArray(data.progress) || typeof data.progress !== 'object') throw new Error();
-      const entries = Object.entries(data.progress);
-      if (entries.some(([, state]) => !backupStates.includes(state))) throw new Error();
-      if (!confirm('Merge this backup into your progress? Matching entries will use the backup state.')) return;
-      progress = {...progress, ...Object.fromEntries(entries)};
-      render();
-      status('Progress imported.');
-      saveStore(progressKey, progress);
-    } catch {
-      status('This file is not a valid notebook progress backup.');
-    }
-  };
+  const filter = byId('hide-mastered');
+  filter.checked = hideMastered;
+  filter.addEventListener('change', () => {
+    hideMastered = filter.checked;
+    if (section === 'spanish') render();
+    saveStore(vocabularyFilterKey, {hideMastered});
+  });
+  for (const [id, sansSerif] of [['handwritten', false], ['standard-font', true]]) {
+    byId(id).addEventListener('click', () => {
+      setNotesFont(sansSerif);
+      status();
+      saveStore(notesFontKey, {sansSerif});
+    });
+  }
+  setNotesFont(useSansSerif);
   render();
   if ('serviceWorker' in navigator) {
     try {

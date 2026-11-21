@@ -9,11 +9,13 @@ import sys
 import tempfile
 import unicodedata
 import wave
+from zipfile import ZipFile
 from array import array
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/notebooks.json"
 MANIFEST = ROOT / "audio/manifest.json"
+PUBLISHED_BOOKS = ("books/The_Last_Witness_-_Working_Draft_v02.epub",)
 WARNING = "No confíe en él. La llave no es suya."
 
 def key(text):
@@ -82,8 +84,12 @@ def main():
         record = manifest[identity]
         assert key(record["text"]) == key(phrase)
         assert has_audio(ROOT / record["file"]), record["file"]
+    for name in PUBLISHED_BOOKS:
+        with ZipFile(ROOT / name) as epub:
+            if epub.read("mimetype") != b"application/epub+zip" or epub.testzip() is not None:
+                raise SystemExit(f"Invalid EPUB: {name}")
     if "--check" in sys.argv:
-        print(f"Verified chapter sequence and {len(entries)} audio assets.")
+        print(f"Verified chapter sequence and {len(entries)} audio assets. EPUB integrity passed.")
         return
     dist = ROOT / "dist"
     dist.mkdir(exist_ok=True)
@@ -104,6 +110,10 @@ def main():
         target = dist / name
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(payload)
+    for name in PUBLISHED_BOOKS:
+        target = dist / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / name, target)
     (dist / "sw.js").write_text(worker.replace("__REVISION__", revision).replace("__FILES__", json.dumps(files)))
     (dist / ".nojekyll").touch()
     print(f"Built app {version} ({revision}), book {book['bookVersion']}, with {len(entries)} recordings.")
