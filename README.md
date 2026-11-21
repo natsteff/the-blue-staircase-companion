@@ -31,7 +31,7 @@ This free preview is an unfinished manuscript. The chapters, translations, and c
 
 ## Try Sally’s Detective Notebook
 
-Read a chapter, then select that chapter in the companion. Review Sally’s observations, theories, and unanswered questions without going past where you’ve read. Practice Mexican Spanish with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide mastered** to focus on what you’re still practicing.
+Read a chapter, then select that chapter in the companion. Review Sally’s observations, theories, and unanswered questions without going past where you’ve read. Practice Mexican Spanish with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide Mastered** to focus on what you’re still practicing.
 
 Mastery is saved in your current browser. On mobile, add **TLW Notebook** to your home screen. Both chapter notebooks and their recordings are available offline after the first successful visit. [Open TLW Notebook](https://natsteff.github.io/the-last-witness-companion/)
 

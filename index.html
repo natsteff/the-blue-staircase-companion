@@ -32,11 +32,12 @@
         <select id="chapter" aria-describedby="selected-chapter-title" disabled></select>
         <p id="selected-chapter-title"></p>
       </div>
-      <label class="mastery"><input id="hide-mastered" type="checkbox"> Hide mastered</label>
-      <div class="notes-font-setting" role="group" aria-label="Case Notes font">
-        <button id="handwritten" type="button" aria-pressed="true">Handwritten</button>
-        <button id="standard-font" type="button" aria-pressed="false">Standard Font</button>
-      </div>
+      <button id="hide-mastered" type="button" aria-pressed="false">Hide Mastered</button>
+      <button id="notes-font" class="font-switch" type="button" role="switch"
+        aria-checked="false" aria-label="Use standard font for Case Notes">
+        <span aria-hidden="true">Handwritten</span>
+        <span aria-hidden="true">Standard Font</span>
+      </button>
     </section>
     <nav aria-label="Notebook sections">
       <button id="spanish" type="button" aria-pressed="true">Spanish</button>

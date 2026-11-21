@@ -118,7 +118,7 @@ function renderVocabulary(chapter, target) {
   const list = node('ul', '', 'entries');
   const totals = node('p', '', 'muted');
   const filter = byId('hide-mastered');
-  const empty = node('p', 'All entries in this chapter are mastered. Uncheck Hide mastered to see them again.', 'muted');
+  const empty = node('p', 'All entries in this chapter are mastered. Select Mastered Hidden to see them again.', 'muted');
   const ids = [...new Set(book.chapters.flatMap(item => item.vocabulary.map(row => key(row[0]))))];
   const update = () => {
     const count = rows => rows.filter(id => progress[id] === 'Mastered').length;
@@ -128,7 +128,15 @@ function renderVocabulary(chapter, target) {
     empty.hidden = !hideMastered || Boolean(list.querySelector('.entry:not([hidden])'));
   };
   totals.setAttribute('aria-live', 'polite');
-  target.append(totals, list, empty);
+  target.append(totals);
+  if (chapter.notes.includes(warning)) {
+    const evidence = node('section', '', 'evidence-audio');
+    const phrase = node('p', warning);
+    phrase.lang = 'es-MX';
+    evidence.append(node('h3', 'Evidence audio'), phrase, playbackControls(warning));
+    target.append(evidence);
+  }
+  target.append(list, empty);
   for (const [spanish, english, context] of chapter.vocabulary) {
     const id = key(spanish);
     const meanings = node('div');
@@ -208,7 +216,6 @@ function renderNotes(chapter, target) {
       addInline(paragraph, block);
       notes.append(paragraph);
     }
-    if (block.includes(warning)) notes.append(playbackControls(warning));
   }
   target.append(notes);
 }
@@ -216,8 +223,7 @@ function renderNotes(chapter, target) {
 function setNotesFont(sansSerif) {
   useSansSerif = sansSerif;
   byId('notebook').classList.toggle('standard-notes', sansSerif);
-  byId('handwritten').setAttribute('aria-pressed', String(!sansSerif));
-  byId('standard-font').setAttribute('aria-pressed', String(sansSerif));
+  byId('notes-font').setAttribute('aria-checked', String(sansSerif));
 }
 
 function render() {
@@ -256,19 +262,22 @@ async function start() {
   chapter.addEventListener('change', render);
   for (const id of ['spanish', 'case']) byId(id).addEventListener('click', () => { section = id; render(); });
   const filter = byId('hide-mastered');
-  filter.checked = hideMastered;
-  filter.addEventListener('change', () => {
-    hideMastered = filter.checked;
+  const updateFilterButton = () => {
+    filter.textContent = hideMastered ? 'Mastered Hidden' : 'Hide Mastered';
+    filter.setAttribute('aria-pressed', String(hideMastered));
+  };
+  updateFilterButton();
+  filter.addEventListener('click', () => {
+    hideMastered = !hideMastered;
+    updateFilterButton();
     if (section === 'spanish') render();
     saveStore(vocabularyFilterKey, {hideMastered});
   });
-  for (const [id, sansSerif] of [['handwritten', false], ['standard-font', true]]) {
-    byId(id).addEventListener('click', () => {
-      setNotesFont(sansSerif);
-      status();
-      saveStore(notesFontKey, {sansSerif});
-    });
-  }
+  byId('notes-font').addEventListener('click', () => {
+    setNotesFont(!useSansSerif);
+    status();
+    saveStore(notesFontKey, {sansSerif: useSansSerif});
+  });
   setNotesFont(useSansSerif);
   render();
   if ('serviceWorker' in navigator) {
