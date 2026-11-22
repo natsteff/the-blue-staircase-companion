@@ -324,3 +324,15 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
   .intro { gap: .85rem; padding-block: 1.35rem 1rem; }
   .intro > div { min-width: 0; }
 }
+
+.reference-options { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+.reference-options label { margin: 0; }
+.reference-options select { display: block; }
+[hidden] { display: none !important; }
+nav { flex-wrap: wrap; }
+#notebook.travelers-page { grid-template-columns: minmax(0, 1fr); }
+.traveler-grammar { margin: .7rem 0; }
+.entry-chapters { color: var(--muted); font-size: .875rem; }
+@media (max-width: 540px) {
+  #travelers { flex-basis: 100%; }
+}

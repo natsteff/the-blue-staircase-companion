@@ -1,6 +1,41 @@
 {
   "version": 1,
   "recordings": {
+    "0d7ccc7d56105df99ef4": {
+      "text": "Perdón.",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/0d7ccc7d56105df99ef4.wav",
+      "status": "generated"
+    },
+    "4f87498b67d58967fc51": {
+      "text": "Sí",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/4f87498b67d58967fc51.wav",
+      "status": "generated"
+    },
+    "8c633bd2a60a03247cab": {
+      "text": "Señora",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/8c633bd2a60a03247cab.wav",
+      "status": "generated"
+    },
+    "a1df10ed4987d8939962": {
+      "text": "¿Dónde está...?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/a1df10ed4987d8939962.wav",
+      "status": "generated"
+    },
+    "86136f8c3600f8d0a8a1": {
+      "text": "El hotel",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/86136f8c3600f8d0a8a1.wav",
+      "status": "generated"
+    },
     "0de6a7102ec576a2a472": {
       "text": "Buenas tardes",
       "voice": "Paulina",
@@ -8,11 +43,46 @@
       "file": "audio/0de6a7102ec576a2a472.wav",
       "status": "generated"
     },
-    "8cbbc6554f857a27d615": {
-      "text": "Buenas noches",
+    "eda08c5eac8b3a147505": {
+      "text": "¿Tienen una reservación?",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/8cbbc6554f857a27d615.wav",
+      "file": "audio/eda08c5eac8b3a147505.wav",
+      "status": "generated"
+    },
+    "1f799eb0d66907d3ac80": {
+      "text": "Tenemos una reservación",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/1f799eb0d66907d3ac80.wav",
+      "status": "generated"
+    },
+    "9a0dbd188b36a55ce2f9": {
+      "text": "¿A nombre de quién?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/9a0dbd188b36a55ce2f9.wav",
+      "status": "generated"
+    },
+    "4d17c35987fb76b31169": {
+      "text": "Mucho gusto",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/4d17c35987fb76b31169.wav",
+      "status": "generated"
+    },
+    "fe84cddf73c466c8e52d": {
+      "text": "La llave",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/fe84cddf73c466c8e52d.wav",
+      "status": "generated"
+    },
+    "75b37bb7efcfe78bd08e": {
+      "text": "Una cerveza",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/75b37bb7efcfe78bd08e.wav",
       "status": "generated"
     },
     "87d73033cc7339318cae": {
@@ -36,55 +106,6 @@
       "file": "audio/847c9e5d0002380596de.wav",
       "status": "generated"
     },
-    "4f87498b67d58967fc51": {
-      "text": "Sí",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/4f87498b67d58967fc51.wav",
-      "status": "generated"
-    },
-    "9390298f3fb0c5b16049": {
-      "text": "No",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/9390298f3fb0c5b16049.wav",
-      "status": "generated"
-    },
-    "8c633bd2a60a03247cab": {
-      "text": "Señora",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/8c633bd2a60a03247cab.wav",
-      "status": "generated"
-    },
-    "ea6f982f15b79e7d1d03": {
-      "text": "Señor",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/ea6f982f15b79e7d1d03.wav",
-      "status": "generated"
-    },
-    "a1df10ed4987d8939962": {
-      "text": "¿Dónde está...?",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/a1df10ed4987d8939962.wav",
-      "status": "generated"
-    },
-    "86136f8c3600f8d0a8a1": {
-      "text": "El hotel",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/86136f8c3600f8d0a8a1.wav",
-      "status": "generated"
-    },
-    "1f799eb0d66907d3ac80": {
-      "text": "Tenemos una reservación",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/1f799eb0d66907d3ac80.wav",
-      "status": "generated"
-    },
     "e6bec8842308e9d49300": {
       "text": "Picante",
       "voice": "Paulina",
@@ -99,11 +120,25 @@
       "file": "audio/b87f0b5f9dce9196e6d1.wav",
       "status": "generated"
     },
-    "3d9d76375e11572505a9": {
-      "text": "Despacio",
+    "8cbbc6554f857a27d615": {
+      "text": "Buenas noches",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/3d9d76375e11572505a9.wav",
+      "file": "audio/8cbbc6554f857a27d615.wav",
+      "status": "generated"
+    },
+    "ea6f982f15b79e7d1d03": {
+      "text": "Señor",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/ea6f982f15b79e7d1d03.wav",
+      "status": "generated"
+    },
+    "17d5847b6ae75f1debdc": {
+      "text": "¿Usted habla español?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/17d5847b6ae75f1debdc.wav",
       "status": "generated"
     },
     "805119e7bf2d5b21d45d": {
@@ -113,25 +148,46 @@
       "file": "audio/805119e7bf2d5b21d45d.wav",
       "status": "generated"
     },
-    "fe84cddf73c466c8e52d": {
-      "text": "La llave",
+    "3d9d76375e11572505a9": {
+      "text": "Despacio",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/fe84cddf73c466c8e52d.wav",
+      "file": "audio/3d9d76375e11572505a9.wav",
       "status": "generated"
     },
-    "4d17c35987fb76b31169": {
-      "text": "Mucho gusto",
+    "52aeb4acea93b3b4c192": {
+      "text": "Hay algo que debe saber.",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/4d17c35987fb76b31169.wav",
+      "file": "audio/52aeb4acea93b3b4c192.wav",
       "status": "generated"
     },
-    "17d5847b6ae75f1debdc": {
-      "text": "¿Usted habla español?",
+    "24d755cdc0a56d01ef54": {
+      "text": "No confíe en él. La llave no es suya.",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/17d5847b6ae75f1debdc.wav",
+      "file": "audio/24d755cdc0a56d01ef54.wav",
+      "status": "generated"
+    },
+    "f9f25eb6f72e4d4ec687": {
+      "text": "Por favor. Escúcheme.",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/f9f25eb6f72e4d4ec687.wav",
+      "status": "generated"
+    },
+    "23446d4d4b2fe6f5f593": {
+      "text": "La policía",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/23446d4d4b2fe6f5f593.wav",
+      "status": "generated"
+    },
+    "5c490dcf1ac3f8708a87": {
+      "text": "Una ambulancia",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/5c490dcf1ac3f8708a87.wav",
       "status": "generated"
     },
     "5ab4d7f1fc854a344b5f": {
@@ -162,18 +218,11 @@
       "file": "audio/3878dde392d243919f51.wav",
       "status": "generated"
     },
-    "23446d4d4b2fe6f5f593": {
-      "text": "La policía",
+    "df63e6da8cab36084ff8": {
+      "text": "Lo siento",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/23446d4d4b2fe6f5f593.wav",
-      "status": "generated"
-    },
-    "5c490dcf1ac3f8708a87": {
-      "text": "Una ambulancia",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/5c490dcf1ac3f8708a87.wav",
+      "file": "audio/df63e6da8cab36084ff8.wav",
       "status": "generated"
     },
     "e94c0074c1b4f4e8fda8": {
@@ -190,13 +239,6 @@
       "file": "audio/8c56a6249fe4fff88911.wav",
       "status": "generated"
     },
-    "cc3ef93f6ecf324faf32": {
-      "text": "Fue un accidente",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/cc3ef93f6ecf324faf32.wav",
-      "status": "generated"
-    },
     "5fd14e2dd9b63f7418c2": {
       "text": "Anoche",
       "voice": "Paulina",
@@ -204,11 +246,18 @@
       "file": "audio/5fd14e2dd9b63f7418c2.wav",
       "status": "generated"
     },
-    "df63e6da8cab36084ff8": {
-      "text": "Lo siento",
+    "cc3ef93f6ecf324faf32": {
+      "text": "Fue un accidente",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/df63e6da8cab36084ff8.wav",
+      "file": "audio/cc3ef93f6ecf324faf32.wav",
+      "status": "generated"
+    },
+    "58e8cc0fcb69ba6975f5": {
+      "text": "¿Dónde está Rosa?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/58e8cc0fcb69ba6975f5.wav",
       "status": "generated"
     },
     "da4b4fc03bd41899d9e4": {
@@ -232,18 +281,88 @@
       "file": "audio/018576b8030e53d8294d.wav",
       "status": "generated"
     },
-    "58e8cc0fcb69ba6975f5": {
-      "text": "¿Dónde está Rosa?",
+    "adda9bd0c15fe90839e4": {
+      "text": "Un momento, por favor.",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/58e8cc0fcb69ba6975f5.wav",
+      "file": "audio/adda9bd0c15fe90839e4.wav",
       "status": "generated"
     },
-    "24d755cdc0a56d01ef54": {
-      "text": "No confíe en él. La llave no es suya.",
+    "c4b3f00913d57515458b": {
+      "text": "No sé",
       "voice": "Paulina",
       "locale": "es-MX",
-      "file": "audio/24d755cdc0a56d01ef54.wav",
+      "file": "audio/c4b3f00913d57515458b.wav",
+      "status": "generated"
+    },
+    "c279204197221732efd5": {
+      "text": "Fecha",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/c279204197221732efd5.wav",
+      "status": "generated"
+    },
+    "60a6c2661df4be46d85f": {
+      "text": "Antes",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/60a6c2661df4be46d85f.wav",
+      "status": "generated"
+    },
+    "e73c8c4f3a15f283e600": {
+      "text": "Después",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/e73c8c4f3a15f283e600.wav",
+      "status": "generated"
+    },
+    "b56796f5dd29620d50af": {
+      "text": "No, gracias",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/b56796f5dd29620d50af.wav",
+      "status": "generated"
+    },
+    "5eca0e174620e72290fa": {
+      "text": "No entiendo.",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/5eca0e174620e72290fa.wav",
+      "status": "generated"
+    },
+    "9cd485ff2e814aeaf5b2": {
+      "text": "¿Puede repetirlo más despacio, por favor?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/9cd485ff2e814aeaf5b2.wav",
+      "status": "generated"
+    },
+    "3ed4eae4303f0511ddf0": {
+      "text": "¿Dónde está el hotel?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/3ed4eae4303f0511ddf0.wav",
+      "status": "generated"
+    },
+    "f72dd7eab7956ac42a08": {
+      "text": "¿Está picante?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/f72dd7eab7956ac42a08.wav",
+      "status": "generated"
+    },
+    "eebd5877c11ac484ac48": {
+      "text": "Una cerveza, por favor.",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/eebd5877c11ac484ac48.wav",
+      "status": "generated"
+    },
+    "d70f259bcc92547d718f": {
+      "text": "La cuenta, por favor.",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/d70f259bcc92547d718f.wav",
       "status": "generated"
     }
   }

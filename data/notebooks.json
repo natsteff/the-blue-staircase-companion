@@ -1,19 +1,59 @@
 {
-  "bookVersion": "v02",
-  "latestReleasedChapter": 2,
+  "bookVersion": "review-01",
+  "latestReleasedChapter": 4,
   "chapters": [
     {
       "number": 1,
       "title": "The House with the Blue Staircase",
-      "intro": "Spanish encountered in Chapter One. These are the words and expressions Sally can begin using in the investigation.",
+      "intro": "Words and phrases in the order Sally encounters them in Chapter One. Contextual expressions are not always fully understood.",
       "vocabulary": [
+        [
+          "Perdón",
+          "Excuse me"
+        ],
+        [
+          "Sí",
+          "Yes; the driver's response"
+        ],
+        [
+          "Señora",
+          "Polite address for a woman"
+        ],
+        [
+          "¿Dónde está...?",
+          "Where is...?"
+        ],
+        [
+          "El hotel",
+          "The hotel"
+        ],
         [
           "Buenas tardes",
           "Good afternoon"
         ],
         [
-          "Buenas noches",
-          "Good evening / Good night"
+          "¿Tienen una reservación?",
+          "Do you have a reservation? (understood from context)"
+        ],
+        [
+          "Tenemos una reservación",
+          "We have a reservation"
+        ],
+        [
+          "¿A nombre de quién?",
+          "In whose name? (reader help; Sally offers her surname without fully translating the question)"
+        ],
+        [
+          "Mucho gusto",
+          "Nice to meet you"
+        ],
+        [
+          "La llave",
+          "The key; which key remains uncertain"
+        ],
+        [
+          "Una cerveza",
+          "A beer"
         ],
         [
           "Por favor",
@@ -28,26 +68,6 @@
           "You're welcome"
         ],
         [
-          "Sí / No",
-          "Yes / No"
-        ],
-        [
-          "Señora / Señor",
-          "Mrs. or ma'am / Mr. or sir"
-        ],
-        [
-          "¿Dónde está...?",
-          "Where is...?"
-        ],
-        [
-          "El hotel",
-          "The hotel"
-        ],
-        [
-          "Tenemos una reservación",
-          "We have a reservation"
-        ],
-        [
           "Picante",
           "Spicy"
         ],
@@ -56,47 +76,54 @@
           "A little"
         ],
         [
-          "Despacio",
-          "Slowly"
+          "Buenas noches",
+          "Good evening / Good night"
+        ],
+        [
+          "Señor",
+          "Mr. / sir"
+        ],
+        [
+          "¿Usted habla español?",
+          "Do you speak Spanish?"
         ],
         [
           "Un momento",
           "One moment"
         ],
         [
-          "La llave",
-          "The key"
-        ],
-        [
-          "Mucho gusto",
-          "Nice to meet you"
-        ],
-        [
-          "¿Usted habla español?",
-          "Do you speak Spanish?"
+          "Despacio",
+          "Slowly"
         ]
       ],
-      "notes": "**Untranslated evidence:** *No confíe en él. La llave no es suya.*\n\nSally recognizes *la llave* (the key), but does not yet understand the full warning.\n\n### Case notes\n\n**Observed:** Whitmore spoke sharply to Isabel while holding a folded paper. Tomás returned a silver key to Isabel. An elderly housekeeper spoke urgently to Sally and mentioned a key. Whitmore was discovered dead at the foot of the staircase the next morning. Sally does not know when he died or whether he fell.\n\n**Unanswered questions:** What was written on Whitmore’s paper? Why was the key important? What did the housekeeper mean? Who was on the gallery shortly before she spoke?"
+      "evidence": [
+        [
+          "Hay algo que debe saber.",
+          null,
+          ""
+        ],
+        [
+          "No confíe en él. La llave no es suya.",
+          null,
+          ""
+        ],
+        [
+          "Por favor. Escúcheme.",
+          null,
+          "*Por favor* is familiar; the rest is not."
+        ]
+      ],
+      "notes": "**What I saw:** Tomás handed Isabel a small silver key. Whitmore held a folded paper while arguing with her. An upset housekeeper called to me from below the balcony. A door closed on the upper gallery, but I did not see who closed it.\n\n**What I need to know:** What was on Whitmore's paper? Which key did the housekeeper mean? Where did she go?\n\n---"
     },
     {
       "number": 2,
       "title": "A Word for Dead",
-      "intro": "Day Two: Words understood, testimony translated, and facts still to establish.",
+      "intro": "Day Two. Spanish in order of first encounter in this chapter; some expressions return from yesterday.",
       "vocabulary": [
         [
-          "Buenos días",
-          "Good morning",
-          "Recognizes in context"
-        ],
-        [
-          "Muerto / muerta",
-          "Dead (masculine / feminine)",
-          "Learns from Diego"
-        ],
-        [
-          "Está muerto",
-          "He is dead",
-          "Understands from Diego's response"
+          "Por favor",
+          "Please",
+          "Recognizes from yesterday"
         ],
         [
           "La policía",
@@ -109,24 +136,19 @@
           "Recognizes by similarity"
         ],
         [
-          "¿Qué pasó?",
-          "What happened?",
-          "Infers from context; included here for reader reference"
+          "Buenos días",
+          "Good morning",
+          "Recognizes in context"
         ],
         [
-          "¡Dios mío!",
-          "My God!",
-          "Infers from Tomás's reaction"
+          "Muerto / muerta",
+          "Dead (masculine / feminine)",
+          "Learns *muerto* from Diego; *muerta* is a useful variant"
         ],
         [
-          "Fue un accidente",
-          "It was an accident",
-          "Recognizes *accidente*; full phrase included for reader reference"
-        ],
-        [
-          "Anoche",
-          "Last night",
-          "Nate suggests; Sally has not independently verified it"
+          "Está muerto",
+          "He is dead",
+          "Understands from Diego's response"
         ],
         [
           "Lo siento",
@@ -134,27 +156,173 @@
           "Uses with Diego"
         ],
         [
-          "No confíe en él",
-          "Don't trust him",
-          "Lucía translates"
+          "¿Qué pasó?",
+          "What happened?",
+          "Infers from context"
         ],
         [
-          "La llave no es suya",
-          "The key isn't his",
-          "Lucía translates"
+          "¡Dios mío!",
+          "My God!",
+          "Infers from Tomás's reaction"
         ],
         [
-          "Él",
-          "He / him",
-          "Lucía explains in context"
+          "Anoche",
+          "Last night",
+          "Nate suggests; Sally marks it as tentative"
+        ],
+        [
+          "Fue un accidente",
+          "It was an accident",
+          "Sally infers the phrase; Isabel's claim is not proof"
         ],
         [
           "¿Dónde está Rosa?",
           "Where is Rosa?",
-          "Sally constructs independently"
+          "Sally builds it from a phrase she used yesterday"
         ]
       ],
-      "notes": "### Confirmed observations\n\n- Whitmore was found dead beside the blue staircase on the morning after the Mercers arrived. The time and cause of death have **not** been established for Sally.\n- The previous evening, Whitmore approached Sally about a matter involving documents, and later argued with Isabel while holding a folded paper.\n- Tomás returned a small silver key to Isabel on the Mercers' arrival.\n- At approximately 11:15 p.m., an elderly housekeeper spoke urgently to Sally from the courtyard. Sally heard a door close on the upper gallery shortly beforehand but did not see who used it.\n- Lucía informally translated the warning as: “Don't trust him. The key isn't his.” The man and the key are **not identified**.\n- Police have not yet located Rosa Méndez. They have not established that she is deliberately hiding.\n\n### Sally's theories, not proven facts\n\n- Rosa's warning might refer to Tomás and the silver key, but there is no proof that it does.\n- Whitmore's folded paper might concern the hotel property or its ownership.\n- Whitmore may have fallen, or someone may have caused his fall. Neither possibility is established.\n\n### Questions to carry forward\n\n1. What did Whitmore want Sally to examine?\n2. What did the folded paper say, and where is it now?\n3. Who was on the upper gallery before Rosa spoke?\n4. Which man did Rosa mean, and what key did she mean?\n5. Where is Rosa, and what else was she trying to tell Sally?\n\n### Translated evidence\n\n> *No confíe en él. La llave no es suya.*\n>\n> **Don't trust him. The key isn't his.**\n\n*The translation is clear. Its referents and relevance to Whitmore's death are not.*"
+      "evidence": [
+        [
+          "No confíe en él",
+          "Don't trust him",
+          "Lucía's first translation"
+        ],
+        [
+          "La llave no es suya",
+          "The key isn't his (Lucía's contextual reading; owner unknown)",
+          "Lucía's first translation"
+        ],
+        [
+          "Él",
+          "He / him",
+          "Lucía explains the pronoun"
+        ],
+        [
+          "No confíe en él. La llave no es suya.",
+          "Don't trust him. The key isn't his.",
+          "Lucía’s contextual reading; owner unknown"
+        ]
+      ],
+      "notes": "**What I know:** Whitmore wanted to show me something about documents. He argued with Isabel while holding a folded paper. Rosa warned me in Spanish; Lucía translated the two sentences I wrote down. The police haven't found Rosa.\n\n**What I wonder:** Whom did Rosa mean? Was it the silver key I saw, or another one? What was Whitmore trying to tell me?\n\n*No answer yet to the question I can finally ask in Spanish: ¿Dónde está Rosa?*\n\n---"
+    },
+    {
+      "number": 3,
+      "title": "The Room Across the Gallery",
+      "intro": "Day Two, continued (Chapter Three). Selected Spanish in order of first encounter in this chapter.",
+      "vocabulary": [
+        [
+          "Un momento, por favor",
+          "One moment, please",
+          "Recognizes *un momento* from yesterday; hears Isabel use the fuller phrase"
+        ],
+        [
+          "¿Dónde está Rosa?",
+          "Where is Rosa?",
+          "Uses the question she worked out earlier that morning"
+        ],
+        [
+          "No sé",
+          "I don't know",
+          "Tomás supplies the meaning after Sally infers it from his reaction"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** I saw a door close at the stair head before Rosa spoke, heard an unplaced sound while she spoke, then heard footsteps in the lower passage. I told Salazar these are separate observations. Evelyn's untimed account proves no connection. Tomás says he doesn't know where Rosa is.\n\n**What I wonder:** Was the middle sound the service door? Did anyone actually see Rosa leave? Why did Tomás seem so upset by the question?\n\n*Not knowing is not the same as having an answer I dislike.*"
+    },
+    {
+      "number": 4,
+      "title": "What the Dates Mean",
+      "intro": "Day Two, continued (Chapter Four). Selected Spanish in order of first encounter in this chapter.",
+      "vocabulary": [
+        [
+          "Fecha",
+          "Date",
+          "Lucía explains the heading on a public-record example"
+        ],
+        [
+          "Antes",
+          "Before",
+          "Lucía explains a date-order word"
+        ],
+        [
+          "Después",
+          "After / later",
+          "Lucía explains both senses; Sally recognizes Isabel meant “Later” when she said it to Tomás, though Sally did not know the word then"
+        ],
+        [
+          "No, gracias",
+          "No, thank you",
+          "Uses it at reception without help; *gracias* was familiar"
+        ],
+        [
+          "Lo siento",
+          "I'm sorry",
+          "Recognizes Diego's familiar phrase in a calmer context"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Whitmore asked about dates, but showed me no documents. Lucía's mock sample showed why different date labels matter. I asked Salazar about the paper I saw Whitmore hold at the stair head; he would not say whether it was recovered. Isabel says she did not know about his invitation.\n\n**What I wonder:** Which dates did Whitmore mean? Can Lucía show me where to check real date labels without seeing Whitmore's papers? What was on the folded paper?\n\n*There are several ways for dates to disagree. Only some of them mean that someone is lying.*"
     }
-  ]
+  ],
+  "travelers": {
+    "vocabulary": [
+      [
+        "Buenas tardes.",
+        "Good afternoon."
+      ],
+      [
+        "Buenas noches.",
+        "Good evening / good night."
+      ],
+      [
+        "Perdón.",
+        "Excuse me."
+      ],
+      [
+        "Por favor.",
+        "Please."
+      ],
+      [
+        "Gracias.",
+        "Thank you."
+      ],
+      [
+        "De nada.",
+        "You're welcome."
+      ],
+      [
+        "No entiendo.",
+        "I don't understand."
+      ],
+      [
+        "¿Puede repetirlo más despacio, por favor?",
+        "Could you repeat that more slowly, please?"
+      ],
+      [
+        "Un momento, por favor.",
+        "One moment, please."
+      ],
+      [
+        "¿Dónde está el hotel?",
+        "Where is the hotel?"
+      ],
+      [
+        "Tenemos una reservación.",
+        "We have a reservation."
+      ],
+      [
+        "¿Está picante?",
+        "Is it spicy?"
+      ],
+      [
+        "Una cerveza, por favor.",
+        "A beer, please."
+      ],
+      [
+        "La cuenta, por favor.",
+        "The check, please."
+      ]
+    ],
+    "tip": "Tip: Learn nouns with their articles. **El hotel** means “the hotel”; **la llave** means “the key.” For grammar explanations, examples, and pronunciation practice, use the companion app."
+  }
 }

@@ -21,6 +21,9 @@ WARNING = "No confíe en él. La llave no es suya."
 def key(text):
     return unicodedata.normalize("NFC", text).strip().casefold()
 
+def speech_key(text):
+    return re.sub(r"(?<!\.)\.$", "", key(text))
+
 def audio_id(text):
     return hashlib.sha256(key(text).encode()).hexdigest()[:20]
 
@@ -70,13 +73,17 @@ def main():
         raise SystemExit("VERSION must contain a major.minor.patch app version.")
     book = read(SOURCE)
     assert [c["number"] for c in book["chapters"]] == list(range(1, book["latestReleasedChapter"] + 1))
-    phrases = [
-        phrase
-        for chapter in book["chapters"]
-        for row in chapter["vocabulary"]
-        for phrase in row[0].split(" / ")
-    ] + [WARNING]
-    entries = {audio_id(text): text for text in phrases}
+    rows = [row for chapter in book["chapters"]
+            for row in chapter["vocabulary"] + chapter.get("evidence", [])]
+    rows.extend(book.get("travelers", {}).get("vocabulary", []))
+    phrases = [phrase for row in rows for phrase in row[0].split(" / ")]
+    if any("evidence" not in chapter and WARNING in chapter["notes"] for chapter in book["chapters"]):
+        phrases.append(WARNING)
+    previous = read(MANIFEST)["recordings"] if MANIFEST.exists() else {}
+    recorded_text = {speech_key(item["text"]): item["text"] for item in previous.values()}
+    distinct = {speech_key(text): text for text in phrases}
+    recordings = [recorded_text.get(identity, text) for identity, text in distinct.items()]
+    entries = {audio_id(text): text for text in recordings}
     if "--audio" in sys.argv:
         generate(entries)
     manifest = read(MANIFEST)["recordings"]

@@ -6,6 +6,8 @@ const notesFontKey = 'last-witness.notes-font.v1';
 const vocabularyFilterKey = 'last-witness.vocabulary-filter.v1';
 const warning = 'No confíe en él. La llave no es suya.';
 const key = text => text.normalize('NFC').trim().toLowerCase();
+const speechKey = text => key(text).replace(/(?<!\.)\.$/, "");
+const alphabetical = new Intl.Collator("es-MX", {ignorePunctuation: true});
 const alternatives = text => text.split(' / ');
 let book;
 let recordings;
@@ -61,7 +63,7 @@ function stopAudio() {
 async function play(phrase, rate = 1) {
   stopAudio();
   const attempt = playback;
-  const recording = recordings.get(key(phrase));
+  const recording = recordings.get(speechKey(phrase));
   const fallback = () => {
     if (attempt !== playback) return;
     player.onerror = null;
@@ -114,81 +116,122 @@ function selectedChapter() {
   return book.chapters.find(item => String(item.number) === byId('chapter').value);
 }
 
-function renderVocabulary(chapter, target) {
+function vocabularyEntries(chapters) {
+  const entries = new Map();
+  for (const chapter of chapters) {
+    for (const row of chapter.vocabulary) {
+      const id = speechKey(row[0]);
+      if (!entries.has(id)) entries.set(id, {row, chapters: []});
+      if (chapter.number) entries.get(id).chapters.push(chapter.number);
+    }
+  }
+  const result = [...entries.values()];
+  if (section === 'spanish' && byId('vocabulary-sort').value === 'alphabetical') {
+    result.sort((left, right) => alphabetical.compare(left.row[0], right.row[0]));
+  }
+  return result;
+}
+
+function wordRow([spanish, english, context], chapters = []) {
+  const entry = node('li', '', 'entry');
+  const meanings = node('div');
+  const term = node('strong', spanish);
+  term.lang = 'es-MX';
+  meanings.append(term, node('p', english ?? 'Unknown'));
+  if (context) {
+    const note = node('small');
+    addInline(note, context);
+    meanings.append(note);
+  }
+  if (chapters.length) {
+    const label = chapters.length === 1 ? 'Chapter ' : 'Chapters ';
+    meanings.append(node('p', label + chapters.join(', '), 'entry-chapters'));
+  }
+  const controls = node('div', '', 'controls entry-audio');
+  const phrases = alternatives(spanish);
+  for (const phrase of phrases) controls.append(playbackControls(phrase, phrases.length > 1));
+  entry.append(meanings, controls);
+  return {entry, controls};
+}
+
+function renderVocabulary(chapters, target, cumulative) {
+  const entries = vocabularyEntries(chapters);
   const list = node('ul', '', 'entries');
   const totals = node('p', '', 'muted');
-  const filter = byId('hide-mastered');
-  const empty = node('p', 'All entries in this chapter are mastered. Switch to Show All to see them again.', 'muted');
-  const ids = [...new Set(book.chapters.flatMap(item => item.vocabulary.map(row => key(row[0]))))];
+  const empty = node('p', 'All entries in this list are mastered. Switch to Show All to see them again.', 'muted');
   const update = () => {
-    const count = rows => rows.filter(id => progress[id] === 'Mastered').length;
-    totals.textContent = count(chapter.vocabulary.map(row => key(row[0]))) + ' of ' + chapter.vocabulary.length
-      + ' mastered in this chapter · ' + count(ids) + ' of ' + ids.length + ' overall';
+    const count = entries.filter(({row}) => progress[speechKey(row[0])] === 'Mastered').length;
+    totals.textContent = count + ' of ' + entries.length + ' mastered'
+      + (cumulative ? ' through Chapter ' + chapters.at(-1).number : '');
     for (const entry of list.children) entry.hidden = hideMastered && entry.classList.contains('mastered');
-    empty.hidden = !hideMastered || Boolean(list.querySelector('.entry:not([hidden])'));
+    empty.hidden = !hideMastered || count < entries.length;
   };
   totals.setAttribute('aria-live', 'polite');
   target.append(totals, list, empty);
-  if (chapter.notes.includes(warning)) {
-    const translation = chapter.notes.split(/\n\s*\n/)
-      .find(block => block.startsWith('>') && block.includes(warning))
-      ?.match(/^> \*\*(.+)\*\*$/m)?.[1];
-    const evidence = node('section', '', 'evidence-audio');
-    const heading = node('h3', translation ? 'Evidence phrase' : 'Untranslated');
-    heading.id = 'evidence-heading';
-    evidence.setAttribute('aria-labelledby', heading.id);
-    const entries = node('ul', '', 'entries');
-    const entry = node('li', '', 'entry');
-    const meanings = node('div');
-    const phrase = node('strong', warning);
-    phrase.lang = 'es-MX';
-    meanings.append(phrase, node('p', translation ?? 'Unknown'));
-    const controls = node('div', '', 'controls entry-audio');
-    controls.append(playbackControls(warning));
-    entry.append(meanings, controls);
-    entries.append(entry);
-    evidence.append(heading, entries);
-    target.append(evidence);
-  }
-  for (const [spanish, english, context] of chapter.vocabulary) {
-    const id = key(spanish);
-    const meanings = node('div');
-    const term = node('strong', spanish);
-    term.lang = 'es-MX';
-    meanings.append(term, node('p', english));
-    if (context) {
-      const note = node('small');
-      addInline(note, context);
-      meanings.append(note);
-    }
-    const controls = node('div', '', 'controls entry-audio');
+
+  for (const {row, chapters: references} of entries) {
+    const id = speechKey(row[0]);
+    const {entry, controls} = wordRow(row, cumulative ? references : []);
     const mastered = node('input');
     mastered.type = 'checkbox';
     mastered.checked = progress[id] === 'Mastered';
-    mastered.setAttribute('aria-label', 'Mastered: ' + spanish);
+    mastered.setAttribute('aria-label', 'Mastered: ' + row[0]);
     const label = node('label', '', 'mastery');
     label.append(mastered, ' Mastered');
-    const entry = node('li', '', 'entry');
+    entry.insertBefore(label, controls);
     entry.classList.toggle('mastered', mastered.checked);
     mastered.addEventListener('change', () => {
-      if (mastered.checked) progress[id] = 'Mastered';
-      else delete progress[id];
+      progress[id] = mastered.checked ? 'Mastered' : 'Learning';
       entry.classList.toggle('mastered', mastered.checked);
       status();
       saveStore(progressKey, progress);
       if (hideMastered && mastered.checked && document.activeElement === mastered) {
         const remaining = [...list.querySelectorAll('.entry:not(.mastered) input')];
         const next = remaining.find(input => mastered.compareDocumentPosition(input) & Node.DOCUMENT_POSITION_FOLLOWING);
-        (next ?? remaining.at(-1) ?? filter).focus();
+        (next ?? remaining.at(-1) ?? byId('hide-mastered')).focus();
       }
       update();
     });
-    const phrases = alternatives(spanish);
-    for (const phrase of phrases) controls.append(playbackControls(phrase, phrases.length > 1));
-    entry.append(meanings, label, controls);
     list.append(entry);
   }
   update();
+}
+
+function renderEvidence(chapters, target, cumulative) {
+  const entries = new Map();
+  for (const chapter of chapters) {
+    for (const row of chapterEvidence(chapter)) {
+      const id = speechKey(row[0]);
+      if (!entries.has(id)) entries.set(id, {row, references: []});
+      const evidence = entries.get(id);
+      if (row[1]) evidence.row = row;
+      evidence.references.push(chapter.number);
+    }
+  }
+  for (const [title, translated] of [['Untranslated', false], ['Translated Evidence', true]]) {
+    const matching = [...entries.values()].filter(({row}) => Boolean(row[1]) === translated);
+    if (!matching.length) continue;
+    if (byId('vocabulary-sort').value === 'alphabetical') {
+      matching.sort((left, right) => alphabetical.compare(left.row[0], right.row[0]));
+    }
+    const section = node('section', '', 'evidence-audio');
+    const heading = node('h3', title);
+    heading.id = translated ? 'translated-heading' : 'untranslated-heading';
+    section.setAttribute('aria-labelledby', heading.id);
+    const list = node('ul', '', 'entries');
+    for (const {row, references} of matching) list.append(wordRow(row, cumulative ? references : []).entry);
+    section.append(heading, list);
+    target.append(section);
+  }
+}
+
+function chapterEvidence(chapter) {
+  if (chapter.evidence) return chapter.evidence;
+  if (!chapter.notes.includes(warning)) return [];
+  const translation = chapter.notes.split(/\n\s*\n/)
+    .find(block => block.startsWith('>') && block.includes(warning))
+    ?.match(/^> \*\*(.+)\*\*$/m)?.[1];
+  return [[warning, translation]];
 }
 
 function addInline(target, text) {
@@ -230,6 +273,17 @@ function renderNotes(chapter, target) {
       notes.append(paragraph);
     }
   }
+  if (chapter.evidence) {
+    const full = chapter.evidence.find(([spanish]) => speechKey(spanish) === speechKey(warning));
+    if (full) {
+      const quote = node('blockquote', '', 'evidence');
+      const spanish = node('p', full[0]);
+      spanish.lang = 'es-MX';
+      quote.append(spanish);
+      if (full[1]) quote.append(node('p', full[1]));
+      notes.prepend(quote);
+    }
+  }
   target.append(notes);
 }
 
@@ -239,22 +293,56 @@ function setNotesFont(sansSerif) {
   byId('notes-font').setAttribute('aria-checked', String(sansSerif));
 }
 
+function renderTravelers(target) {
+  const page = node('div', '', 'chapter-page');
+  const heading = node('h2', 'Spanish Phrases for Travelers');
+  const tips = node('p', '', 'chapter-intro');
+  if (book.travelers.tip) addInline(tips, book.travelers.tip.split(' For grammar')[0]);
+  const grammar = node('details', '', 'traveler-grammar');
+  grammar.append(node('summary', 'Masculine, feminine, and “to be”'),
+    node('p', 'Learn the article with the noun. El hotel is masculine and la llave is feminine.'),
+    node('p', 'Use ser for identity or origin: Soy Sally. Use estar for location or condition: ¿Dónde está el hotel?'));
+  page.append(heading, tips, grammar);
+  renderVocabulary([book.travelers], page, false);
+  target.append(page);
+}
+
 function render() {
   stopAudio();
   status();
   const chapter = selectedChapter();
   const target = byId('notebook');
+  const traveler = section === 'travelers';
+  const cumulative = byId('scope').value === 'through';
+  const chapters = cumulative ? book.chapters.filter(item => item.number <= chapter.number) : [chapter];
   target.classList.toggle('case-page', section === 'case');
+  target.classList.toggle('travelers-page', traveler);
   byId('selected-chapter-title').textContent = chapter.title;
+  byId('scope').options[1].textContent = 'Through Chapter ' + chapter.number;
+  byId('scope').closest('label').hidden = traveler;
+  byId('sort-option').hidden = section !== 'spanish';
+  for (const id of ['travelers', 'spanish', 'case']) byId(id).setAttribute('aria-pressed', String(section === id));
+  target.replaceChildren();
+  if (traveler) {
+    renderTravelers(target);
+    return;
+  }
   const margin = node('header', '', 'chapter-margin');
-  margin.append(node('p', 'Chapter ' + chapter.number, 'chapter-number'), node('h2', chapter.title));
+  const label = (cumulative ? 'Through Chapter ' : 'Chapter ') + chapter.number;
+  margin.append(node('p', label, 'chapter-number'), node('h2', chapter.title));
   const page = node('div', '', 'chapter-page');
-  page.append(node('p', chapter.intro, 'chapter-intro'));
-  target.replaceChildren(margin, page);
-  byId('spanish').setAttribute('aria-pressed', section === 'spanish');
-  byId('case').setAttribute('aria-pressed', section === 'case');
-  if (section === 'spanish') renderVocabulary(chapter, page);
-  else renderNotes(chapter, page);
+  target.append(margin, page);
+  if (section === 'spanish') {
+    if (!cumulative) page.append(node('p', chapter.intro, 'chapter-intro'));
+    renderVocabulary(chapters, page, cumulative);
+    renderEvidence(chapters, page, cumulative);
+  } else {
+    for (const item of chapters) {
+      if (cumulative) page.append(node('h3', 'Chapter ' + item.number + ' · ' + item.title));
+      page.append(node('p', item.intro, 'chapter-intro'));
+      renderNotes(item, page);
+    }
+  }
 }
 
 async function loadJSON(url) {
@@ -266,20 +354,28 @@ async function loadJSON(url) {
 async function start() {
   const [data, audio] = await Promise.all([loadJSON('data/notebooks.json'), loadJSON('audio/manifest.json')]);
   book = data;
-  recordings = new Map(Object.values(audio.recordings).map(record => [key(record.text), record]));
+  recordings = new Map(Object.values(audio.recordings).map(record => [speechKey(record.text), record]));
+  for (const [legacy, parts] of [['sí / no', ['sí', 'no']], ['señora / señor', ['señora', 'señor']]]) {
+    if (progress[legacy] === 'Mastered') {
+      for (const part of parts) progress[part] ??= 'Mastered';
+    }
+  }
   const chapter = byId('chapter');
   for (const item of book.chapters.filter(item => item.number <= book.latestReleasedChapter)) {
     chapter.add(new Option('Chapter ' + item.number, item.number));
   }
   chapter.disabled = false;
   chapter.addEventListener('change', render);
-  for (const id of ['spanish', 'case']) byId(id).addEventListener('click', () => { section = id; render(); });
+  byId('travelers').hidden = !book.travelers;
+  byId('scope').addEventListener('change', render);
+  byId('vocabulary-sort').addEventListener('change', render);
+  for (const id of ['travelers', 'spanish', 'case']) byId(id).addEventListener('click', () => { section = id; render(); });
   const filter = byId('hide-mastered');
   filter.setAttribute('aria-checked', String(hideMastered));
   filter.addEventListener('click', () => {
     hideMastered = !hideMastered;
     filter.setAttribute('aria-checked', String(hideMastered));
-    if (section === 'spanish') render();
+    if (section !== 'case') render();
     saveStore(vocabularyFilterKey, {hideMastered});
   });
   byId('notes-font').addEventListener('click', () => {

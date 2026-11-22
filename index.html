@@ -32,6 +32,20 @@
         <select id="chapter" aria-describedby="selected-chapter-title" disabled></select>
         <p id="selected-chapter-title"></p>
       </div>
+      <div class="reference-options">
+        <label>Scope
+          <select id="scope">
+            <option value="chapter">This Chapter</option>
+            <option value="through">Through Chapter 1</option>
+          </select>
+        </label>
+        <label id="sort-option">Vocabulary order
+          <select id="vocabulary-sort">
+            <option value="story">Story Order</option>
+            <option value="alphabetical">A–Z</option>
+          </select>
+        </label>
+      </div>
       <div class="display-switches">
         <button id="hide-mastered" class="display-switch" type="button" role="switch"
           aria-checked="false" aria-label="Hide mastered vocabulary">
@@ -46,6 +60,7 @@
       </div>
     </section>
     <nav aria-label="Notebook sections">
+      <button id="travelers" type="button" aria-pressed="false">Spanish Phrases for Travelers</button>
       <button id="spanish" type="button" aria-pressed="true">Spanish</button>
       <button id="case" type="button" aria-pressed="false">Case Notes</button>
     </nav>
