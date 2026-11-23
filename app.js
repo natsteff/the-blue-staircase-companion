@@ -15,6 +15,7 @@ let section = 'spanish';
 const progress = readStore(progressKey);
 let useSansSerif = readStore(notesFontKey).sansSerif === true;
 let hideMastered = readStore(vocabularyFilterKey).hideMastered === true;
+let sortAlphabetically = false;
 let playback = 0;
 const player = new Audio();
 
@@ -96,7 +97,7 @@ async function play(phrase, rate = 1) {
 
 function playButton(phrase, distinguish = false, slow = false) {
   const text = slow ? 'Slow' : '▶ Listen';
-  const control = button(text, () => play(phrase, slow ? 0.75 : 1), 'audio' + (slow ? ' slow' : ''));
+  const control = button(text, () => play(phrase, slow ? 0.5 : 1), 'audio' + (slow ? ' slow' : ''));
   control.setAttribute('aria-label', (slow ? 'Listen slowly to ' : 'Listen to ') + phrase);
   if (distinguish && !slow) {
     const label = node('span', phrase);
@@ -126,7 +127,7 @@ function vocabularyEntries(chapters) {
     }
   }
   const result = [...entries.values()];
-  if (section === 'spanish' && byId('vocabulary-sort').value === 'alphabetical') {
+  if (section === 'spanish' && sortAlphabetically) {
     result.sort((left, right) => alphabetical.compare(left.row[0], right.row[0]));
   }
   return result;
@@ -137,7 +138,9 @@ function wordRow([spanish, english, context], chapters = []) {
   const meanings = node('div');
   const term = node('strong', spanish);
   term.lang = 'es-MX';
-  meanings.append(term, node('p', english ?? 'Unknown'));
+  const translation = node('p');
+  addInline(translation, english ?? 'Unknown');
+  meanings.append(term, translation);
   if (context) {
     const note = node('small');
     addInline(note, context);
@@ -156,9 +159,14 @@ function wordRow([spanish, english, context], chapters = []) {
 
 function renderVocabulary(chapters, target, cumulative) {
   const entries = vocabularyEntries(chapters);
+  const chapter = chapters[0];
+  const evidenceBefore = !cumulative && !sortAlphabetically && chapter.evidenceBefore;
+  const storyEvidence = evidenceBefore
+    ? new Map(chapterEvidence(chapter).map(row => [row[0], row]))
+    : new Map();
   const list = node('ul', '', 'entries');
   const totals = node('p', '', 'muted');
-  const empty = node('p', 'All entries in this list are mastered. Switch to Show All to see them again.', 'muted');
+  const empty = node('p', 'All vocabulary in this list is mastered. Switch to Show All to see them again.', 'muted');
   const update = () => {
     const count = entries.filter(({row}) => progress[speechKey(row[0])] === 'Mastered').length;
     totals.textContent = count + ' of ' + entries.length + ' mastered'
@@ -171,6 +179,10 @@ function renderVocabulary(chapters, target, cumulative) {
 
   for (const {row, chapters: references} of entries) {
     const id = speechKey(row[0]);
+    for (const phrase of evidenceBefore?.[row[0]] ?? []) {
+      const [spanish, english, context] = storyEvidence.get(phrase);
+      list.append(wordRow([spanish, english ?? 'Untranslated', context]).entry);
+    }
     const {entry, controls} = wordRow(row, cumulative ? references : []);
     const mastered = node('input');
     mastered.type = 'checkbox';
@@ -195,6 +207,7 @@ function renderVocabulary(chapters, target, cumulative) {
     list.append(entry);
   }
   update();
+  return Boolean(evidenceBefore);
 }
 
 function renderEvidence(chapters, target, cumulative) {
@@ -211,7 +224,7 @@ function renderEvidence(chapters, target, cumulative) {
   for (const [title, translated] of [['Untranslated', false], ['Translated Evidence', true]]) {
     const matching = [...entries.values()].filter(({row}) => Boolean(row[1]) === translated);
     if (!matching.length) continue;
-    if (byId('vocabulary-sort').value === 'alphabetical') {
+    if (sortAlphabetically) {
       matching.sort((left, right) => alphabetical.compare(left.row[0], right.row[0]));
     }
     const section = node('section', '', 'evidence-audio');
@@ -320,7 +333,9 @@ function render() {
   byId('selected-chapter-title').textContent = chapter.title;
   byId('scope').options[1].textContent = 'Through Chapter ' + chapter.number;
   byId('scope').closest('label').hidden = traveler;
-  byId('sort-option').hidden = section !== 'spanish';
+  byId('vocabulary-sort').hidden = section !== 'spanish';
+  byId('hide-mastered').hidden = section === 'case';
+  byId('notes-font').hidden = section !== 'case';
   for (const id of ['travelers', 'spanish', 'case']) byId(id).setAttribute('aria-pressed', String(section === id));
   target.replaceChildren();
   if (traveler) {
@@ -334,8 +349,9 @@ function render() {
   target.append(margin, page);
   if (section === 'spanish') {
     if (!cumulative) page.append(node('p', chapter.intro, 'chapter-intro'));
-    renderVocabulary(chapters, page, cumulative);
-    renderEvidence(chapters, page, cumulative);
+    if (!renderVocabulary(chapters, page, cumulative)) {
+      renderEvidence(chapters, page, cumulative);
+    }
   } else {
     for (const item of chapters) {
       if (cumulative) page.append(node('h3', 'Chapter ' + item.number + ' · ' + item.title));
@@ -368,7 +384,12 @@ async function start() {
   chapter.addEventListener('change', render);
   byId('travelers').hidden = !book.travelers;
   byId('scope').addEventListener('change', render);
-  byId('vocabulary-sort').addEventListener('change', render);
+  const sort = byId('vocabulary-sort');
+  sort.addEventListener('click', () => {
+    sortAlphabetically = !sortAlphabetically;
+    sort.setAttribute('aria-checked', String(sortAlphabetically));
+    render();
+  });
   for (const id of ['travelers', 'spanish', 'case']) byId(id).addEventListener('click', () => { section = id; render(); });
   const filter = byId('hide-mastered');
   filter.setAttribute('aria-checked', String(hideMastered));

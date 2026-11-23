@@ -39,21 +39,20 @@
             <option value="through">Through Chapter 1</option>
           </select>
         </label>
-        <label id="sort-option">Vocabulary order
-          <select id="vocabulary-sort">
-            <option value="story">Story Order</option>
-            <option value="alphabetical">A–Z</option>
-          </select>
-        </label>
       </div>
       <div class="display-switches">
+        <button id="vocabulary-sort" class="display-switch" type="button" role="switch"
+          aria-checked="false" aria-label="Sort vocabulary A–Z">
+          <span aria-hidden="true">Story Order</span>
+          <span aria-hidden="true">A–Z</span>
+        </button>
         <button id="hide-mastered" class="display-switch" type="button" role="switch"
           aria-checked="false" aria-label="Hide mastered vocabulary">
           <span aria-hidden="true">Show All</span>
           <span aria-hidden="true">Hide Mastered</span>
         </button>
         <button id="notes-font" class="display-switch" type="button" role="switch"
-          aria-checked="false" aria-label="Use standard font for Case Notes">
+          aria-checked="false" aria-label="Use standard font for Case Notes" hidden>
           <span aria-hidden="true">Handwritten</span>
           <span aria-hidden="true">Standard Font</span>
         </button>

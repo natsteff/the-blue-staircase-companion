@@ -15,7 +15,7 @@ Open [the local notebook](http://127.0.0.1:8767/). The service worker caches bot
 
 On macOS, run `python3 scripts/build.py --audio` to synthesize new or changed phrases with `say` and convert them to mono PCM WAV with `afconvert`. Generation prefers Paulina when available. It requires an installed Mexican Spanish voice and access to the Mac speech service. Install a voice under Accessibility system speech settings if needed. The build checks that every required WAV contains audio samples. The versioned manifest records the text, voice, locale, path, and generation status.
 
-Use the chapter’s **Listen** and **Slow** controls to spot-check pronunciation. The audio manifest also maps each clip to its source phrase for review. A voice identified as Spanish may be used as a browser fallback if a recording cannot play.
+Use the chapter’s **Listen** and **Slow** controls to spot-check pronunciation at normal and half speed. The audio manifest also maps each clip to its source phrase for review. A voice identified as Spanish may be used as a browser fallback if a recording cannot play.
 
 ## GitHub Pages
 
@@ -28,6 +28,8 @@ The footer shows the app version and its unique build ID. Update `VERSION` when 
 ## Future chapter contract
 
 Add the next contiguous chapter to `data/notebooks.json` and update `bookVersion` and `latestReleasedChapter`. Each chapter has a numeric `number`, a `title`, a one-paragraph `intro`, `vocabulary` rows in the form `[exact Spanish, exact English, optional Sally context]`, and `notes` containing chapter-specific Markdown headings, paragraphs, lists, and quotes. Preserve manuscript wording and distinctions between observations, theories, questions, and evidence. Include only released chapters. Use a space on each side of a slash when separate Spanish recordings are required.
+
+For **This Chapter → Story Order**, set a chapter’s optional `evidenceBefore` to an object mapping exact vocabulary labels to the evidence phrases that precede them. Include each evidence phrase once. Reconcile the anchors against the revised manuscript whenever the notebook is reimported. The build validates anchor and evidence coverage.
 
 Keep existing Spanish vocabulary spellings and punctuation stable when possible. Progress keys use normalized, case-insensitive Spanish text. If a revision changes a term’s identity, decide how its prior progress should migrate before releasing. Run the audio build and review newly generated clips, then switch through the chapters and check that later discoveries appear only in the appropriate notebook. The v02 manuscript importer can reproduce the initial two-chapter data file with `python3 scripts/import-notebook.py /path/to/manuscript.md`.
 

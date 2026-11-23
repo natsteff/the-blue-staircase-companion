@@ -23,9 +23,11 @@ def main():
     for number, section in enumerate(sections, 1):
         title, _, _ = section.partition("\n")
         notebook = section.split("## Sally's Detective Notebook\n", 1)[1].strip()
-        notebook = re.split(r"\n---\n|\n# ", notebook, maxsplit=1)[0]
+        notebook = re.split(r"\n---\s*(?=\n# |\Z)|\n# ", notebook, maxsplit=1)[0]
         words, _, notes = notebook.partition("### Case notes\n")
-        words, _, untranslated = words.partition("**Untranslated evidence, in encounter order**")
+        evidence_sections = re.split(r"^\*\*Untranslated evidence[^\n]*\*\*\s*$", words, maxsplit=1, flags=re.M)
+        words = evidence_sections[0]
+        untranslated = evidence_sections[1] if len(evidence_sections) > 1 else ""
         words, _, translated = words.partition("### Evidence translated in this chapter")
         evidence = [
             [phrase, None, context or ""]
@@ -42,7 +44,7 @@ def main():
             evidence.append([previous[0], " ".join(row[1].split(" (", 1)[0].rstrip(".") + "."
                                                    for row in translated_rows[:2]),
                              "Lucía’s contextual reading; owner unknown"])
-        chapters.append(dict(number=number, title=title, intro=words.splitlines()[0].strip("*"),
+        chapters.append(dict(number=number, title=title, intro=words.splitlines()[0].strip("*").replace("**", ""),
                              vocabulary=vocabulary(words), evidence=evidence, notes=notes.strip()))
     if not chapters or not all(c["vocabulary"] and c["notes"] for c in chapters):
         raise SystemExit("The reviewed source is missing a chapter notebook or case notes.")

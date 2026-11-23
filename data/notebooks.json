@@ -1,11 +1,11 @@
 {
-  "bookVersion": "review-01",
+  "bookVersion": "blue-staircase-review-v2",
   "latestReleasedChapter": 4,
   "chapters": [
     {
       "number": 1,
       "title": "The House with the Blue Staircase",
-      "intro": "Words and phrases in the order Sally encounters them in Chapter One. Contextual expressions are not always fully understood.",
+      "intro": "Selected Spanish from Chapter One. Sally recognizes some phrases and hears others whose meaning she has yet to learn.",
       "vocabulary": [
         [
           "Perdón",
@@ -48,8 +48,16 @@
           "Nice to meet you"
         ],
         [
+          "Tía",
+          "Aunt; Tomás addresses Isabel this way, though Sally does not yet translate it herself"
+        ],
+        [
           "La llave",
           "The key; which key remains uncertain"
+        ],
+        [
+          "Ahora",
+          "Now; heard in Tomás's request, not independently understood by Sally"
         ],
         [
           "Una cerveza",
@@ -98,6 +106,21 @@
       ],
       "evidence": [
         [
+          "¿Dónde está la llave del almacén?",
+          null,
+          "Tomás's question to Isabel; Sally does not understand the full question."
+        ],
+        [
+          "Después.",
+          null,
+          "Isabel's response; Sally learns its meaning only in Chapter Four."
+        ],
+        [
+          "Pero la necesito ahora.",
+          null,
+          "Tomás's request; Sally does not grasp the full sentence."
+        ],
+        [
           "Hay algo que debe saber.",
           null,
           ""
@@ -113,7 +136,21 @@
           "*Por favor* is familiar; the rest is not."
         ]
       ],
-      "notes": "**What I saw:** Tomás handed Isabel a small silver key. Whitmore held a folded paper while arguing with her. An upset housekeeper called to me from below the balcony. A door closed on the upper gallery, but I did not see who closed it.\n\n**What I need to know:** What was on Whitmore's paper? Which key did the housekeeper mean? Where did she go?\n\n---"
+      "notes": "**What I saw:** Tomás handed Isabel a small silver key. Whitmore held a folded paper while arguing with her. An upset housekeeper called to me from below the balcony. A door closed on the upper gallery, but I did not see who closed it.\n\n**What I need to know:** What was on Whitmore's paper? Which key did the housekeeper mean? Where did she go?\n\n**What I must not assume:** I heard *la llave*, not a translated explanation. I do not know what *almacén* means or whom the woman meant by *él*.",
+      "evidenceBefore": {
+        "La llave": [
+          "¿Dónde está la llave del almacén?"
+        ],
+        "Ahora": [
+          "Después.",
+          "Pero la necesito ahora."
+        ],
+        "Un momento": [
+          "Hay algo que debe saber.",
+          "No confíe en él. La llave no es suya.",
+          "Por favor. Escúcheme."
+        ]
+      }
     },
     {
       "number": 2,
@@ -203,7 +240,15 @@
           "Lucía’s contextual reading; owner unknown"
         ]
       ],
-      "notes": "**What I know:** Whitmore wanted to show me something about documents. He argued with Isabel while holding a folded paper. Rosa warned me in Spanish; Lucía translated the two sentences I wrote down. The police haven't found Rosa.\n\n**What I wonder:** Whom did Rosa mean? Was it the silver key I saw, or another one? What was Whitmore trying to tell me?\n\n*No answer yet to the question I can finally ask in Spanish: ¿Dónde está Rosa?*\n\n---"
+      "notes": "**What I know:** Whitmore wanted to show me something about documents. He argued with Isabel while holding a folded paper. Rosa warned me in Spanish; Lucía translated the two sentences I wrote down. The police haven't found Rosa.\n\n**What I wonder:** Whom did Rosa mean? Was it the silver key I saw, or another one? What was Whitmore trying to tell me?\n\n*No answer yet to the question I can finally ask in Spanish: ¿Dónde está Rosa?*",
+      "evidenceBefore": {
+        "¿Dónde está Rosa?": [
+          "No confíe en él",
+          "La llave no es suya",
+          "Él",
+          "No confíe en él. La llave no es suya."
+        ]
+      }
     },
     {
       "number": 3,
@@ -227,7 +272,7 @@
         ]
       ],
       "evidence": [],
-      "notes": "**What I know:** I saw a door close at the stair head before Rosa spoke, heard an unplaced sound while she spoke, then heard footsteps in the lower passage. I told Salazar these are separate observations. Evelyn's untimed account proves no connection. Tomás says he doesn't know where Rosa is.\n\n**What I wonder:** Was the middle sound the service door? Did anyone actually see Rosa leave? Why did Tomás seem so upset by the question?\n\n*Not knowing is not the same as having an answer I dislike.*"
+      "notes": "**What I know:** I saw a door close at the stair head before Rosa spoke, heard an unplaced sound while she spoke, then heard footsteps in the lower passage. I recorded the middle sound separately and told Salazar these are distinct observations. Evelyn's untimed account proves no connection. Tomás says he doesn't know where Rosa is. The inspector is checking Diego's upstairs position; I do not know what Diego told him.\n\n**What I wonder:** Was the middle sound the service door? Did anyone actually see Rosa leave? Why did Tomás seem so upset by the question?\n\n*Not knowing is not the same as having an answer I dislike.*"
     },
     {
       "number": 4,
@@ -235,9 +280,24 @@
       "intro": "Day Two, continued (Chapter Four). Selected Spanish in order of first encounter in this chapter.",
       "vocabulary": [
         [
+          "Fecha de firma",
+          "Date of signing; *firma* = signing",
+          "Lucía explains this first label in an unrelated mock example"
+        ],
+        [
+          "Fecha de presentación",
+          "Date submitted/filed; *presentación* = filing or submission",
+          "Second label in the mock example"
+        ],
+        [
+          "Fecha de inscripción",
+          "Date registered/recorded; *inscripción* = registration",
+          "Third label in the mock example"
+        ],
+        [
           "Fecha",
           "Date",
-          "Lucía explains the heading on a public-record example"
+          "Lucía explains the reusable word after the full labels appear"
         ],
         [
           "Antes",
@@ -248,6 +308,11 @@
           "Después",
           "After / later",
           "Lucía explains both senses; Sally recognizes Isabel meant “Later” when she said it to Tomás, though Sally did not know the word then"
+        ],
+        [
+          "¿Un mensaje?",
+          "A message?",
+          "Diego asks at reception; Sally takes him to be offering to take a message"
         ],
         [
           "No, gracias",
@@ -261,7 +326,7 @@
         ]
       ],
       "evidence": [],
-      "notes": "**What I know:** Whitmore asked about dates, but showed me no documents. Lucía's mock sample showed why different date labels matter. I asked Salazar about the paper I saw Whitmore hold at the stair head; he would not say whether it was recovered. Isabel says she did not know about his invitation.\n\n**What I wonder:** Which dates did Whitmore mean? Can Lucía show me where to check real date labels without seeing Whitmore's papers? What was on the folded paper?\n\n*There are several ways for dates to disagree. Only some of them mean that someone is lying.*"
+      "notes": "**What I know:** Whitmore asked about dates, but showed me no documents. Lucía's mock sample showed why different date labels matter. I asked Salazar about the paper I saw Whitmore hold at the stair head; he would not say whether it was recovered. Isabel says she did not know about his invitation.\n\n**What I wonder:** Which dates did Whitmore mean, and whose account of events was he testing? What was on the folded paper? Would Diego want to speak with Lucía's help? I do not know what he told Salazar.\n\n*There are several ways for dates to disagree. Only some of them mean that someone is lying.*"
     }
   ],
   "travelers": {

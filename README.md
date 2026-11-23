@@ -8,7 +8,7 @@
   <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open Blue Staircase Companion" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2, former title) · TBS Companion v0.3.2 (Chapters 1–4)**
+**WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2, former title) · TBS Companion v0.4.0 (Chapters 1–4)**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
@@ -35,15 +35,15 @@ This free preview is an unfinished manuscript. The chapters, translations, and c
 
 Start with **Spanish Phrases for Travelers** for 14 practical Mexican Spanish phrases and a quick guide to masculine and feminine nouns and *ser* and *estar*.
 
-Select the last chapter you’ve read. **This Chapter** shows that chapter’s vocabulary and case notes, while **Through Chapter** includes earlier chapters. Use **Story Order** to find a phrase as you encounter it or **A–Z** for reference. Untranslated clues stay untranslated until the story reveals their meaning.
+Select the last chapter you’ve read. **This Chapter** shows that chapter’s vocabulary and case notes, while **Through Chapter** includes earlier chapters. In **Spanish**, toggle **Story Order / A–Z**. **This Chapter → Story Order** places selected evidence where Sally encounters it. Meanings stay hidden until the story reveals them.
 
-Practice with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide Mastered** to focus on what you’re still practicing.
+Practice with **Listen** or **Slow** at half speed. Use **Hide Mastered** in Spanish or Traveler Phrases. In **Case Notes**, switch between **Handwritten** and **Standard Font**.
 
 Mastery is saved in your current browser. On mobile, add **TBS Companion** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Companion](https://natsteff.github.io/the-blue-staircase-companion/)
 
 ## What to expect
 
-Future working drafts will be cumulative, with the earlier chapters and new material in one EPUB. The EPUB and companion app have separate release schedules. The public download currently contains Chapters 1–2, and the notebook has material through Chapter 4. The novel is still being written and revised, with no announced publication date.
+Future working drafts will be cumulative, with the earlier chapters and new material in one EPUB. The EPUB and companion app have separate release schedules. The public download currently contains Chapters 1–2. The companion’s Spanish and case notes follow *The Blue Staircase* Chapters 1–4 review draft v2, so some entries differ from the original EPUB. The novel is still being written and revised, with no announced publication date.
 
 ## Feedback
 

@@ -73,6 +73,12 @@ def main():
         raise SystemExit("VERSION must contain a major.minor.patch app version.")
     book = read(SOURCE)
     assert [c["number"] for c in book["chapters"]] == list(range(1, book["latestReleasedChapter"] + 1))
+    for chapter in book["chapters"]:
+        if placements := chapter.get("evidenceBefore"):
+            vocabulary = {row[0] for row in chapter["vocabulary"]}
+            evidence = [row[0] for row in chapter["evidence"]]
+            placed = [phrase for phrases in placements.values() for phrase in phrases]
+            assert placements.keys() <= vocabulary and sorted(placed) == sorted(evidence), chapter["title"]
     rows = [row for chapter in book["chapters"]
             for row in chapter["vocabulary"] + chapter.get("evidence", [])]
     rows.extend(book.get("travelers", {}).get("vocabulary", []))
