@@ -1,29 +1,31 @@
 # Sally’s Detective Notebook
 
 <p align="center">
-  <img src="assets/sallys-detective-notebook-logo.png" width="720" alt="Sally’s Detective Notebook, a companion to The Last Witness">
+  <img src="assets/blue-staircase-notebook-logo.jpg" width="720" alt="Sally’s Detective Notebook, a companion to The Blue Staircase">
 </p>
 
 <p align="center">
-  <a href="https://natsteff.github.io/the-last-witness-companion/"><img alt="Open TLW Notebook" src="https://img.shields.io/badge/Open%20TLW%20Notebook-205275?style=for-the-badge"></a>
+  <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open Blue Staircase Notebook" src="https://img.shields.io/badge/Open%20Notebook-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2) · TLW Notebook v0.3.0 (Chapters 1–4)**
+**WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2, former title) · TBS Notebook v0.3.1 (Chapters 1–4)**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
 ## About the book
 
-A long-overdue vacation in Playa del Carmen turns into a murder investigation for Sally Mercer and her husband Nate. The Mexican Spanish Sally came to practice becomes part of how she follows clues and makes sense of what people tell her. *The Last Witness: A Mystery in Playa del Carmen* is a cozy mystery with Spanish woven into the story.
+A long-overdue vacation in Playa del Carmen turns into a mystery surrounding a guest's death for Sally Mercer and her husband Nate. The Mexican Spanish Sally came to practice becomes part of how she follows clues and makes sense of what people tell her. *The Blue Staircase: A Mystery in Playa del Carmen* is a cozy mystery with Spanish woven into the story.
 
 <p align="center">
-  <img src="assets/the-last-witness-v02-cover.png" width="240" alt="Working Draft v02 cover for The Last Witness, Chapters 1 and 2">
-  <img src="assets/the-last-witness-back-cover.jpg" width="240" alt="Project back-cover artwork with the book synopsis">
+  <img src="assets/the-blue-staircase-front-cover.jpg" width="240" alt="The Blue Staircase front cover artwork">
+  <img src="assets/the-blue-staircase-back-cover.jpg" width="240" alt="The Blue Staircase beach-sunset back cover with synopsis and companion app features">
 </p>
 
 ## Read the Working Draft
 
-**[Download EPUB — Working Draft v02 (Chapters 1–2)](https://natsteff.github.io/the-last-witness-companion/books/The_Last_Witness_-_Working_Draft_v02.epub)**
+**[Download the existing EPUB under its former title — Working Draft v02 (Chapters 1–2)](https://natsteff.github.io/the-blue-staircase-companion/books/The_Last_Witness_-_Working_Draft_v02.epub)**
+
+The current download is the original two-chapter EPUB, published as *The Last Witness*. The artwork above is for *The Blue Staircase*. [View the original EPUB cover](assets/the-last-witness-v02-cover.png).
 
 This free preview is an unfinished manuscript. The chapters, translations, and covers may change substantially.
 
@@ -37,7 +39,7 @@ Select the last chapter you’ve read. **This Chapter** shows that chapter’s v
 
 Practice with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide Mastered** to focus on what you’re still practicing.
 
-Mastery is saved in your current browser. On mobile, add **TLW Notebook** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TLW Notebook](https://natsteff.github.io/the-last-witness-companion/)
+Mastery is saved in your current browser. On mobile, add **TBS Notebook** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Notebook](https://natsteff.github.io/the-blue-staircase-companion/)
 
 ## What to expect
 
@@ -45,7 +47,7 @@ Future working drafts will be cumulative, with the earlier chapters and new mate
 
 ## Feedback
 
-Corrections, usability reports, pronunciation notes, and editorial feedback are welcome. Include the draft version and chapter, label spoilers clearly, and keep plot details out of issue titles. [GitHub Issues](https://github.com/natsteff/the-last-witness-companion/issues)
+Corrections, usability reports, pronunciation notes, and editorial feedback are welcome. Include the draft version and chapter, label spoilers clearly, and keep plot details out of issue titles. [GitHub Issues](https://github.com/natsteff/the-blue-staircase-companion/issues)
 
 ## Credits and rights
 

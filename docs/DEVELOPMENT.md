@@ -1,4 +1,4 @@
-# Developing TLW Notebook
+# Developing Blue Staircase Notebook
 
 ## Run locally
 
@@ -23,7 +23,7 @@ The app uses relative URLs so the same build works at a domain root or under a r
 
 ## App versions
 
-The footer shows the app version and its unique build ID. Update `VERSION` when preparing an app release. The build ID is generated automatically from the published app files and changes whenever their content changes. The manuscript edition is tracked separately as `bookVersion`.
+The footer shows the app version and its unique build ID. Update `VERSION` when preparing an app release. The build ID is generated automatically from the published app files and changes whenever their content changes. The manuscript edition is tracked separately as `bookVersion`. The original EPUB, its filename, and historical cover assets are retained. The app hero shows the approved artwork for The Blue Staircase. Use a new filename for each separately approved EPUB edition.
 
 ## Future chapter contract
 
