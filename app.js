@@ -479,12 +479,13 @@ function openQuiz() {
   const pool = [...new Map(cards.filter(card => progress[card.id] === 'Mastered')
     .reverse().map(card => [card.id, card])).values()];
   const travelCards = quizCards(travel);
-  let remaining = shuffle(pool);
+  const remaining = shuffle(pool);
   let round = [];
   let missed = [];
   let index = 0;
   let multipleChoice;
   let direction;
+  let roundSize;
 
   function show(title, ...content) {
     const heading = node('h1', title);
@@ -503,7 +504,7 @@ function openQuiz() {
   }
 
   function nextRound() {
-    startRound(remaining.splice(0, 10));
+    startRound(remaining.splice(0, roundSize));
   }
 
   function results() {
@@ -644,21 +645,30 @@ function openQuiz() {
     show('Quiz Me', intro, node('p', 'Mark a phrase as Mastered in the notebook to start a quiz.'));
     return;
   }
-  const directions = node('label', 'Translation direction', 'quiz-direction');
+  const directions = node('label', 'Translation direction', 'quiz-setting');
   const selection = node('select');
   for (const [value, label] of [['spanish', 'English to Spanish'], ['english', 'Spanish to English'], ['mixed', 'Mixed']]) {
     selection.add(new Option(label, value));
   }
   directions.append(selection);
+  const length = node('label', 'Questions per round', 'quiz-setting');
+  const sizes = node('select');
+  const maximum = Math.min(pool.length, 50);
+  for (let size = 10; size < maximum; size += 10) {
+    sizes.add(new Option(size + ' questions', size));
+  }
+  sizes.add(new Option(maximum + (maximum === 1 ? ' question' : ' questions'), maximum));
+  length.append(sizes);
   const modes = node('div', '', 'quiz-choices');
   for (const [mode, choice] of [['Multiple Choice', true], ['Type or Speak', false]]) {
     modes.append(button(mode, () => {
       multipleChoice = choice;
       direction = selection.value;
+      roundSize = Number(sizes.value);
       nextRound();
     }));
   }
-  show('Quiz Me', intro, node('p', pool.length + (pool.length === 1 ? ' mastered phrase' : ' mastered phrases')), directions, modes);
+  show('Quiz Me', intro, node('p', pool.length + (pool.length === 1 ? ' mastered phrase' : ' mastered phrases')), directions, length, modes);
 }
 
 async function loadJSON(url) {

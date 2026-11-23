@@ -413,7 +413,7 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
   #notebook.spanish-page > .chapter-margin { padding-inline-end: 7.5rem; }
   #notebook.spanish-page > .chapter-page { grid-column: 1; }
 }
-.quiz-direction { display: grid; gap: .35rem; margin-block: 1rem; }
+.quiz-setting { display: grid; gap: .35rem; margin-block: 1rem; }
 #quiz-me { background: #205275; color: #fff7e7; font-weight: 700; }
 .quiz-view { max-width: 38rem; padding-block: 1rem 2rem; }
 .quiz-panel {
