@@ -35,7 +35,7 @@ This free preview is an unfinished manuscript. The chapters, translations, and c
 
 Follow the mystery with **Sally’s Detective Notebook**, hear the Mexican Spanish she encounters, and track the words and phrases you’ve mastered.
 
-Start with **Travel Spanish** for 14 practical Mexican Spanish phrases and a quick guide to masculine and feminine nouns and *ser* and *estar*.
+Start with **Travel Spanish** for 22 practical Mexican Spanish phrases and a quick guide to masculine and feminine nouns and *ser* and *estar*.
 
 Select the last chapter you’ve read. **This Chapter** shows that chapter’s vocabulary and case notes, while **Through Chapter** includes earlier chapters. In **Spanish**, toggle **Story Order / A–Z**. **This Chapter → Story Order** places selected evidence where Sally encounters it. Meanings stay hidden until the story reveals them.
 

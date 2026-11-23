@@ -133,7 +133,7 @@ function vocabularyEntries(chapters) {
   return result;
 }
 
-function wordRow([spanish, english, context], chapters = []) {
+function wordRow([spanish, english, context, examples = []], chapters = []) {
   const entry = node('li', '', 'entry');
   const meanings = node('div');
   const term = node('strong', spanish);
@@ -151,7 +151,7 @@ function wordRow([spanish, english, context], chapters = []) {
     meanings.append(node('p', label + chapters.join(', '), 'entry-chapters'));
   }
   const controls = node('div', '', 'controls entry-audio');
-  const phrases = alternatives(spanish);
+  const phrases = [...alternatives(spanish), ...examples];
   for (const phrase of phrases) controls.append(playbackControls(phrase, phrases.length > 1));
   entry.append(meanings, controls);
   return {entry, controls};
@@ -361,7 +361,14 @@ function renderTravelers(target) {
     node('p', 'Learn the article with the noun. El hotel is masculine and la llave is feminine.'),
     node('p', 'Use ser for identity or origin: Soy Sally. Use estar for location or condition: ¿Dónde está el hotel?'));
   page.append(heading, tips, grammar);
-  renderVocabulary([book.travelers], page, false);
+  const {vocabulary, groups = {}} = book.travelers;
+  const starts = vocabulary.flatMap(([phrase], index) => groups[phrase] ? [index] : []);
+  if (starts[0] !== 0) starts.unshift(0);
+  starts.forEach((start, index) => {
+    const title = groups[vocabulary[start]?.[0]];
+    if (title) page.append(node('h3', title));
+    renderVocabulary([{vocabulary: vocabulary.slice(start, starts[index + 1])}], page, false);
+  });
   target.append(page);
 }
 

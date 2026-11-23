@@ -85,7 +85,7 @@ def main():
     rows = [row for chapter in book["chapters"]
             for row in chapter["vocabulary"] + chapter.get("evidence", [])]
     rows.extend(book.get("travelers", {}).get("vocabulary", []))
-    phrases = [phrase for row in rows for phrase in row[0].split(" / ")]
+    phrases = [phrase for row in rows for phrase in row[0].split(" / ") + (row[3] if len(row) > 3 else [])]
     if any("evidence" not in chapter and WARNING in chapter["notes"] for chapter in book["chapters"]):
         phrases.append(WARNING)
     previous = read(MANIFEST)["recordings"] if MANIFEST.exists() else {}

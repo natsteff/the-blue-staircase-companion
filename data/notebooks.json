@@ -368,6 +368,22 @@
         "One moment, please."
       ],
       [
+        "¿Habla inglés?",
+        "Do you speak English?"
+      ],
+      [
+        "¿Me puede ayudar?",
+        "Can you help me?"
+      ],
+      [
+        "¿Dónde está el baño?",
+        "Where is the bathroom?"
+      ],
+      [
+        "¿Dónde está la playa?",
+        "Where is the beach?"
+      ],
+      [
         "¿Dónde está el hotel?",
         "Where is the hotel?"
       ],
@@ -376,18 +392,45 @@
         "We have a reservation."
       ],
       [
+        "Una mesa para dos, por favor.",
+        "A table for two, please."
+      ],
+      [
         "¿Está picante?",
-        "Is it spicy?"
+        "Is it spicy?",
+        "You may also hear **¿Pica mucho?** (“Is it very spicy?”).",
+        [
+          "¿Pica mucho?"
+        ]
       ],
       [
         "Una cerveza, por favor.",
         "A beer, please."
       ],
       [
+        "Para llevar, por favor.",
+        "To go, please."
+      ],
+      [
+        "¿Cuánto cuesta?",
+        "How much does it cost?"
+      ],
+      [
         "La cuenta, por favor.",
         "The check, please."
+      ],
+      [
+        "¿Puedo pagar con tarjeta?",
+        "Can I pay by card?"
       ]
     ],
-    "tip": "Tip: Learn nouns with their articles. **El hotel** means “the hotel”; **la llave** means “the key.” For grammar explanations, examples, and pronunciation practice, use the companion app."
+    "tip": "Tip: Learn nouns with their articles. **El hotel** means “the hotel”; **la llave** means “the key.” For grammar explanations, examples, and pronunciation practice, use the companion app.",
+    "groups": {
+      "Buenas tardes.": "Greetings and courtesy",
+      "No entiendo.": "Asking for help",
+      "¿Dónde está el baño?": "Getting around and checking in",
+      "Una mesa para dos, por favor.": "Ordering food",
+      "¿Cuánto cuesta?": "Paying"
+    }
   }
 }
