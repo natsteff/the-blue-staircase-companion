@@ -329,10 +329,19 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 .reference-options label { margin: 0; }
 .reference-options select { display: block; }
 [hidden] { display: none !important; }
-nav { flex-wrap: wrap; }
 #notebook.travelers-page { grid-template-columns: minmax(0, 1fr); }
 .traveler-grammar { margin: .7rem 0; }
 .entry-chapters { color: var(--muted); font-size: .875rem; }
 @media (max-width: 540px) {
-  #travelers { flex-basis: 100%; }
+  nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-inline-start: 0;
+  }
+  nav button {
+    min-height: 44px;
+    padding-inline: .25rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
 }
