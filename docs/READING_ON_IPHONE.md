@@ -55,7 +55,7 @@ If the iPhone share-sheet import fails, open [amazon.com/sendtokindle](https://w
 
 ## Companion notebook and updates
 
-Open [Sally's Detective Notebook](https://natsteff.github.io/the-blue-staircase-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **TBS Notebook**. It is not required to read the EPUB.
+Open [Sally's Detective Notebook](https://natsteff.github.io/the-blue-staircase-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **TBS Companion**. It is not required to read the EPUB.
 
 When a new cumulative working draft is published, download the new EPUB and import it again. The notebook app will be updated for the newly released chapters; vocabulary progress stays in the browser where you use the notebook. Importing a new EPUB does not move that progress between devices.
 

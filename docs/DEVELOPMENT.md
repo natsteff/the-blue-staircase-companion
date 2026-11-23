@@ -1,4 +1,4 @@
-# Developing Blue Staircase Notebook
+# Developing Blue Staircase Companion
 
 ## Run locally
 

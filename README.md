@@ -5,10 +5,10 @@
 </p>
 
 <p align="center">
-  <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open Blue Staircase Notebook" src="https://img.shields.io/badge/Open%20Notebook-205275?style=for-the-badge"></a>
+  <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open Blue Staircase Companion" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2, former title) · TBS Notebook v0.3.1 (Chapters 1–4)**
+**WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2, former title) · TBS Companion v0.3.2 (Chapters 1–4)**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
@@ -39,7 +39,7 @@ Select the last chapter you’ve read. **This Chapter** shows that chapter’s v
 
 Practice with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide Mastered** to focus on what you’re still practicing.
 
-Mastery is saved in your current browser. On mobile, add **TBS Notebook** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Notebook](https://natsteff.github.io/the-blue-staircase-companion/)
+Mastery is saved in your current browser. On mobile, add **TBS Companion** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Companion](https://natsteff.github.io/the-blue-staircase-companion/)
 
 ## What to expect
 

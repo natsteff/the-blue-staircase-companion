@@ -1,6 +1,6 @@
 {
-  "name": "Blue Staircase Notebook",
-  "short_name": "TBS Notebook",
+  "name": "TBS Companion App",
+  "short_name": "TBS Companion",
   "id": "./",
   "start_url": "./",
   "scope": "./",
