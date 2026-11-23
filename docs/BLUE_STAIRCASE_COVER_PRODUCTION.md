@@ -4,7 +4,7 @@ Status: **Design prototypes approved as working references only**, not final art
 
 ## Source prototypes
 Nate supplied **two images in the current ChatGPT conversation**:
-1. **Front prototype**: courtyard at dusk, blue staircase, patterned blue/white risers, ornate title, flowers and fountain.
+1. **Front prototype**: courtyard at night, blue staircase, patterned blue/white risers, ornate title, flowers and fountain. **Nate prefers the earlier darker nighttime atmosphere** over the most recent version, where the illuminated lanterns and windows imply night but the sky appears too bright. Use a convincingly dark, deep-navy nighttime sky and restrained ambient light, with architectural lanterns and windows providing believable warm pools of light; retain clear visibility of the staircase and tile details. Do not alter the established composition, ornate typography, or other scene elements beyond what is needed for the lighting correction.
 2. **Back prototype**: beach sunset ONLY (no staircase), synopsis and companion app benefits.
 
 **The image files must be attached/uploaded to this repository by Nate or another authorized maintainer before they can be considered available to Abu's GitHub workflow.** Do not recreate from a verbal summary while claiming exact fidelity. Original conversation attachment paths are not portable to GitHub.
@@ -13,7 +13,7 @@ Nate supplied **two images in the current ChatGPT conversation**:
 - Exact title: **The Blue Staircase**.
 - Subtitle: **A Mystery in Playa del Carmen**.
 - Front supporting line: **A mystery that helps you learn Spanish.** Keep clean and legible, with **no horizontal gold bars flanking this tagline**.
-- Front scene: preserve prototype's lush courtyard, blue staircase and blue walking treads, **blue-and-white patterned tiles on the vertical risers**, lanterns, magenta bougainvillea, fountain, and ornate title hierarchy.
+- Front scene: preserve prototype's lush **nighttime** courtyard, blue staircase and blue walking treads, **blue-and-white patterned tiles on the vertical risers**, lanterns, magenta bougainvillea, fountain, and ornate title hierarchy. **Night consistency:** sky should read as nighttime rather than bright dusk/daylight; lit lanterns, windows and reflections should supply localized warm lighting. Avoid making the staircase or courtyard so dark that the primary clue-setting is obscured.
 - Back scene: **beach sunset only**; absolutely **no staircase** or hotel structure inserted on the beach.
 - No visible author credit on cover. The publication metadata/front matter may retain author credit **Nate and OpenAI** as previously agreed.
 - **Never** include ISBN, UPC, barcode, fake ISBN or fake barcode; these will not be issued.
@@ -38,7 +38,7 @@ Nate supplied **two images in the current ChatGPT conversation**:
 
 ## Acceptance checks for Abu
 1. Side-by-side visual comparison with Nate's *actual two uploaded prototypes*, not earlier generated variants.
-2. Front: blue tread surfaces and blue/white decorative risers; subtitle and Spanish tagline; **metal plaque clearly reads WORKING DRAFT and CHAPTERS 1–4**; no author credit.
+2. Front: convincingly **dark nighttime sky with lantern-lit courtyard** (not an over-bright dusk sky), while still legible; blue tread surfaces and blue/white decorative risers; subtitle and Spanish tagline; **metal plaque clearly reads WORKING DRAFT and CHAPTERS 1–4**; no author credit.
 3. Back: pure beach sunset, no stairs; correct synopsis and feature block; no ISBN/UPC/barcode.
 4. Reusable overlay tested for different chapter ranges and absent for final edition.
 5. Confirm title, chapter count, draft state and metadata agree across companion and EPUB **for each individual release**.
