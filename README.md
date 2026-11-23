@@ -8,7 +8,7 @@
   <a href="https://natsteff.github.io/the-last-witness-companion/"><img alt="Open TLW Notebook" src="https://img.shields.io/badge/Open%20TLW%20Notebook-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Novel working draft v02 · Chapters 1–2 of 24 planned**
+**WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2) · TLW Notebook v0.3.0 (Chapters 1–4)**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
@@ -31,13 +31,17 @@ This free preview is an unfinished manuscript. The chapters, translations, and c
 
 ## Try Sally’s Detective Notebook
 
-Read a chapter, then select that chapter in the companion. Review Sally’s observations, theories, and unanswered questions without going past where you’ve read. Practice Mexican Spanish with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide Mastered** to focus on what you’re still practicing.
+Start with **Spanish Phrases for Travelers** for 14 practical Mexican Spanish phrases and a quick guide to masculine and feminine nouns and *ser* and *estar*.
 
-Mastery is saved in your current browser. On mobile, add **TLW Notebook** to your home screen. Both chapter notebooks and their recordings are available offline after the first successful visit. [Open TLW Notebook](https://natsteff.github.io/the-last-witness-companion/)
+Select the last chapter you’ve read. **This Chapter** shows that chapter’s vocabulary and case notes, while **Through Chapter** includes earlier chapters. Use **Story Order** to find a phrase as you encounter it or **A–Z** for reference. Untranslated clues stay untranslated until the story reveals their meaning.
+
+Practice with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide Mastered** to focus on what you’re still practicing.
+
+Mastery is saved in your current browser. On mobile, add **TLW Notebook** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TLW Notebook](https://natsteff.github.io/the-last-witness-companion/)
 
 ## What to expect
 
-Future working drafts will be cumulative, with the earlier chapters and new material in one EPUB. Companion content will be synchronized to the corresponding edition. The novel is still being written and revised, with no announced publication date.
+Future working drafts will be cumulative, with the earlier chapters and new material in one EPUB. The EPUB and companion app have separate release schedules. The public download currently contains Chapters 1–2, and the notebook has material through Chapter 4. The novel is still being written and revised, with no announced publication date.
 
 ## Feedback
 
