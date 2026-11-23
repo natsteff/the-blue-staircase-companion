@@ -351,6 +351,15 @@ function setNotesFont(sansSerif) {
   byId('notes-font').setAttribute('aria-checked', String(sansSerif));
 }
 
+function quizLauncher(heading) {
+  const toolbar = node('div', '', 'quiz-launch');
+  if (heading) toolbar.append(heading);
+  const launch = button('Quiz Me', openQuiz);
+  launch.id = 'quiz-me';
+  toolbar.append(launch);
+  return toolbar;
+}
+
 function renderTravelers(target) {
   const page = node('div', '', 'chapter-page');
   const heading = node('h2', 'Spanish Phrases for Travelers');
@@ -360,7 +369,7 @@ function renderTravelers(target) {
   grammar.append(node('summary', 'Masculine, feminine, and “to be”'),
     node('p', 'Learn the article with the noun. El hotel is masculine and la llave is feminine.'),
     node('p', 'Use ser for identity or origin: Soy Sally. Use estar for location or condition: ¿Dónde está el hotel?'));
-  page.append(heading, tips, grammar);
+  page.append(quizLauncher(heading), tips, grammar);
   const {vocabulary, groups = {}} = book.travelers;
   const starts = vocabulary.flatMap(([phrase], index) => groups[phrase] ? [index] : []);
   if (starts[0] !== 0) starts.unshift(0);
@@ -400,6 +409,7 @@ function render() {
   const page = node('div', '', 'chapter-page');
   target.append(margin, page);
   if (section === 'spanish') {
+    page.append(quizLauncher());
     if (!cumulative) page.append(node('p', chapter.intro, 'chapter-intro'));
     if (chapters.length > 1 && !sortAlphabetically) {
       const entries = vocabularyEntries(chapters);
@@ -439,7 +449,7 @@ function quizKey(text) {
 function quizCards(rows) {
   return rows.filter(([, english]) => english).map(([spanish, english, , examples = []]) => ({
     id: speechKey(spanish),
-    prompt: english,
+    meanings: alternatives(english.split(/[;(]/, 1)[0].trim()),
     answers: [...alternatives(spanish), ...examples]
   }));
 }
@@ -472,6 +482,7 @@ function openQuiz() {
   let missed = [];
   let index = 0;
   let multipleChoice;
+  let direction;
 
   function show(title, ...content) {
     const heading = node('h1', title);
@@ -522,15 +533,30 @@ function openQuiz() {
   function question() {
     stopAudio();
     const card = round[index];
-    const accepted = card.answers.map(quizKey);
+    const intoEnglish = direction === 'english' || (direction === 'mixed' && index % 2 === 0);
+    const answerLanguage = intoEnglish ? 'English' : 'Spanish';
+    const languageTag = intoEnglish ? 'en' : 'es-MX';
+    const answers = intoEnglish ? card.meanings : card.answers;
+    const matchKey = intoEnglish
+      ? text => quizKey(text.replace(/\bI['’]m\b/gi, 'I am').replace(/n['’]t\b/gi, ' not')
+        .replace(/\byou['’]re\b/gi, 'you are'))
+      : quizKey;
+    const accepted = answers.map(matchKey);
     const reveal = correct => {
       if (!correct) missed.push(card);
-      const answer = node('p', card.answers.join(' / '));
-      answer.lang = 'es-MX';
+      const answer = node('p', answers.join(' / '));
+      answer.lang = languageTag;
       const audio = node('div', '', 'controls');
       for (const phrase of card.answers) audio.append(playbackControls(phrase, card.answers.length > 1));
       const last = index === round.length - 1;
-      show(correct ? 'Correct' : 'Review this phrase', answer, audio,
+      const feedback = [answer, audio];
+      if (!correct && intoEnglish && !multipleChoice) {
+        feedback.push(button('My answer means the same thing', () => {
+          missed.pop();
+          reveal(true);
+        }));
+      }
+      show(correct ? 'Correct' : 'Review this phrase', ...feedback,
         button(last ? 'See Results' : 'Next Question', () => {
           if (last) results();
           else {
@@ -541,27 +567,30 @@ function openQuiz() {
     };
     const counter = node('p', 'Question ' + (index + 1) + ' of ' + round.length, 'muted');
     const prompt = node('p', '', 'quiz-prompt');
-    addInline(prompt, card.prompt);
+    prompt.textContent = intoEnglish ? card.answers[0] : card.meanings.join(' / ');
+    prompt.lang = intoEnglish ? 'es-MX' : 'en';
     if (multipleChoice) {
       const distractors = new Map();
       for (const other of shuffle(travelCards)) {
-        if (quizKey(other.prompt) === quizKey(card.prompt) || other.answers.some(answer => accepted.includes(quizKey(answer)))) continue;
-        distractors.set(quizKey(other.answers[0]), other.answers[0]);
+        if (other.meanings.some(meaning => card.meanings.some(own => matchKey(meaning) === matchKey(own))) ||
+            other.answers.some(phrase => card.answers.some(own => quizKey(phrase) === quizKey(own)))) continue;
+        const option = intoEnglish ? other.meanings[0] : other.answers[0];
+        distractors.set(matchKey(option), option);
       }
       const options = node('div', '', 'quiz-choices');
-      for (const phrase of shuffle([card.answers[0], ...[...distractors.values()].slice(0, 3)])) {
-        const option = button(phrase, () => reveal(accepted.includes(quizKey(phrase))));
-        option.lang = 'es-MX';
+      for (const phrase of shuffle([answers[0], ...[...distractors.values()].slice(0, 3)])) {
+        const option = button(phrase, () => reveal(accepted.includes(matchKey(phrase))));
+        option.lang = languageTag;
         options.append(option);
       }
-      show('Choose the Spanish phrase', counter, prompt, options);
+      show('Choose the ' + answerLanguage + ' translation', counter, prompt, options);
       return;
     }
     const form = node('form', '', 'quiz-form');
-    const label = node('label', 'Your answer in Spanish');
+    const label = node('label', 'Your answer in ' + answerLanguage);
     const input = node('input');
     input.id = 'quiz-answer';
-    input.lang = 'es-MX';
+    input.lang = languageTag;
     input.required = true;
     input.autocomplete = 'off';
     input.autocapitalize = 'off';
@@ -573,9 +602,9 @@ function openQuiz() {
     form.append(label, input, submit, confirmation);
     form.addEventListener('submit', event => {
       event.preventDefault();
-      const answer = quizKey(input.value);
+      const answer = matchKey(input.value);
       const corrected = answer.replace(/\bs\b/g, 'es');
-      if (answer !== corrected && accepted.includes(corrected) && !accepted.includes(answer)) {
+      if (!intoEnglish && answer !== corrected && accepted.includes(corrected) && !accepted.includes(answer)) {
         const phrase = card.answers[accepted.indexOf(corrected)];
         const yes = button('Yes, that’s what I said', () => reveal(true));
         confirmation.replaceChildren(node('p', 'Did you mean “' + phrase + '”?'), yes,
@@ -589,7 +618,8 @@ function openQuiz() {
       }
     });
     input.addEventListener('input', () => confirmation.replaceChildren());
-    show('Say or type the Spanish phrase', counter, prompt, form, keyboardHelp());
+    const help = intoEnglish ? node('p', 'You can also use your English keyboard microphone.') : keyboardHelp();
+    show('Say or type the ' + answerLanguage + ' translation', counter, prompt, form, help);
   }
 
   function close() {
@@ -612,14 +642,21 @@ function openQuiz() {
     show('Quiz Me', intro, node('p', 'Mark a phrase as Mastered in the notebook to start a quiz.'));
     return;
   }
+  const directions = node('label', 'Translation direction', 'quiz-direction');
+  const selection = node('select');
+  for (const [value, label] of [['spanish', 'English to Spanish'], ['english', 'Spanish to English'], ['mixed', 'Mixed']]) {
+    selection.add(new Option(label, value));
+  }
+  directions.append(selection);
   const modes = node('div', '', 'quiz-choices');
   for (const [mode, choice] of [['Multiple Choice', true], ['Type or Speak', false]]) {
     modes.append(button(mode, () => {
       multipleChoice = choice;
+      direction = selection.value;
       nextRound();
     }));
   }
-  show('Quiz Me', intro, node('p', pool.length + (pool.length === 1 ? ' mastered phrase' : ' mastered phrases')), modes);
+  show('Quiz Me', intro, node('p', pool.length + (pool.length === 1 ? ' mastered phrase' : ' mastered phrases')), directions, modes);
 }
 
 async function loadJSON(url) {
@@ -642,8 +679,6 @@ async function start() {
     chapter.add(new Option('Chapter ' + item.number, item.number));
   }
   chapter.disabled = false;
-  byId('quiz-me').disabled = false;
-  byId('quiz-me').addEventListener('click', openQuiz);
   chapter.addEventListener('change', render);
   byId('travelers').hidden = !book.travelers;
   byId('scope').addEventListener('change', render);

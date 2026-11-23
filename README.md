@@ -41,7 +41,7 @@ Select the last chapter you’ve read. **This Chapter** shows that chapter’s v
 
 Practice with **Listen** at regular speed or **Slow** at 70% speed. Use **Hide Mastered** in Spanish or Traveler Phrases. In **Case Notes**, switch between **Handwritten** and **Standard Font**.
 
-Choose **Quiz Me** to review mastered phrases from every chapter and Travel Spanish. Try **Multiple Choice** or **Type or Speak** with your Spanish keyboard microphone. The quiz includes setup help for iPhone and Android with Gboard.
+Choose **Quiz Me** at the top of **Spanish** or **Travel Spanish** to review mastered phrases from both tabs. Pick English to Spanish, Spanish to English, or Mixed, then choose **Multiple Choice** or **Type or Speak**. The quiz includes setup help for iPhone and Android with Gboard.
 
 Mastery is saved in your current browser. On mobile, add **TBS Companion** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Companion App](https://natsteff.github.io/the-blue-staircase-companion/)
 

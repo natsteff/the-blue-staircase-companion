@@ -390,7 +390,10 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
   }
 }
 
-.quiz-launch { display: flex; justify-content: flex-end; margin-block: 0 1rem; }
+.quiz-launch { display: flex; align-items: start; gap: .75rem; margin-block: 0 1rem; }
+.quiz-launch h2 { margin: 0; }
+.quiz-launch button { margin-inline-start: auto; flex: none; white-space: nowrap; }
+.quiz-direction { display: grid; gap: .35rem; margin-block: 1rem; }
 #quiz-me { background: #205275; color: #fff7e7; font-weight: 700; }
 .quiz-view { max-width: 38rem; padding-block: 1rem 2rem; }
 .quiz-panel {
