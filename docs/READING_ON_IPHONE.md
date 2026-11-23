@@ -1,6 +1,6 @@
-# Read *The Last Witness* on iPhone, iPad, or Kindle
+# Read *The Blue Staircase* on iPhone, iPad, or Kindle
 
-> **Working draft:** The novel is unfinished. The current v02 preview contains Chapters 1–2 of 24 planned chapters. Later drafts may revise earlier chapters. The EPUB is a book file; **Sally's Detective Notebook** is a separate optional web app.
+> **Working draft:** The novel is unfinished. The current downloadable EPUB still bears the former title *The Last Witness* until a revised edition is approved. The current v02 preview contains Chapters 1–2 of 24 planned chapters. Later drafts may revise earlier chapters. The EPUB is a book file; **Sally's Detective Notebook** is a separate optional web app.
 
 ## Quick start: iPhone
 
@@ -16,7 +16,7 @@
 1. Install/open **Apple Books** on your iPhone if necessary.
 2. In **Files**, locate the downloaded `.epub`.
 3. Tap **Share** and select **Books**. If Books is not visible, scroll the share-app row, tap **More**, and look for Books. On some iOS versions, simply tapping the EPUB in Files opens it in Books or offers an **Open in Books** option.
-4. Apple Books should import the EPUB and open it. If it does not, open **Books → Library** and search for **The Last Witness** or inspect recent additions.
+4. Apple Books should import the EPUB and open it. If it does not, open **Books → Library** and search for **The Last Witness** (existing edition) or inspect recent additions.
 5. Use the book's table of contents to jump to the chapter you want. The book may sync between Apple devices using the same Apple Account if Books/iCloud syncing is enabled; this is separate from Kindle.
 
 ### If Apple Books does not appear or the file will not open
@@ -32,10 +32,10 @@
 2. Download the EPUB and locate it in **Files → Downloads**.
 3. Touch and hold the EPUB, tap **Share**, then select **Kindle**. If Kindle is not listed, choose **More** in the share sheet; ensure the Kindle app is installed and has been opened at least once.
 4. The **Send to Kindle** screen may show the **filename** as the title and an account-based default author rather than the EPUB's embedded metadata. Before tapping **Send**, edit the fields:
-   - **Title:** `The Last Witness - Working Draft (Chapters 1-2)`
+   - **Title:** `The Last Witness - Working Draft (Chapters 1-2)` (existing EPUB); use *The Blue Staircase* for a future approved renamed edition.
    - **Author:** `Nate and OpenAI`
    - Turn **Add to your library** **on** if offered, so the document is stored in your Kindle library rather than sent only to a particular device.
-5. Tap **Send** and wait for processing. Open the Kindle app's **Library**. Use **All** rather than only **Downloaded** if necessary, refresh/sync, and search for **The Last Witness**. Processing and delivery may take a few minutes.
+5. Tap **Send** and wait for processing. Open the Kindle app's **Library**. Use **All** rather than only **Downloaded** if necessary, refresh/sync, and search for **The Blue Staircase**. Processing and delivery may take a few minutes.
 6. If you have a separate physical Kindle signed into the **same Amazon account**, sync that Kindle and look in its library. It may need Wi-Fi to download the personal document.
 
 **Important:** An EPUB imported through Send to Kindle is a **personal document**, not a purchased Kindle book. Amazon Family/Household book sharing should **not** be relied on to make it appear in a family member's separate account. To let another person read the draft, have them download the EPUB and send it to **their own** Kindle account, or use Apple Books on their device.
@@ -55,7 +55,7 @@ If the iPhone share-sheet import fails, open [amazon.com/sendtokindle](https://w
 
 ## Companion notebook and updates
 
-Open [Sally's Detective Notebook](https://natsteff.github.io/the-last-witness-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **TLW Notebook**. It is not required to read the EPUB.
+Open [Sally's Detective Notebook](https://natsteff.github.io/the-last-witness-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **Blue Staircase Notebook**. It is not required to read the EPUB.
 
 When a new cumulative working draft is published, download the new EPUB and import it again. The notebook app will be updated for the newly released chapters; vocabulary progress stays in the browser where you use the notebook. Importing a new EPUB does not move that progress between devices.
 
