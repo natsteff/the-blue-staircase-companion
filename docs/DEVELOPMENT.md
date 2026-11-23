@@ -15,7 +15,7 @@ Open [the local notebook](http://127.0.0.1:8767/). The service worker caches bot
 
 On macOS, run `python3 scripts/build.py --audio` to synthesize new or changed phrases with `say` and convert them to mono PCM WAV with `afconvert`. Generation prefers Paulina when available. It requires an installed Mexican Spanish voice and access to the Mac speech service. Install a voice under Accessibility system speech settings if needed. The build checks that every required WAV contains audio samples. The versioned manifest records the text, voice, locale, path, and generation status.
 
-Use the chapter’s **Listen** and **Slow** controls to spot-check pronunciation at normal and half speed. The audio manifest also maps each clip to its source phrase for review. A voice identified as Spanish may be used as a browser fallback if a recording cannot play.
+Use the chapter’s **Listen** and **Slow** controls to spot-check pronunciation at 100% and 70% speed. The audio manifest also maps each clip to its source phrase for review. A voice identified as Spanish may be used as a browser fallback if a recording cannot play.
 
 ## GitHub Pages
 

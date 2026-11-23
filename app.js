@@ -97,7 +97,7 @@ async function play(phrase, rate = 1) {
 
 function playButton(phrase, distinguish = false, slow = false) {
   const text = slow ? 'Slow' : '▶ Listen';
-  const control = button(text, () => play(phrase, slow ? 0.5 : 1), 'audio' + (slow ? ' slow' : ''));
+  const control = button(text, () => play(phrase, slow ? 0.7 : 1), 'audio' + (slow ? ' slow' : ''));
   control.setAttribute('aria-label', (slow ? 'Listen slowly to ' : 'Listen to ') + phrase);
   if (distinguish && !slow) {
     const label = node('span', phrase);

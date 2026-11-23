@@ -39,7 +39,7 @@ Start with **Travel Spanish** for 14 practical Mexican Spanish phrases and a qui
 
 Select the last chapter you’ve read. **This Chapter** shows that chapter’s vocabulary and case notes, while **Through Chapter** includes earlier chapters. In **Spanish**, toggle **Story Order / A–Z**. **This Chapter → Story Order** places selected evidence where Sally encounters it. Meanings stay hidden until the story reveals them.
 
-Practice with **Listen** or **Slow** at half speed. Use **Hide Mastered** in Spanish or Traveler Phrases. In **Case Notes**, switch between **Handwritten** and **Standard Font**.
+Practice with **Listen** at regular speed or **Slow** at 70% speed. Use **Hide Mastered** in Spanish or Traveler Phrases. In **Case Notes**, switch between **Handwritten** and **Standard Font**.
 
 Mastery is saved in your current browser. On mobile, add **TBS Companion** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Companion App](https://natsteff.github.io/the-blue-staircase-companion/)
 
