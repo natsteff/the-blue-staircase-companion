@@ -389,3 +389,33 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
     from { opacity: 0; transform: translateY(.25rem); }
   }
 }
+
+.quiz-launch { display: flex; justify-content: flex-end; margin-block: 0 1rem; }
+#quiz-me { background: #205275; color: #fff7e7; font-weight: 700; }
+.quiz-view { max-width: 38rem; padding-block: 1rem 2rem; }
+.quiz-panel {
+  margin-top: 1rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: var(--card);
+  border: 1px solid var(--edge);
+  border-radius: .65rem;
+}
+.quiz-panel h1 { margin: 0 0 .75rem; font-size: clamp(1.6rem, 5vw, 2.25rem); }
+.quiz-prompt { font-size: 1.25rem; font-weight: 700; }
+.quiz-choices, .quiz-form { display: grid; gap: .65rem; }
+.quiz-panel button, #quiz-back, #quiz-me { min-height: 44px; }
+.quiz-panel button { margin-block-end: .35rem; }
+.quiz-form input {
+  width: 100%;
+  min-height: 44px;
+  padding: .5rem .65rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--edge);
+  border-radius: .4rem;
+}
+.quiz-help { margin-top: 1rem; }
+.quiz-confirmation button, .quiz-missed button { margin-inline-end: .4rem; }
+.quiz-missed li { margin-bottom: .5rem; }
+.quiz-missed span { display: block; }

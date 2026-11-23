@@ -44,7 +44,8 @@ function node(tag, content, className) {
 }
 
 function status(message = '') {
-  byId('status').textContent = message;
+  const target = byId('quiz-view').hidden ? 'status' : 'quiz-status';
+  byId(target).textContent = message;
 }
 
 function button(text, action, className) {
@@ -421,6 +422,206 @@ function render() {
   }
 }
 
+function shuffle(items) {
+  const shuffled = [...items];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+function quizKey(text) {
+  return text.toLowerCase().normalize('NFD').replace(/\u0301/g, '').normalize('NFC')
+    .replace(/\p{P}/gu, ' ').trim().replace(/\s+/g, ' ');
+}
+
+function quizCards(rows) {
+  return rows.filter(([, english]) => english).map(([spanish, english, , examples = []]) => ({
+    id: speechKey(spanish),
+    prompt: english,
+    answers: [...alternatives(spanish), ...examples]
+  }));
+}
+
+function keyboardHelp() {
+  const help = node('details', '', 'quiz-help');
+  help.append(
+    node('summary', 'Add a Spanish keyboard'),
+    node('p', 'Use your keyboard microphone to speak your answer. Your phone can stay set to English.'),
+    node('p', 'iPhone: Open Settings → General → Keyboard → Keyboards → Add New Keyboard and choose Spanish. In the quiz, switch with the globe key and tap the microphone. If it is missing, turn on Enable Dictation in Keyboard settings.'),
+    node('p', 'Android with Gboard: Open Gboard Settings → Languages → Add keyboard and choose Spanish. In the quiz, hold the space bar to switch languages, then tap the microphone.')
+  );
+  return help;
+}
+
+function openQuiz() {
+  const view = byId('quiz-view');
+  const notebook = byId('notebook-view');
+  const panel = byId('quiz-panel');
+  const scroll = window.scrollY;
+  let masteryChanged = false;
+  const travel = book.travelers?.vocabulary ?? [];
+  const chapters = book.chapters.filter(chapter => chapter.number <= book.latestReleasedChapter);
+  const cards = quizCards([...travel, ...chapters.flatMap(chapter => chapter.vocabulary)]);
+  const pool = [...new Map(cards.filter(card => progress[card.id] === 'Mastered')
+    .reverse().map(card => [card.id, card])).values()];
+  const travelCards = quizCards(travel);
+  let remaining = shuffle(pool);
+  let round = [];
+  let missed = [];
+  let index = 0;
+  let multipleChoice;
+
+  function show(title, ...content) {
+    const heading = node('h1', title);
+    heading.id = 'quiz-title';
+    heading.tabIndex = -1;
+    status();
+    panel.replaceChildren(heading, ...content);
+    heading.focus();
+  }
+
+  function startRound(cards) {
+    round = cards;
+    missed = [];
+    index = 0;
+    question();
+  }
+
+  function nextRound() {
+    startRound(remaining.splice(0, 10));
+  }
+
+  function results() {
+    const content = [node('p', (round.length - missed.length) + ' of ' + round.length + ' correct.')];
+    if (missed.length) {
+      const list = node('ul', '', 'quiz-missed');
+      for (const card of missed) {
+        const item = node('li');
+        const label = node('span', card.answers[0]);
+        label.lang = 'es-MX';
+        const review = button('Move to Learning', () => {
+          progress[card.id] = 'Learning';
+          saveStore(progressKey, progress);
+          masteryChanged = true;
+          review.textContent = 'Moved to Learning';
+          review.disabled = true;
+        });
+        if (progress[card.id] !== 'Mastered') review.disabled = true;
+        item.append(label, review);
+        list.append(item);
+      }
+      content.push(list, button('Retry Missed Items', () => startRound(shuffle(missed))));
+    }
+    if (remaining.length) content.push(button('Next Round', nextRound));
+    content.push(button('Back to Notebook', close));
+    show('Quiz results', ...content);
+  }
+
+  function question() {
+    stopAudio();
+    const card = round[index];
+    const accepted = card.answers.map(quizKey);
+    const reveal = correct => {
+      if (!correct) missed.push(card);
+      const answer = node('p', card.answers.join(' / '));
+      answer.lang = 'es-MX';
+      const audio = node('div', '', 'controls');
+      for (const phrase of card.answers) audio.append(playbackControls(phrase, card.answers.length > 1));
+      const last = index === round.length - 1;
+      show(correct ? 'Correct' : 'Review this phrase', answer, audio,
+        button(last ? 'See Results' : 'Next Question', () => {
+          if (last) results();
+          else {
+            index++;
+            question();
+          }
+        }));
+    };
+    const counter = node('p', 'Question ' + (index + 1) + ' of ' + round.length, 'muted');
+    const prompt = node('p', '', 'quiz-prompt');
+    addInline(prompt, card.prompt);
+    if (multipleChoice) {
+      const distractors = new Map();
+      for (const other of shuffle(travelCards)) {
+        if (quizKey(other.prompt) === quizKey(card.prompt) || other.answers.some(answer => accepted.includes(quizKey(answer)))) continue;
+        distractors.set(quizKey(other.answers[0]), other.answers[0]);
+      }
+      const options = node('div', '', 'quiz-choices');
+      for (const phrase of shuffle([card.answers[0], ...[...distractors.values()].slice(0, 3)])) {
+        const option = button(phrase, () => reveal(accepted.includes(quizKey(phrase))));
+        option.lang = 'es-MX';
+        options.append(option);
+      }
+      show('Choose the Spanish phrase', counter, prompt, options);
+      return;
+    }
+    const form = node('form', '', 'quiz-form');
+    const label = node('label', 'Your answer in Spanish');
+    const input = node('input');
+    input.id = 'quiz-answer';
+    input.lang = 'es-MX';
+    input.required = true;
+    input.autocomplete = 'off';
+    input.autocapitalize = 'off';
+    input.spellcheck = false;
+    label.htmlFor = input.id;
+    const submit = node('button', 'Check Answer');
+    submit.type = 'submit';
+    const confirmation = node('div', '', 'quiz-confirmation');
+    form.append(label, input, submit, confirmation);
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const answer = quizKey(input.value);
+      const corrected = answer.replace(/\bs\b/g, 'es');
+      if (answer !== corrected && accepted.includes(corrected) && !accepted.includes(answer)) {
+        const phrase = card.answers[accepted.indexOf(corrected)];
+        const yes = button('Yes, that’s what I said', () => reveal(true));
+        confirmation.replaceChildren(node('p', 'Did you mean “' + phrase + '”?'), yes,
+          button('Edit Answer', () => {
+            confirmation.replaceChildren();
+            input.focus();
+          }), button('Use My Answer', () => reveal(false)));
+        yes.focus();
+      } else {
+        reveal(accepted.includes(answer));
+      }
+    });
+    input.addEventListener('input', () => confirmation.replaceChildren());
+    show('Say or type the Spanish phrase', counter, prompt, form, keyboardHelp());
+  }
+
+  function close() {
+    stopAudio();
+    status();
+    view.hidden = true;
+    notebook.hidden = false;
+    if (masteryChanged) render();
+    byId('quiz-me').focus({preventScroll: true});
+    window.scrollTo(0, scroll);
+  }
+
+  stopAudio();
+  status();
+  notebook.hidden = true;
+  view.hidden = false;
+  byId('quiz-back').onclick = close;
+  const intro = node('p', 'Practice the phrases you’ve marked as Mastered across all chapters and Travel Spanish.');
+  if (!pool.length) {
+    show('Quiz Me', intro, node('p', 'Mark a phrase as Mastered in the notebook to start a quiz.'));
+    return;
+  }
+  const modes = node('div', '', 'quiz-choices');
+  for (const [mode, choice] of [['Multiple Choice', true], ['Type or Speak', false]]) {
+    modes.append(button(mode, () => {
+      multipleChoice = choice;
+      nextRound();
+    }));
+  }
+  show('Quiz Me', intro, node('p', pool.length + (pool.length === 1 ? ' mastered phrase' : ' mastered phrases')), modes);
+}
+
 async function loadJSON(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error(response.statusText);
@@ -441,6 +642,8 @@ async function start() {
     chapter.add(new Option('Chapter ' + item.number, item.number));
   }
   chapter.disabled = false;
+  byId('quiz-me').disabled = false;
+  byId('quiz-me').addEventListener('click', openQuiz);
   chapter.addEventListener('change', render);
   byId('travelers').hidden = !book.travelers;
   byId('scope').addEventListener('change', render);

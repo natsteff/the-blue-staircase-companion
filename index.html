@@ -15,7 +15,7 @@
 </head>
 <body>
   <header class="masthead"><div class="shell brand">The Blue Staircase <span>Companion App</span></div></header>
-  <main class="shell">
+  <main id="notebook-view" class="shell">
     <section class="intro" aria-labelledby="title">
       <a class="cover-link" href="books/The%20Blue%20Staircase%20-%20Review%20Draft%20%28Chapters%201-4%29%20v2.epub" aria-label="Download The Blue Staircase EPUB, Chapters 1–4">
         <img src="assets/the-blue-staircase-front-cover.jpg" alt="The Blue Staircase cover artwork" width="600" height="900">
@@ -58,6 +58,7 @@
         </button>
       </div>
     </section>
+    <div class="quiz-launch"><button id="quiz-me" type="button" disabled>Quiz Me</button></div>
     <nav aria-label="Notebook sections">
       <button id="travelers" type="button" aria-pressed="false">Travel Spanish</button>
       <button id="spanish" type="button" aria-pressed="true">Spanish</button>
@@ -74,6 +75,11 @@
       <div id="mastery-action"></div>
     </div>
     <noscript>This notebook requires JavaScript.</noscript>
+  </main>
+  <main id="quiz-view" class="shell quiz-view" hidden>
+    <button id="quiz-back" type="button">← Back to Notebook</button>
+    <section id="quiz-panel" class="quiz-panel" aria-labelledby="quiz-title"></section>
+    <p id="quiz-status" role="status"></p>
   </main>
 </body>
 </html>
