@@ -1,31 +1,31 @@
 # Sally’s Detective Notebook
 
 <p align="center">
-  <img src="assets/sallys-detective-notebook-logo.png" width="720" alt="Sally’s Detective Notebook, a companion to The Last Witness">
+  <img src="assets/sallys-detective-notebook-logo.png" width="720" alt="Sally’s Detective Notebook, a companion to The Blue Staircase">
 </p>
 
 <p align="center">
-  <a href="https://natsteff.github.io/the-last-witness-companion/"><img alt="Open TLW Notebook" src="https://img.shields.io/badge/Open%20TLW%20Notebook-205275?style=for-the-badge"></a>
+  <a href="https://natsteff.github.io/the-last-witness-companion/"><img alt="Open Blue Staircase Notebook" src="https://img.shields.io/badge/Open%20Notebook-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2) · TLW Notebook v0.3.0 (Chapters 1–4)**
+**WORK IN PROGRESS · Rebrand in review · Existing public EPUB v02 still bears the former title · Public EPUB v02 (Chapters 1–2) · Blue Staircase Notebook v0.3.0 (Chapters 1–4)**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
 ## About the book
 
-A long-overdue vacation in Playa del Carmen turns into a murder investigation for Sally Mercer and her husband Nate. The Mexican Spanish Sally came to practice becomes part of how she follows clues and makes sense of what people tell her. *The Last Witness: A Mystery in Playa del Carmen* is a cozy mystery with Spanish woven into the story.
+A long-overdue vacation in Playa del Carmen turns into a mystery surrounding a guest's death for Sally Mercer and her husband Nate. The Mexican Spanish Sally came to practice becomes part of how she follows clues and makes sense of what people tell her. *The Blue Staircase: A Mystery in Playa del Carmen* is a cozy mystery with Spanish woven into the story.
 
 <p align="center">
-  <img src="assets/the-last-witness-v02-cover.png" width="240" alt="Working Draft v02 cover for The Last Witness, Chapters 1 and 2">
-  <img src="assets/the-last-witness-back-cover.jpg" width="240" alt="Project back-cover artwork with the book synopsis">
+  <img src="assets/the-last-witness-v02-cover.png" width="240" alt="Previous-title working draft v02 cover (replacement pending), Chapters 1 and 2">
+  <img src="assets/the-last-witness-back-cover.jpg" width="240" alt="Previous-title back-cover artwork (replacement pending)">
 </p>
 
 ## Read the Working Draft
 
-**[Download EPUB — Working Draft v02 (Chapters 1–2)](https://natsteff.github.io/the-last-witness-companion/books/The_Last_Witness_-_Working_Draft_v02.epub)**
+**[Download the existing EPUB under its former title — Working Draft v02 (Chapters 1–2)](https://natsteff.github.io/the-last-witness-companion/books/The_Last_Witness_-_Working_Draft_v02.epub)**
 
-This free preview is an unfinished manuscript. The chapters, translations, and covers may change substantially.
+**Title transition:** The currently downloadable EPUB and existing cover images still display *The Last Witness*. They will be replaced only after the new edition and artwork are approved. The existing URL and book filename are intentionally unchanged to avoid broken links.\n\nThis free preview is an unfinished manuscript. The chapters, translations, and covers may change substantially.
 
 **Read on iPhone or iPad.** Download the EPUB, find it in **Files → Downloads**, then choose **Share → Books** for Apple Books or **Share → Kindle** for Kindle. Kindle may ask you to edit the title and author before sending. [Step-by-step Apple Books and Kindle guide](docs/READING_ON_IPHONE.md)
 
@@ -37,7 +37,7 @@ Select the last chapter you’ve read. **This Chapter** shows that chapter’s v
 
 Practice with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide Mastered** to focus on what you’re still practicing.
 
-Mastery is saved in your current browser. On mobile, add **TLW Notebook** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TLW Notebook](https://natsteff.github.io/the-last-witness-companion/)
+Mastery is saved in your current browser. On mobile, add **Blue Staircase Notebook** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open Blue Staircase Notebook](https://natsteff.github.io/the-last-witness-companion/)
 
 ## What to expect
 
