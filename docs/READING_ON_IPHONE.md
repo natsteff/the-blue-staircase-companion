@@ -1,10 +1,10 @@
 # Read *The Blue Staircase* on iPhone, iPad, or Kindle
 
-> **Working draft:** The novel is unfinished. The current downloadable EPUB still bears the former title *The Last Witness* until a revised edition is approved. The current v02 preview contains Chapters 1–2 of 24 planned chapters. Later drafts may revise earlier chapters. The EPUB is a book file; **Sally's Detective Notebook** is a separate optional web app.
+> **Working draft:** The novel is unfinished. The current EPUB is *The Blue Staircase*, Review Draft v2, Chapters 1–4. Later drafts may revise earlier chapters. The EPUB is a book file; **Sally's Detective Notebook** is a separate optional web app.
 
 ## Quick start: iPhone
 
-1. Download the [Working Draft v02 EPUB](https://natsteff.github.io/the-blue-staircase-companion/books/The_Last_Witness_-_Working_Draft_v02.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
+1. Download the [Download Review Draft v2 (Chapters 1–4)](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Review%20Draft%20%28Chapters%201-4%29%20v2.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
 2. If Safari displays a download arrow, tap it to find the downloaded EPUB. Otherwise open the **Files** app, choose **Browse → Downloads** (often under **iCloud Drive** or **On My iPhone**), and locate the `.epub` file. The exact download location depends on Safari settings.
 3. In **Files**, touch and hold the EPUB and choose **Share** (or open the file and tap the Share icon). Choose your reading app:
    - **Books** to read in Apple Books.
@@ -16,7 +16,7 @@
 1. Install/open **Apple Books** on your iPhone if necessary.
 2. In **Files**, locate the downloaded `.epub`.
 3. Tap **Share** and select **Books**. If Books is not visible, scroll the share-app row, tap **More**, and look for Books. On some iOS versions, simply tapping the EPUB in Files opens it in Books or offers an **Open in Books** option.
-4. Apple Books should import the EPUB and open it. If it does not, open **Books → Library** and search for **The Last Witness** (existing edition) or inspect recent additions.
+4. Apple Books should import the EPUB and open it. If it does not, open **Books → Library** and search for **The Blue Staircase** or inspect recent additions.
 5. Use the book's table of contents to jump to the chapter you want. The book may sync between Apple devices using the same Apple Account if Books/iCloud syncing is enabled; this is separate from Kindle.
 
 ### If Apple Books does not appear or the file will not open
@@ -32,10 +32,10 @@
 2. Download the EPUB and locate it in **Files → Downloads**.
 3. Touch and hold the EPUB, tap **Share**, then select **Kindle**. If Kindle is not listed, choose **More** in the share sheet; ensure the Kindle app is installed and has been opened at least once.
 4. The **Send to Kindle** screen may show the **filename** as the title and an account-based default author rather than the EPUB's embedded metadata. Before tapping **Send**, edit the fields:
-   - **Title:** `The Last Witness - Working Draft (Chapters 1-2)` (existing EPUB); use *The Blue Staircase* for a future approved renamed edition.
+   - **Title:** `The Blue Staircase - Review Draft (Chapters 1-4) v2`
    - **Author:** `Nate and OpenAI`
    - Turn **Add to your library** **on** if offered, so the document is stored in your Kindle library rather than sent only to a particular device.
-5. Tap **Send** and wait for processing. Open the Kindle app's **Library**. Use **All** rather than only **Downloaded** if necessary, refresh/sync, and search for the title you entered. For the current download, that’s **The Last Witness**. Processing and delivery may take a few minutes.
+5. Tap **Send** and wait for processing. Open the Kindle app's **Library**. Use **All** rather than only **Downloaded** if necessary, refresh/sync, and search for **The Blue Staircase**, or the title you entered. Processing and delivery may take a few minutes.
 6. If you have a separate physical Kindle signed into the **same Amazon account**, sync that Kindle and look in its library. It may need Wi-Fi to download the personal document.
 
 **Important:** An EPUB imported through Send to Kindle is a **personal document**, not a purchased Kindle book. Amazon Family/Household book sharing should **not** be relied on to make it appear in a family member's separate account. To let another person read the draft, have them download the EPUB and send it to **their own** Kindle account, or use Apple Books on their device.
