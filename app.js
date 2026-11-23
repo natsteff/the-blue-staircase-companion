@@ -187,8 +187,7 @@ function showMasteryNotice(phrase, restore) {
   expire();
 }
 
-function renderVocabulary(chapters, target, cumulative) {
-  const entries = vocabularyEntries(chapters);
+function renderVocabulary(chapters, target, cumulative, entries = vocabularyEntries(chapters)) {
   const chapter = chapters[0];
   const evidenceBefore = !cumulative && !sortAlphabetically && chapter.evidenceBefore;
   const storyEvidence = evidenceBefore
@@ -200,7 +199,7 @@ function renderVocabulary(chapters, target, cumulative) {
   const update = () => {
     const count = entries.filter(({row}) => progress[speechKey(row[0])] === 'Mastered').length;
     totals.textContent = count + ' of ' + entries.length + ' mastered'
-      + (cumulative ? ' through Chapter ' + chapters.at(-1).number : '');
+      + (cumulative && chapters.length > 1 ? ' through Chapter ' + chapters.at(-1).number : '');
     for (const entry of list.children) entry.hidden = hideMastered && entry.classList.contains('mastered');
     empty.hidden = !hideMastered || count < entries.length;
   };
@@ -366,7 +365,7 @@ function renderTravelers(target) {
   if (starts[0] !== 0) starts.unshift(0);
   starts.forEach((start, index) => {
     const title = groups[vocabulary[start]?.[0]];
-    if (title) page.append(node('h3', title, 'traveler-group-heading'));
+    if (title) page.append(node('h3', title, 'vocabulary-group-heading'));
     renderVocabulary([{vocabulary: vocabulary.slice(start, starts[index + 1])}], page, false);
   });
   target.append(page);
@@ -401,7 +400,16 @@ function render() {
   target.append(margin, page);
   if (section === 'spanish') {
     if (!cumulative) page.append(node('p', chapter.intro, 'chapter-intro'));
-    if (!renderVocabulary(chapters, page, cumulative)) {
+    if (chapters.length > 1 && !sortAlphabetically) {
+      const entries = vocabularyEntries(chapters);
+      for (const item of chapters) {
+        const firstSeen = entries.filter(entry => entry.chapters[0] === item.number);
+        if (!firstSeen.length) continue;
+        page.append(node('h3', 'Chapter ' + item.number + ' · ' + item.title, 'vocabulary-group-heading'));
+        renderVocabulary([item], page, true, firstSeen);
+      }
+      renderEvidence(chapters, page, true);
+    } else if (!renderVocabulary(chapters, page, cumulative)) {
       renderEvidence(chapters, page, cumulative);
     }
   } else {

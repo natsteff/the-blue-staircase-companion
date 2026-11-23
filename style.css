@@ -331,7 +331,7 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 [hidden] { display: none !important; }
 #notebook.travelers-page { grid-template-columns: minmax(0, 1fr); }
 .traveler-grammar { margin: .7rem 0; }
-.traveler-group-heading {
+.vocabulary-group-heading {
   margin: 1.5rem 0 .5rem;
   padding-block-start: .65rem;
   border-block-start: 3px solid var(--accent);
