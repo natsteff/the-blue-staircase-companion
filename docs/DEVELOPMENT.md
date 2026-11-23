@@ -1,4 +1,4 @@
-# Developing Blue Staircase Companion
+# Developing The Blue Staircase Companion App
 
 ## Run locally
 

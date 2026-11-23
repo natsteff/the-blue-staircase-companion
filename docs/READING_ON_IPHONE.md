@@ -1,10 +1,10 @@
 # Read *The Blue Staircase* on iPhone, iPad, or Kindle
 
-> **Working draft:** The novel is unfinished. The current EPUB is *The Blue Staircase*, Review Draft v2, Chapters 1–4. Later drafts may revise earlier chapters. The EPUB is a book file; **Sally's Detective Notebook** is a separate optional web app.
+> **Working draft:** The novel is unfinished. The current EPUB is *The Blue Staircase*, Review Draft v2, Chapters 1–4. Later drafts may revise earlier chapters. The EPUB is a book file; **The Blue Staircase Companion App** is a separate optional web app.
 
 ## Quick start: iPhone
 
-1. Download the [Download Review Draft v2 (Chapters 1–4)](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Review%20Draft%20%28Chapters%201-4%29%20v2.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
+1. Download the [Review Draft v2 (Chapters 1–4)](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Review%20Draft%20%28Chapters%201-4%29%20v2.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
 2. If Safari displays a download arrow, tap it to find the downloaded EPUB. Otherwise open the **Files** app, choose **Browse → Downloads** (often under **iCloud Drive** or **On My iPhone**), and locate the `.epub` file. The exact download location depends on Safari settings.
 3. In **Files**, touch and hold the EPUB and choose **Share** (or open the file and tap the Share icon). Choose your reading app:
    - **Books** to read in Apple Books.
@@ -53,9 +53,9 @@ If the iPhone share-sheet import fails, open [amazon.com/sendtokindle](https://w
 - **Visible on your Kindle but not someone else's:** Check whether the other device uses a **different Amazon account**. Personal documents generally need to be sent to each reader's own account; Family Library sharing is not a reliable solution.
 - **Old draft still appears:** Each new working draft is a separate document and may be imported as a new library item. Remove older drafts manually if you no longer need them. Kindle reading position and annotations should not be assumed to transfer between draft versions.
 
-## Companion notebook and updates
+## Companion app and updates
 
-Open [Sally's Detective Notebook](https://natsteff.github.io/the-blue-staircase-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **TBS Companion**. It is not required to read the EPUB.
+Open [The Blue Staircase Companion App](https://natsteff.github.io/the-blue-staircase-companion/) separately in Safari. Choose the chapter you have **finished** to follow Sally’s Detective Notebook, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **TBS Companion**. It is not required to read the EPUB.
 
 When a new cumulative working draft is published, download the new EPUB and import it again. The notebook app will be updated for the newly released chapters; vocabulary progress stays in the browser where you use the notebook. Importing a new EPUB does not move that progress between devices.
 

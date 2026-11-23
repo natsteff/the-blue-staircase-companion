@@ -1,16 +1,16 @@
-# Sally’s Detective Notebook
+# The Blue Staircase Companion App
 
 <p align="center">
-  <img src="assets/blue-staircase-notebook-logo.jpg" width="720" alt="Sally’s Detective Notebook, a companion to The Blue Staircase">
+  <img src="assets/the-blue-staircase-companion-logo.jpg" width="720" alt="The Blue Staircase Companion App">
 </p>
 
 <p align="center">
-  <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open Blue Staircase Companion" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
+  <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open TBS Companion App" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Review Draft v2 EPUB and TBS Companion v0.4.1 · Chapters 1–4**
+**WORK IN PROGRESS · Review Draft v2 EPUB and TBS Companion App v0.4.2 · Chapters 1–4**
 
-I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion notebook for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
+I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion app for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
 ## About the book
 
@@ -31,7 +31,9 @@ This free preview is an unfinished manuscript. The chapters, translations, and c
 
 **Read on iPhone or iPad.** Download the EPUB, find it in **Files → Downloads**, then choose **Share → Books** for Apple Books or **Share → Kindle** for Kindle. Kindle may ask you to edit the title and author before sending. [Step-by-step Apple Books and Kindle guide](docs/READING_ON_IPHONE.md)
 
-## Try Sally’s Detective Notebook
+## Use TBS Companion App
+
+Follow the mystery with **Sally’s Detective Notebook**, hear the Mexican Spanish she encounters, and track the words and phrases you’ve mastered.
 
 Start with **Spanish Phrases for Travelers** for 14 practical Mexican Spanish phrases and a quick guide to masculine and feminine nouns and *ser* and *estar*.
 
@@ -39,7 +41,7 @@ Select the last chapter you’ve read. **This Chapter** shows that chapter’s v
 
 Practice with **Listen** or **Slow** at half speed. Use **Hide Mastered** in Spanish or Traveler Phrases. In **Case Notes**, switch between **Handwritten** and **Standard Font**.
 
-Mastery is saved in your current browser. On mobile, add **TBS Companion** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Companion](https://natsteff.github.io/the-blue-staircase-companion/)
+Mastery is saved in your current browser. On mobile, add **TBS Companion** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Companion App](https://natsteff.github.io/the-blue-staircase-companion/)
 
 ## What to expect
 
