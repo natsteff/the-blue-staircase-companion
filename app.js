@@ -157,6 +157,36 @@ function wordRow([spanish, english, context], chapters = []) {
   return {entry, controls};
 }
 
+let masteryNoticeTimer;
+
+function showMasteryNotice(phrase, restore) {
+  const notice = byId('mastery-notice');
+  const message = byId('mastery-message');
+  const dismiss = () => {
+    clearTimeout(masteryNoticeTimer);
+    notice.hidden = true;
+    message.replaceChildren();
+  };
+  clearTimeout(masteryNoticeTimer);
+  notice.hidden = false;
+  message.replaceChildren(
+    node('strong', '“' + phrase + '” marked as mastered.'),
+    node('span', 'Hidden because Hide Mastered is on.')
+  );
+  const undo = button('Undo', () => {
+    restore();
+    dismiss();
+  });
+  const expire = () => {
+    clearTimeout(masteryNoticeTimer);
+    masteryNoticeTimer = setTimeout(dismiss, 5000);
+  };
+  undo.addEventListener('focus', () => clearTimeout(masteryNoticeTimer));
+  undo.addEventListener('blur', expire);
+  byId('mastery-action').replaceChildren(undo);
+  expire();
+}
+
 function renderVocabulary(chapters, target, cumulative) {
   const entries = vocabularyEntries(chapters);
   const chapter = chapters[0];
@@ -203,6 +233,21 @@ function renderVocabulary(chapters, target, cumulative) {
         (next ?? remaining.at(-1) ?? byId('hide-mastered')).focus();
       }
       update();
+      if (hideMastered && mastered.checked) {
+        showMasteryNotice(row[0], () => {
+          progress[id] = 'Learning';
+          saveStore(progressKey, progress);
+          if (entry.isConnected) {
+            mastered.checked = false;
+            entry.classList.remove('mastered');
+            update();
+            mastered.focus();
+          } else {
+            render();
+            byId(section).focus();
+          }
+        });
+      }
     });
     list.append(entry);
   }

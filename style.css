@@ -345,3 +345,35 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
     overflow-wrap: anywhere;
   }
 }
+
+.mastery-notice {
+  position: fixed;
+  z-index: 10;
+  inset-inline: 0;
+  bottom: calc(.75rem + env(safe-area-inset-bottom));
+  width: min(100% - 1.5rem, 30rem);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .75rem;
+  background: var(--card);
+  border: 1px solid var(--edge);
+  border-radius: .6rem;
+  box-shadow: 0 .3rem 1rem #0004;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+#mastery-message span { display: block; margin-top: .2rem; }
+#mastery-action button {
+  min-height: 44px;
+  color: var(--blue);
+  font-weight: 700;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mastery-notice { animation: mastery-notice-in .18s ease-out; }
+  @keyframes mastery-notice-in {
+    from { opacity: 0; transform: translateY(.25rem); }
+  }
+}
