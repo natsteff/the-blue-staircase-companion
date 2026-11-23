@@ -390,6 +390,7 @@ function render() {
   const cumulative = byId('scope').value === 'through';
   const chapters = cumulative ? book.chapters.filter(item => item.number <= chapter.number) : [chapter];
   target.classList.toggle('case-page', section === 'case');
+  target.classList.toggle('spanish-page', section === 'spanish');
   target.classList.toggle('travelers-page', traveler);
   byId('selected-chapter-title').textContent = chapter.title;
   byId('scope').options[1].textContent = 'Through Chapter ' + chapter.number;
@@ -407,9 +408,9 @@ function render() {
   const label = (cumulative ? 'Through Chapter ' : 'Chapter ') + chapter.number;
   margin.append(node('p', label, 'chapter-number'), node('h2', chapter.title));
   const page = node('div', '', 'chapter-page');
+  if (section === 'spanish') target.append(quizLauncher());
   target.append(margin, page);
   if (section === 'spanish') {
-    page.append(quizLauncher());
     if (!cumulative) page.append(node('p', chapter.intro, 'chapter-intro'));
     if (chapters.length > 1 && !sortAlphabetically) {
       const entries = vocabularyEntries(chapters);
@@ -459,7 +460,8 @@ function keyboardHelp() {
   help.append(
     node('summary', 'Add a Spanish keyboard'),
     node('p', 'Use your keyboard microphone to speak your answer. Your phone can stay set to English.'),
-    node('p', 'iPhone: Open Settings → General → Keyboard → Keyboards → Add New Keyboard and choose Spanish. In the quiz, switch with the globe key and tap the microphone. If it is missing, turn on Enable Dictation in Keyboard settings.'),
+    node('p', 'iPhone: Open Settings → General → Keyboard → Keyboards → Add New Keyboard and choose Spanish. If offered, you can add Spanish to your English keyboard. With separate keyboards, switch with the globe key before tapping the microphone. If the microphone is missing, turn on Enable Dictation in Keyboard settings.'),
+    node('p', 'Using a bilingual keyboard such as SwiftKey on iPhone? After tapping the microphone, look for an EN or ES label near the answer field. If it appears, tap the label and choose ES for Spanish or EN for English.'),
     node('p', 'Android with Gboard: Open Gboard Settings → Languages → Add keyboard and choose Spanish. In the quiz, hold the space bar to switch languages, then tap the microphone.')
   );
   return help;

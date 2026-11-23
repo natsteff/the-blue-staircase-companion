@@ -393,6 +393,26 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 .quiz-launch { display: flex; align-items: start; gap: .75rem; margin-block: 0 1rem; }
 .quiz-launch h2 { margin: 0; }
 .quiz-launch button { margin-inline-start: auto; flex: none; white-space: nowrap; }
+#notebook.spanish-page > .quiz-launch {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  padding: 1.3rem clamp(.85rem, 3vw, 2rem) 0;
+}
+#notebook.spanish-page > .chapter-margin { grid-column: 1; grid-row: 1 / span 2; }
+#notebook.spanish-page > .chapter-page { grid-column: 2; grid-row: 2; }
+@media (max-width: 620px) {
+  #notebook.spanish-page > .quiz-launch,
+  #notebook.spanish-page > .chapter-margin { grid-column: 1; grid-row: 1; }
+  #notebook.spanish-page > .quiz-launch {
+    justify-self: end;
+    align-self: start;
+    z-index: 1;
+    padding: .9rem 1rem 0 0;
+  }
+  #notebook.spanish-page > .chapter-margin { padding-inline-end: 7.5rem; }
+  #notebook.spanish-page > .chapter-page { grid-column: 1; }
+}
 .quiz-direction { display: grid; gap: .35rem; margin-block: 1rem; }
 #quiz-me { background: #205275; color: #fff7e7; font-weight: 700; }
 .quiz-view { max-width: 38rem; padding-block: 1rem 2rem; }
