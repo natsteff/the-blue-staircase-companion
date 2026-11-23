@@ -357,7 +357,11 @@
       ],
       [
         "No entiendo.",
-        "I don't understand."
+        "I don't understand.",
+        "You can also say **No comprendo.**",
+        [
+          "No comprendo."
+        ]
       ],
       [
         "¿Puede repetirlo más despacio, por favor?",
@@ -413,7 +417,11 @@
       ],
       [
         "¿Cuánto cuesta?",
-        "How much does it cost?"
+        "How much does it cost?",
+        "At checkout, ask **¿Cuánto es?** (“How much is it?”) for the total.",
+        [
+          "¿Cuánto es?"
+        ]
       ],
       [
         "La cuenta, por favor.",

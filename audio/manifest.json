@@ -386,6 +386,13 @@
       "file": "audio/5eca0e174620e72290fa.wav",
       "status": "generated"
     },
+    "26f3d7a1cc33980d6e92": {
+      "text": "No comprendo.",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/26f3d7a1cc33980d6e92.wav",
+      "status": "generated"
+    },
     "9cd485ff2e814aeaf5b2": {
       "text": "¿Puede repetirlo más despacio, por favor?",
       "voice": "Paulina",
@@ -468,6 +475,13 @@
       "voice": "Paulina",
       "locale": "es-MX",
       "file": "audio/3993c269bba928260d47.wav",
+      "status": "generated"
+    },
+    "eee5436ebd960bc07220": {
+      "text": "¿Cuánto es?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/eee5436ebd960bc07220.wav",
       "status": "generated"
     },
     "d70f259bcc92547d718f": {
