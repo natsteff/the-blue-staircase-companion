@@ -556,7 +556,7 @@ function openQuiz() {
           reveal(true);
         }));
       }
-      show(correct ? 'Correct' : 'Review this phrase', ...feedback,
+      show(correct ? 'Correct' : 'Incorrect, review this phrase', ...feedback,
         button(last ? 'See Results' : 'Next Question', () => {
           if (last) results();
           else {
