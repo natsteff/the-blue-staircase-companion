@@ -358,8 +358,9 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
   justify-content: space-between;
   gap: .75rem;
   padding: .75rem;
-  background: var(--card);
-  border: 1px solid var(--edge);
+  background: #ffe2a3;
+  color: #382712;
+  border: 1px solid #c49540;
   border-radius: .6rem;
   box-shadow: 0 .3rem 1rem #0004;
   line-height: 1.35;
@@ -368,7 +369,9 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 #mastery-message span { display: block; margin-top: .2rem; }
 #mastery-action button {
   min-height: 44px;
-  color: var(--blue);
+  background: #382712;
+  border-color: #382712;
+  color: #ffe2a3;
   font-weight: 700;
 }
 @media (prefers-reduced-motion: no-preference) {
