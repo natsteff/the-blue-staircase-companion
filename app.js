@@ -266,8 +266,12 @@ function renderEvidence(chapters, target, cumulative) {
       evidence.references.push(chapter.number);
     }
   }
+  // A single word can enter regular vocabulary after first appearing as untranslated evidence.
+  const learned = new Set(cumulative ? chapters.flatMap(chapter => chapter.vocabulary
+    .filter(row => row[1]).map(row => speechKey(row[0]))) : []);
   for (const [title, translated] of [['Untranslated', false], ['Translated Evidence', true]]) {
-    const matching = [...entries.values()].filter(({row}) => Boolean(row[1]) === translated);
+    const matching = [...entries.values()].filter(({row}) =>
+      Boolean(row[1]) === translated && (translated || !learned.has(speechKey(row[0]))));
     if (!matching.length) continue;
     if (sortAlphabetically) {
       matching.sort((left, right) => alphabetical.compare(left.row[0], right.row[0]));
@@ -461,7 +465,7 @@ function keyboardHelp() {
     node('summary', 'Add a Spanish keyboard'),
     node('p', 'Use your keyboard microphone to speak your answer. Your phone can stay set to English.'),
     node('p', 'iPhone: Open Settings → General → Keyboard → Keyboards → Add New Keyboard and choose Spanish. If offered, you can add Spanish to your English keyboard. With separate keyboards, switch with the globe key before tapping the microphone. If the microphone is missing, turn on Enable Dictation in Keyboard settings.'),
-    node('p', 'Using a bilingual keyboard such as SwiftKey on iPhone? After tapping the microphone, look for an EN or ES label near the answer field. If it appears, tap the label and choose ES for Spanish or EN for English.'),
+    node('p', 'Using a combined English/Spanish keyboard on iPhone? The built-in keyboard and Microsoft SwiftKey can show an EN or ES label near the answer field after you tap the microphone. If you see it, tap the label and choose ES for Spanish or EN for English.'),
     node('p', 'Android with Gboard: Open Gboard Settings → Languages → Add keyboard and choose Spanish. In the quiz, hold the space bar to switch languages, then tap the microphone.')
   );
   return help;

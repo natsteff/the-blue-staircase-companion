@@ -1,10 +1,10 @@
 {
-  "bookVersion": "blue-staircase-review-v2",
+  "bookVersion": "blue-staircase-review-v3",
   "latestReleasedChapter": 4,
   "chapters": [
     {
       "number": 1,
-      "title": "The House with the Blue Staircase",
+      "title": "The Hotel with the Blue Staircase",
       "intro": "Selected Spanish from Chapter One. Sally recognizes some phrases and hears others whose meaning she has yet to learn.",
       "vocabulary": [
         [
@@ -358,7 +358,7 @@
       [
         "No entiendo.",
         "I don't understand.",
-        "You can also say **No comprendo.**",
+        "Also **No comprendo.**",
         [
           "No comprendo."
         ]
@@ -380,14 +380,6 @@
         "Can you help me?"
       ],
       [
-        "¿Dónde está el baño?",
-        "Where is the bathroom?"
-      ],
-      [
-        "¿Dónde está la playa?",
-        "Where is the beach?"
-      ],
-      [
         "¿Dónde está el hotel?",
         "Where is the hotel?"
       ],
@@ -396,13 +388,17 @@
         "We have a reservation."
       ],
       [
-        "Una mesa para dos, por favor.",
-        "A table for two, please."
+        "¿Dónde está el baño?",
+        "Where is the bathroom?"
+      ],
+      [
+        "¿Dónde está la playa?",
+        "Where is the beach?"
       ],
       [
         "¿Está picante?",
         "Is it spicy?",
-        "You may also hear **¿Pica mucho?** (“Is it very spicy?”).",
+        "Also **¿Pica mucho?** — Is it very spicy?",
         [
           "¿Pica mucho?"
         ]
@@ -412,33 +408,37 @@
         "A beer, please."
       ],
       [
-        "Para llevar, por favor.",
-        "To go, please."
+        "Una mesa para dos, por favor.",
+        "A table for two, please."
       ],
       [
-        "¿Cuánto cuesta?",
-        "How much does it cost?",
-        "At checkout, ask **¿Cuánto es?** (“How much is it?”) for the total.",
-        [
-          "¿Cuánto es?"
-        ]
+        "Para llevar, por favor.",
+        "To go, please."
       ],
       [
         "La cuenta, por favor.",
         "The check, please."
       ],
       [
+        "¿Cuánto cuesta?",
+        "How much does it cost?",
+        "Also **¿Cuánto es?** — How much is it? Useful for asking the total at checkout.",
+        [
+          "¿Cuánto es?"
+        ]
+      ],
+      [
         "¿Puedo pagar con tarjeta?",
         "Can I pay by card?"
       ]
     ],
-    "tip": "Tip: Learn nouns with their articles. **El hotel** means “the hotel”; **la llave** means “the key.” For grammar explanations, examples, and pronunciation practice, use the companion app.",
     "groups": {
-      "Buenas tardes.": "Greetings and courtesy",
-      "No entiendo.": "Asking for help",
-      "¿Dónde está el baño?": "Getting around and checking in",
-      "Una mesa para dos, por favor.": "Ordering food",
-      "¿Cuánto cuesta?": "Paying"
-    }
+      "Buenas tardes.": "Greetings and Courtesy",
+      "No entiendo.": "Asking for Help",
+      "¿Dónde está el hotel?": "Getting Around and Checking In",
+      "¿Está picante?": "Ordering Food",
+      "La cuenta, por favor.": "Paying"
+    },
+    "tip": "Tip: Learn nouns with their articles. **El hotel** means “the hotel”; **la llave** means “the key.” For grammar explanations, examples, and pronunciation practice, use the companion app."
   }
 }
