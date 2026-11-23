@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://natsteff.github.io/the-last-witness-companion/"><img alt="Open Blue Staircase Notebook" src="https://img.shields.io/badge/Open%20Notebook-205275?style=for-the-badge"></a>
+  <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open Blue Staircase Notebook" src="https://img.shields.io/badge/Open%20Notebook-205275?style=for-the-badge"></a>
 </p>
 
 **WORK IN PROGRESS · Public EPUB v02 (Chapters 1–2, former title) · TBS Notebook v0.3.1 (Chapters 1–4)**
@@ -23,7 +23,7 @@ A long-overdue vacation in Playa del Carmen turns into a mystery surrounding a g
 
 ## Read the Working Draft
 
-**[Download the existing EPUB under its former title — Working Draft v02 (Chapters 1–2)](https://natsteff.github.io/the-last-witness-companion/books/The_Last_Witness_-_Working_Draft_v02.epub)**
+**[Download the existing EPUB under its former title — Working Draft v02 (Chapters 1–2)](https://natsteff.github.io/the-blue-staircase-companion/books/The_Last_Witness_-_Working_Draft_v02.epub)**
 
 The current download is the original two-chapter EPUB, published as *The Last Witness*. The artwork above is for *The Blue Staircase*. [View the original EPUB cover](assets/the-last-witness-v02-cover.png).
 
@@ -39,7 +39,7 @@ Select the last chapter you’ve read. **This Chapter** shows that chapter’s v
 
 Practice with **Listen** or **Slow**, tick **Mastered** when you know an entry, and use **Hide Mastered** to focus on what you’re still practicing.
 
-Mastery is saved in your current browser. On mobile, add **TBS Notebook** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Notebook](https://natsteff.github.io/the-last-witness-companion/)
+Mastery is saved in your current browser. On mobile, add **TBS Notebook** to your home screen. The traveler guide, chapter notebooks, and recordings are available offline after the app finishes downloading them. Reopen the app while online to pick up updates automatically. [Open TBS Notebook](https://natsteff.github.io/the-blue-staircase-companion/)
 
 ## What to expect
 
@@ -47,7 +47,7 @@ Future working drafts will be cumulative, with the earlier chapters and new mate
 
 ## Feedback
 
-Corrections, usability reports, pronunciation notes, and editorial feedback are welcome. Include the draft version and chapter, label spoilers clearly, and keep plot details out of issue titles. [GitHub Issues](https://github.com/natsteff/the-last-witness-companion/issues)
+Corrections, usability reports, pronunciation notes, and editorial feedback are welcome. Include the draft version and chapter, label spoilers clearly, and keep plot details out of issue titles. [GitHub Issues](https://github.com/natsteff/the-blue-staircase-companion/issues)
 
 ## Credits and rights
 

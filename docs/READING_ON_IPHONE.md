@@ -4,7 +4,7 @@
 
 ## Quick start: iPhone
 
-1. Download the [Working Draft v02 EPUB](https://natsteff.github.io/the-last-witness-companion/books/The_Last_Witness_-_Working_Draft_v02.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
+1. Download the [Working Draft v02 EPUB](https://natsteff.github.io/the-blue-staircase-companion/books/The_Last_Witness_-_Working_Draft_v02.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
 2. If Safari displays a download arrow, tap it to find the downloaded EPUB. Otherwise open the **Files** app, choose **Browse → Downloads** (often under **iCloud Drive** or **On My iPhone**), and locate the `.epub` file. The exact download location depends on Safari settings.
 3. In **Files**, touch and hold the EPUB and choose **Share** (or open the file and tap the Share icon). Choose your reading app:
    - **Books** to read in Apple Books.
@@ -55,12 +55,12 @@ If the iPhone share-sheet import fails, open [amazon.com/sendtokindle](https://w
 
 ## Companion notebook and updates
 
-Open [Sally's Detective Notebook](https://natsteff.github.io/the-last-witness-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **TBS Notebook**. It is not required to read the EPUB.
+Open [Sally's Detective Notebook](https://natsteff.github.io/the-blue-staircase-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **TBS Notebook**. It is not required to read the EPUB.
 
 When a new cumulative working draft is published, download the new EPUB and import it again. The notebook app will be updated for the newly released chapters; vocabulary progress stays in the browser where you use the notebook. Importing a new EPUB does not move that progress between devices.
 
 ## Questions or problems
 
-Use the repository's [GitHub Issues](https://github.com/natsteff/the-last-witness-companion/issues) to report broken links, import failures, and pronunciation problems. Include the **draft version**, device, reading app, and the exact error. Avoid putting future-story spoilers in issue titles.
+Use the repository's [GitHub Issues](https://github.com/natsteff/the-blue-staircase-companion/issues) to report broken links, import failures, and pronunciation problems. Include the **draft version**, device, reading app, and the exact error. Avoid putting future-story spoilers in issue titles.
 
 *Instructions reflect typical iPhone/iOS and Kindle workflows; menu labels and behavior may vary with software versions.*
