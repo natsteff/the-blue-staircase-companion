@@ -331,6 +331,12 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 [hidden] { display: none !important; }
 #notebook.travelers-page { grid-template-columns: minmax(0, 1fr); }
 .traveler-grammar { margin: .7rem 0; }
+.traveler-group-heading {
+  margin: 1.5rem 0 .5rem;
+  padding-block-start: .65rem;
+  border-block-start: 3px solid var(--accent);
+  color: var(--accent);
+}
 .entry-chapters { color: var(--muted); font-size: .875rem; }
 @media (max-width: 540px) {
   nav {
@@ -367,8 +373,11 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
   overflow-wrap: anywhere;
 }
 #mastery-message span { display: block; margin-top: .2rem; }
+#mastery-message { min-width: 0; }
+#mastery-action { flex: 0 0 auto; }
 #mastery-action button {
   min-height: 44px;
+  white-space: nowrap;
   background: #382712;
   border-color: #382712;
   color: #ffe2a3;

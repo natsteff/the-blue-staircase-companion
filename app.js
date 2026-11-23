@@ -366,7 +366,7 @@ function renderTravelers(target) {
   if (starts[0] !== 0) starts.unshift(0);
   starts.forEach((start, index) => {
     const title = groups[vocabulary[start]?.[0]];
-    if (title) page.append(node('h3', title));
+    if (title) page.append(node('h3', title, 'traveler-group-heading'));
     renderVocabulary([{vocabulary: vocabulary.slice(start, starts[index + 1])}], page, false);
   });
   target.append(page);
