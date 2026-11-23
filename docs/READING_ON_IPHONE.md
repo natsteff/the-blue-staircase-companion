@@ -35,7 +35,7 @@
    - **Title:** `The Last Witness - Working Draft (Chapters 1-2)` (existing EPUB); use *The Blue Staircase* for a future approved renamed edition.
    - **Author:** `Nate and OpenAI`
    - Turn **Add to your library** **on** if offered, so the document is stored in your Kindle library rather than sent only to a particular device.
-5. Tap **Send** and wait for processing. Open the Kindle app's **Library**. Use **All** rather than only **Downloaded** if necessary, refresh/sync, and search for **The Blue Staircase**. Processing and delivery may take a few minutes.
+5. Tap **Send** and wait for processing. Open the Kindle app's **Library**. Use **All** rather than only **Downloaded** if necessary, refresh/sync, and search for the title you entered. For the current download, that’s **The Last Witness**. Processing and delivery may take a few minutes.
 6. If you have a separate physical Kindle signed into the **same Amazon account**, sync that Kindle and look in its library. It may need Wi-Fi to download the personal document.
 
 **Important:** An EPUB imported through Send to Kindle is a **personal document**, not a purchased Kindle book. Amazon Family/Household book sharing should **not** be relied on to make it appear in a family member's separate account. To let another person read the draft, have them download the EPUB and send it to **their own** Kindle account, or use Apple Books on their device.
@@ -55,7 +55,7 @@ If the iPhone share-sheet import fails, open [amazon.com/sendtokindle](https://w
 
 ## Companion notebook and updates
 
-Open [Sally's Detective Notebook](https://natsteff.github.io/the-last-witness-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **Blue Staircase Notebook**. It is not required to read the EPUB.
+Open [Sally's Detective Notebook](https://natsteff.github.io/the-last-witness-companion/) separately in Safari. Choose the chapter you have **finished** to review clues, hear Spanish pronunciation, and track vocabulary. On iPhone, Safari's **Share → Add to Home Screen** can install it as **TBS Notebook**. It is not required to read the EPUB.
 
 When a new cumulative working draft is published, download the new EPUB and import it again. The notebook app will be updated for the newly released chapters; vocabulary progress stays in the browser where you use the notebook. Importing a new EPUB does not move that progress between devices.
 

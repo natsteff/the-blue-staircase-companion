@@ -23,7 +23,7 @@ The app uses relative URLs so the same build works at a domain root or under a r
 
 ## App versions
 
-The footer shows the app version and its unique build ID. Update `VERSION` when preparing an app release. The build ID is generated automatically from the published app files and changes whenever their content changes. The manuscript edition is tracked separately as `bookVersion`. The public EPUB, filename, and old cover assets are intentionally retained until a separately approved renamed edition is available; do not change their identifiers solely to match the working title.
+The footer shows the app version and its unique build ID. Update `VERSION` when preparing an app release. The build ID is generated automatically from the published app files and changes whenever their content changes. The manuscript edition is tracked separately as `bookVersion`. The original EPUB, its filename, and historical cover assets are retained. The app hero shows the approved artwork for The Blue Staircase. Use a new filename for each separately approved EPUB edition.
 
 ## Future chapter contract
 
