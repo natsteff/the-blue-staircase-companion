@@ -8,7 +8,7 @@
   <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open TBS Companion App" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Companion v0.5.9 · Notebook for Review Draft v4 · Chapters 1–4**
+**WORK IN PROGRESS · Companion v0.5.10 · Notebook for Review Draft v4 · Chapters 1–4**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion app for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 

@@ -445,6 +445,10 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 .quiz-missed span { display: block; }
 
 button.cover-link { padding: 0; border: 0; background: none; }
+html:has(#cover-viewer[open]), body:has(#cover-viewer[open]) {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 #cover-viewer {
   position: fixed;
   inset: 0;
@@ -456,6 +460,7 @@ button.cover-link { padding: 0; border: 0; background: none; }
   height: 100dvh;
   margin: 0;
   border: 0;
+  overscroll-behavior: contain;
   padding: max(.75rem, env(safe-area-inset-top)) max(.75rem, env(safe-area-inset-right))
     max(.75rem, env(safe-area-inset-bottom)) max(.75rem, env(safe-area-inset-left));
   color: var(--ink);
@@ -467,7 +472,7 @@ button.cover-link { padding: 0; border: 0; background: none; }
 .cover-viewer-bar h2, #cover-share-status { margin: 0; }
 #cover-share-status:empty { display: none; }
 .cover-viewer-image { min-height: 0; touch-action: pan-y pinch-zoom; }
-.cover-viewer-image img { width: 100%; height: 100%; object-fit: contain; user-select: none; cursor: pointer; }
+.cover-viewer-image img { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; cursor: pointer; }
 .cover-viewer-actions { justify-content: center; flex-wrap: wrap; }
 .cover-viewer-actions a, .cover-viewer-actions button, #close-cover {
   display: inline-grid;
