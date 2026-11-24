@@ -1,13 +1,17 @@
 # The Blue Staircase — Cover Production & Edition Handoff
 
-Status: **Design prototypes approved as working references only**, not final artwork or permission to publish. Owner for production refinement and maintenance: **Abu**, in collaboration with Nate and the writer. Date: 2026-11-23.
+Status: **Terracotta courtyard artwork approved for future book covers and the companion app** on November 24, 2026. Cover masters and the renderer are maintained in the private development repository.
 
-## Source prototypes
+## Approved cover source
+
+Use the current front master with matte weathered terracotta, blue treads and patterned risers, a black wrought-iron railing, and sandy-tan planters and fountain. Use the clean render for the app and crop the corrected staircase for the app icon and banners. Keep the beach-sunset back artwork for future editions. The private release procedure records how to render an edition-specific plaque from the masters.
+
+## Original prototypes
 Nate supplied **two images in the current ChatGPT conversation**:
 1. **Front prototype**: courtyard at night, blue staircase, patterned blue/white risers, ornate title, flowers and fountain. **Nate prefers the earlier darker nighttime atmosphere** over the most recent version, where the illuminated lanterns and windows imply night but the sky appears too bright. Use a convincingly dark, deep-navy nighttime sky and restrained ambient light, with architectural lanterns and windows providing believable warm pools of light; retain clear visibility of the staircase and tile details. Do not alter the established composition, ornate typography, or other scene elements beyond what is needed for the lighting correction.
 2. **Back prototype**: beach sunset ONLY (no staircase), synopsis and companion app benefits.
 
-**The image files must be attached/uploaded to this repository by Nate or another authorized maintainer before they can be considered available to Abu's GitHub workflow.** Do not recreate from a verbal summary while claiming exact fidelity. Original conversation attachment paths are not portable to GitHub.
+Reference the source-controlled masters for production.
 
 ## Permanent visual identity
 - Exact title: **The Blue Staircase**.
@@ -31,10 +35,10 @@ Nate supplied **two images in the current ChatGPT conversation**:
 - Source-controlled master artwork and reproducible export pipeline for front and back, EPUB cover, companion app, GitHub README/social previews and archival draft editions.
 - Ensure correct aspect ratio, crisp text, safe margins, appropriate image sizes and contrast; no image-generation artifacts in words.
 - **Preserve each released working draft's historical cover and chapter range**; do not retroactively overwrite older editions or mislabel their content.
-- **Current public EPUB is reportedly Chapters 1–2**. The proposed Chapters 1–4 badge must **not** be applied to that EPUB until a matching Chapters 1–4 edition is explicitly authorized, produced and verified. Verify actual file contents and metadata first.
+- Review Draft v3 covers Chapters 1–4. Confirm chapter range and metadata before publishing a new cumulative review edition.
 - Preserve stable GitHub Pages URL and reader local-storage keys, unless separately authorized with a migration strategy.
-- Do not merge the staged companion rebrand PR or change public app assets without authorization. Coordinate EPUB metadata, internal cover, website thumbnail, download labels, back cover and version display.
-- **No manuscript edits to Chapters 1–4; Chapter 5 on hold; manuscript PR #6 and companion rebrand PR remain drafts; no canon selection, merge, EPUB production or publication** without Nate's explicit approval.
+- Coordinate EPUB metadata, internal cover, website thumbnail, download labels, back cover and version display when publishing a new edition.
+- Nate approves manuscript edits, EPUB production and publication separately from artwork changes.
 
 ## Acceptance checks for Abu
 1. Side-by-side visual comparison with Nate's *actual two uploaded prototypes*, not earlier generated variants.
