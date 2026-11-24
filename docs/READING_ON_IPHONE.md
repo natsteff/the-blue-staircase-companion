@@ -1,10 +1,10 @@
 # Read *The Blue Staircase* on iPhone, iPad, or Kindle
 
-> **Working draft:** The novel is unfinished. The current EPUB is *The Blue Staircase*, Review Draft v5, Chapters 1–6. Later drafts may revise earlier chapters. The EPUB is a book file; **The Blue Staircase Companion App** is a separate optional web app.
+> **Working draft:** The novel is unfinished. The current EPUB is *The Blue Staircase*, Chapters 1–6, Review Draft 01. Later drafts may revise earlier chapters. The EPUB is a book file; **The Blue Staircase Companion App** is a separate optional web app.
 
 ## Quick start: iPhone
 
-1. Download the [Review Draft v5 (Chapters 1–6)](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Review%20Draft%20%28Chapters%201-6%29%20v5.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
+1. Download the [Chapters 1–6 · Review Draft 01](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-6%20-%20Review%20Draft%2001.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
 2. If Safari displays a download arrow, tap it to find the downloaded EPUB. Otherwise open the **Files** app, choose **Browse → Downloads** (often under **iCloud Drive** or **On My iPhone**), and locate the `.epub` file. The exact download location depends on Safari settings.
 3. In **Files**, touch and hold the EPUB and choose **Share** (or open the file and tap the Share icon). Choose your reading app:
    - **Books** to read in Apple Books.
