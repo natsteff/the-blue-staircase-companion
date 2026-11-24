@@ -61,16 +61,17 @@ def main():
             for phrase, context in re.findall(r"^- \*([^*]+)\*(?: \((.+)\))?$", untranslated, re.M)
         ]
         translated_rows = vocabulary(translated)
-        if translated_rows:
-            prior_warning = next(
+        evidence.extend(translated_rows)
+        # Rosa's two-part warning was recorded together before it was translated.
+        if number == 2 and len(translated_rows) >= 2:
+            prior_warning = next((
                 row for chapter in chapters for row in chapter["evidence"]
                 if all(phrase in row[0] for phrase, *_ in translated_rows[:2])
-            )
-            # The worksheet teaches both clauses separately. Keep the original warning available too.
-            evidence.extend(translated_rows)
-            evidence.append([prior_warning[0], " ".join(row[1].split(" (", 1)[0].rstrip(".") + "."
-                                                   for row in translated_rows[:2]),
-                             "Lucía’s contextual reading; owner unknown"])
+            ), None)
+            if prior_warning:
+                evidence.append([prior_warning[0], " ".join(row[1].split(" (", 1)[0].rstrip(".") + "."
+                                                           for row in translated_rows[:2]),
+                                 "Lucía’s contextual reading; owner unknown"])
         chapters.append(dict(number=number, title=title, intro=words.splitlines()[0].strip("*").replace("**", ""),
                              vocabulary=vocabulary(words), evidence=evidence, notes=notes.strip()))
     if not chapters or not all(c["vocabulary"] and c["notes"] for c in chapters):

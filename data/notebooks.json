@@ -1,6 +1,6 @@
 {
-  "bookVersion": "blue-staircase-review-v4",
-  "latestReleasedChapter": 4,
+  "bookVersion": "blue-staircase-review-v5",
+  "latestReleasedChapter": 6,
   "chapters": [
     {
       "number": 1,
@@ -327,6 +327,119 @@
       ],
       "evidence": [],
       "notes": "**What I know:** Whitmore asked about dates, but showed me no documents. Lucía explained how signing, submission and registration dates may differ. I asked Salazar about the paper I saw Whitmore hold at the stair head; he would not say whether it was recovered. Isabel says she did not know about his invitation.\n\n**What I wonder:** Which dates did Whitmore mean, and whose account of events was he testing? What was on the folded paper? Would Diego want to speak with Lucía's help?"
+    },
+    {
+      "number": 5,
+      "title": "The Waiter's Account",
+      "intro": "Day Three. Selected Spanish in encounter order.",
+      "vocabulary": [
+        [
+          "Buenos días",
+          "Good morning",
+          "Uses independently with Diego"
+        ],
+        [
+          "¿Tiene un momento?",
+          "Do you have a moment?",
+          "Recognizes the purpose of Lucía's question from her own request"
+        ],
+        [
+          "Ahora no",
+          "Not now",
+          "First reliable recognition of the full phrase in context"
+        ],
+        [
+          "Después",
+          "Later / after",
+          "Recognizes Diego's reply; hears it again in his account"
+        ],
+        [
+          "Gracias",
+          "Thank you",
+          "Uses with Diego"
+        ],
+        [
+          "Ya tengo tiempo",
+          "I have time now",
+          "Lucía translates Diego's return"
+        ],
+        [
+          "Yo vi lo que pasó",
+          "I saw what happened",
+          "Lucía translates"
+        ],
+        [
+          "Con las dos manos",
+          "With both hands",
+          "Lucía translates during Diego's account"
+        ],
+        [
+          "Sí. Todo.",
+          "Yes. Everything.",
+          "Lucía translates Diego's confirmation"
+        ],
+        [
+          "Mi hijo",
+          "My son",
+          "Learns from Diego's photograph and Lucía's translation"
+        ],
+        [
+          "Cada vez que cierro los ojos",
+          "Every time I close my eyes",
+          "Lucía translates; Diego leaves the thought unfinished"
+        ],
+        [
+          "De nada, señora",
+          "You're welcome, ma'am",
+          "Recognizes familiar words in Diego's reply"
+        ]
+      ],
+      "evidence": [
+        [
+          "No. Primero ella lo empujó. Después cayó.",
+          "No. First she pushed him. Then he fell."
+        ]
+      ],
+      "notes": "Diego says he saw Evelyn push Whitmore as Whitmore walked toward the staircase. He told Salazar yesterday. I apologized to Tomás for making too much of the key, but that hasn't undone the trouble.\n\nWhy did Whitmore want someone to look at dates? What did Evelyn mean by Clara's arrangement?"
+    },
+    {
+      "number": 6,
+      "title": "Clara's Refusal",
+      "intro": "Day Three, continued. Selected Spanish in encounter order.",
+      "vocabulary": [
+        [
+          "¿Con hielo?",
+          "With ice?",
+          "Clara translates at the café"
+        ],
+        [
+          "Sí, por favor",
+          "Yes, please",
+          "Uses familiar words in reply"
+        ],
+        [
+          "Antes / después",
+          "Before / after",
+          "Recalls the distinction from Chapter Four while comparing two English messages; no new spoken encounter"
+        ],
+        [
+          "¿Algo más?",
+          "Anything else?",
+          "Clara translates when the attendant returns"
+        ],
+        [
+          "No, gracias",
+          "No, thank you",
+          "Uses independently"
+        ],
+        [
+          "Muy bien",
+          "Very well / all right",
+          "Infers from the attendant's response"
+        ]
+      ],
+      "evidence": [],
+      "notes": "Clara showed me her own dated refusal and Evelyn's acknowledgment the following day. She says she never agreed afterward. Clara wants to speak to Salazar herself.\n\nWhat account of Clara's wishes did Whitmore receive?"
     }
   ],
   "travelers": {
