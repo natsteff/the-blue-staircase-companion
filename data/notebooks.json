@@ -1,5 +1,5 @@
 {
-  "bookVersion": "blue-staircase-review-v3",
+  "bookVersion": "blue-staircase-review-v4",
   "latestReleasedChapter": 4,
   "chapters": [
     {
@@ -136,7 +136,7 @@
           "*Por favor* is familiar; the rest is not."
         ]
       ],
-      "notes": "**What I saw:** Tomás handed Isabel a small silver key. Whitmore held a folded paper while arguing with her. An upset housekeeper called to me from below the balcony. A door closed on the upper gallery, but I did not see who closed it.\n\n**What I need to know:** What was on Whitmore's paper? Which key did the housekeeper mean? Where did she go?\n\n**What I must not assume:** I heard *la llave*, not a translated explanation. I do not know what *almacén* means or whom the woman meant by *él*.",
+      "notes": "**What I saw:** Tomás placed a small silver key on the reception desk. Isabel picked it up and put it in a drawer. Whitmore held a folded paper while arguing with her. An upset housekeeper called to me from below the balcony. A door closed on the upper gallery, but I did not see who closed it.\n\n**What I need to know:** What was on Whitmore's paper? Which key did the housekeeper mean? Where did she go?",
       "evidenceBefore": {
         "La llave": [
           "¿Dónde está la llave del almacén?"
@@ -272,7 +272,7 @@
         ]
       ],
       "evidence": [],
-      "notes": "**What I know:** I saw a door close at the stair head before Rosa spoke, heard an unplaced sound while she spoke, then heard footsteps in the lower passage. I recorded the middle sound separately and told Salazar these are distinct observations. Evelyn's untimed account proves no connection. Tomás says he doesn't know where Rosa is. The inspector is checking Diego's upstairs position; I do not know what Diego told him.\n\n**What I wonder:** Was the middle sound the service door? Did anyone actually see Rosa leave? Why did Tomás seem so upset by the question?\n\n*Not knowing is not the same as having an answer I dislike.*"
+      "notes": "**What I know:** I told Salazar about the sound I heard while Rosa spoke. Evelyn says she heard a door and footsteps late last night. Tomás says he doesn't know where Rosa is.\n\n**What I wonder:** Was the middle sound the service door? Did anyone actually see Rosa leave? Why did Tomás seem so upset by the question?"
     },
     {
       "number": 4,
@@ -280,24 +280,24 @@
       "intro": "Day Two, continued (Chapter Four). Selected Spanish in order of first encounter in this chapter.",
       "vocabulary": [
         [
+          "Fecha",
+          "Date",
+          "Lucía explains the reusable word before the full labels"
+        ],
+        [
           "Fecha de firma",
           "Date of signing; *firma* = signing",
-          "Lucía explains this first label in an unrelated mock example"
+          "Lucía explains a common date label in conversation"
         ],
         [
           "Fecha de presentación",
           "Date submitted/filed; *presentación* = filing or submission",
-          "Second label in the mock example"
+          "Lucía explains the submission date"
         ],
         [
           "Fecha de inscripción",
           "Date registered/recorded; *inscripción* = registration",
-          "Third label in the mock example"
-        ],
-        [
-          "Fecha",
-          "Date",
-          "Lucía explains the reusable word after the full labels appear"
+          "Lucía explains the registration date"
         ],
         [
           "Antes",
@@ -312,7 +312,7 @@
         [
           "¿Un mensaje?",
           "A message?",
-          "Diego asks at reception; Sally takes him to be offering to take a message"
+          "Diego asks at reception; Sally sees him pick up a pen and redirects him toward the pigeonholes"
         ],
         [
           "No, gracias",
@@ -326,7 +326,7 @@
         ]
       ],
       "evidence": [],
-      "notes": "**What I know:** Whitmore asked about dates, but showed me no documents. Lucía's mock sample showed why different date labels matter. I asked Salazar about the paper I saw Whitmore hold at the stair head; he would not say whether it was recovered. Isabel says she did not know about his invitation.\n\n**What I wonder:** Which dates did Whitmore mean, and whose account of events was he testing? What was on the folded paper? Would Diego want to speak with Lucía's help? I do not know what he told Salazar.\n\n*There are several ways for dates to disagree. Only some of them mean that someone is lying.*"
+      "notes": "**What I know:** Whitmore asked about dates, but showed me no documents. Lucía explained how signing, submission and registration dates may differ. I asked Salazar about the paper I saw Whitmore hold at the stair head; he would not say whether it was recovered. Isabel says she did not know about his invitation.\n\n**What I wonder:** Which dates did Whitmore mean, and whose account of events was he testing? What was on the folded paper? Would Diego want to speak with Lucía's help?"
     }
   ],
   "travelers": {

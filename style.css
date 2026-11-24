@@ -328,6 +328,7 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 .reference-options { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
 .reference-options label { margin: 0; }
 .reference-options select { display: block; }
+#scope-evidence-note { align-self: end; margin: .25rem 0; color: var(--muted); font-size: .875rem; }
 [hidden] { display: none !important; }
 #notebook.travelers-page { grid-template-columns: minmax(0, 1fr); }
 .traveler-grammar { margin: .7rem 0; }
@@ -442,3 +443,37 @@ nav button[aria-pressed="true"] { background: #205275; color: #fff7e7; }
 .quiz-confirmation button, .quiz-missed button { margin-inline-end: .4rem; }
 .quiz-missed li { margin-bottom: .5rem; }
 .quiz-missed span { display: block; }
+
+button.cover-link { padding: 0; border: 0; background: none; }
+#cover-viewer {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  margin: 0;
+  border: 0;
+  padding: max(.75rem, env(safe-area-inset-top)) max(.75rem, env(safe-area-inset-right))
+    max(.75rem, env(safe-area-inset-bottom)) max(.75rem, env(safe-area-inset-left));
+  color: var(--ink);
+  background: var(--paper);
+}
+#cover-viewer[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto auto; gap: .5rem; }
+.cover-viewer-bar, .cover-viewer-actions { display: flex; align-items: center; gap: .5rem; }
+.cover-viewer-bar { justify-content: space-between; }
+.cover-viewer-bar h2, #cover-share-status { margin: 0; }
+#cover-share-status:empty { display: none; }
+.cover-viewer-image { min-height: 0; touch-action: pan-y pinch-zoom; }
+.cover-viewer-image img { width: 100%; height: 100%; object-fit: contain; user-select: none; }
+.cover-viewer-actions { justify-content: center; flex-wrap: wrap; }
+.cover-viewer-actions a, .cover-viewer-actions button, #close-cover {
+  display: inline-grid;
+  place-items: center;
+  min-height: 44px;
+}
+.cover-viewer-actions a { padding-inline: .65rem; color: var(--blue); }
+#copy-book-link { background: #205275; color: #fff7e7; font-weight: 700; }
+#manual-book-link { width: min(100%, 34rem); justify-self: center; font: inherit; }

@@ -8,7 +8,7 @@
   <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open TBS Companion App" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Companion v0.5.7 · Review Draft v3 · Chapters 1–4**
+**WORK IN PROGRESS · Companion v0.5.8 · Notebook for Review Draft v4 · Chapters 1–4**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion app for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
@@ -25,7 +25,7 @@ A long-overdue vacation in Playa del Carmen turns into a mystery surrounding a g
 
 **[Download The Blue Staircase — Review Draft v3 (Chapters 1–4)](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Review%20Draft%20%28Chapters%201-4%29%20v3.epub)**
 
-Review Draft v3 matches the live companion’s Chapters 1–4 vocabulary and case notes. The EPUB includes edition-matched covers and a **Back Cover** entry at the end of the table of contents. The [earlier Chapters 1–2 preview](https://natsteff.github.io/the-blue-staircase-companion/books/The_Last_Witness_-_Working_Draft_v02.epub) is available under its former title, *The Last Witness*.
+The public EPUB is Review Draft v3. The companion uses the revised Chapters 1–4 notebook from Review Draft v4. The EPUB includes edition-matched covers and a **Back Cover** entry at the end of the table of contents. The [earlier Chapters 1–2 preview](https://natsteff.github.io/the-blue-staircase-companion/books/The_Last_Witness_-_Working_Draft_v02.epub) is available under its former title, *The Last Witness*.
 
 This free preview is an unfinished manuscript. The chapters, translations, and covers may change substantially.
 
@@ -34,6 +34,8 @@ This free preview is an unfinished manuscript. The chapters, translations, and c
 ## Use TBS Companion App
 
 Follow the mystery with **Sally’s Detective Notebook**, hear the Mexican Spanish she encounters, and track the words and phrases you’ve mastered.
+
+Tap the book cover in the app to view both covers. Use **Copy Link** to share this project page or open it from your browser.
 
 Start with **Travel Spanish** for 22 practical Mexican Spanish phrases and a quick guide to masculine and feminine nouns and *ser* and *estar*.
 

@@ -15,7 +15,7 @@ def travelers_reference(section):
     groups = {}
     rows = []
     for title, content in zip(parts[1::2], parts[2::2]):
-        group = vocabulary(content)
+        group = vocabulary(content) or re.findall(r"^\*\*(.+)\*\* *\n([^\n|]+)", content, re.M)
         if not group:
             raise SystemExit(f"Traveler phrase group is empty: {title}")
         for spanish, english in group:

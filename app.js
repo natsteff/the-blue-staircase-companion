@@ -269,10 +269,16 @@ function renderEvidence(chapters, target, cumulative) {
   // A single word can enter regular vocabulary after first appearing as untranslated evidence.
   const learned = new Set(cumulative ? chapters.flatMap(chapter => chapter.vocabulary
     .filter(row => row[1]).map(row => speechKey(row[0]))) : []);
-  for (const [title, translated] of [['Untranslated', false], ['Translated Evidence', true]]) {
+  const evidenceGroups = [['Untranslated', false], ['Translated Evidence', true]];
+  if (cumulative) evidenceGroups.reverse();
+  for (const [title, translated] of evidenceGroups) {
     const matching = [...entries.values()].filter(({row}) =>
       Boolean(row[1]) === translated && (translated || !learned.has(speechKey(row[0]))));
     if (!matching.length) continue;
+    if (cumulative && !translated) {
+      byId('scope-evidence-note').hidden = false;
+      byId('scope').setAttribute('aria-describedby', 'scope-evidence-note');
+    }
     if (sortAlphabetically) {
       matching.sort((left, right) => alphabetical.compare(left.row[0], right.row[0]));
     }
@@ -399,6 +405,8 @@ function render() {
   byId('selected-chapter-title').textContent = chapter.title;
   byId('scope').options[1].textContent = 'Through Chapter ' + chapter.number;
   byId('scope').closest('label').hidden = traveler;
+  byId('scope-evidence-note').hidden = true;
+  byId('scope').removeAttribute('aria-describedby');
   byId('vocabulary-sort').hidden = section !== 'spanish';
   byId('hide-mastered').hidden = section === 'case';
   byId('notes-font').hidden = section !== 'case';
@@ -675,6 +683,81 @@ function openQuiz() {
   show('Quiz Me', intro, node('p', pool.length + (pool.length === 1 ? ' mastered phrase' : ' mastered phrases')), directions, length, modes);
 }
 
+function setupCoverViewer() {
+  const viewer = byId('cover-viewer');
+  const cover = byId('viewer-cover');
+  const flip = byId('flip-cover');
+  const link = byId('book-repository').href;
+  const feedback = byId('cover-share-status');
+  const manual = byId('manual-book-link');
+  let side = 'front';
+  let gesture;
+
+  function showSide(next) {
+    side = next;
+    cover.src = 'assets/the-blue-staircase-' + side + '-cover.jpg';
+    cover.alt = 'The Blue Staircase ' + side + ' cover';
+    byId('cover-side').textContent = side === 'front' ? 'Front cover' : 'Back cover';
+    flip.textContent = side === 'front' ? 'Show Back Cover' : 'Show Front Cover';
+  }
+  const flipSide = () => showSide(side === 'front' ? 'back' : 'front');
+
+  byId('open-cover').addEventListener('click', () => {
+    showSide('front');
+    feedback.textContent = '';
+    manual.hidden = true;
+    viewer.showModal();
+  });
+  byId('close-cover').addEventListener('click', () => viewer.close());
+  flip.addEventListener('click', flipSide);
+  viewer.addEventListener('keydown', event => {
+    if (event.target === manual || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    flipSide();
+  });
+  const imageArea = cover.parentElement;
+  imageArea.addEventListener('pointerdown', event => {
+    if (event.isPrimary && event.button === 0) {
+      gesture = {id: event.pointerId, x: event.clientX, y: event.clientY};
+      imageArea.setPointerCapture(event.pointerId);
+    }
+  });
+  imageArea.addEventListener('pointerup', event => {
+    if (gesture?.id !== event.pointerId) return;
+    const dx = Math.abs(event.clientX - gesture.x);
+    const dy = Math.abs(event.clientY - gesture.y);
+    gesture = undefined;
+    if (dx >= 45 && dx > dy * 1.3) flipSide();
+  });
+  imageArea.addEventListener('lostpointercapture', () => { gesture = undefined; });
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(link);
+      manual.hidden = true;
+      feedback.textContent = 'Link copied.';
+    } catch {
+      manual.value = link;
+      manual.hidden = false;
+      feedback.textContent = 'Select and copy the link below.';
+      manual.focus();
+      manual.select();
+    }
+  }
+  byId('copy-book-link').addEventListener('click', copyLink);
+  if (navigator.share) {
+    const share = byId('share-book-link');
+    share.hidden = false;
+    share.addEventListener('click', async () => {
+      try {
+        await navigator.share({title: 'The Blue Staircase', url: link});
+      } catch (error) {
+        if (error.name !== 'AbortError') await copyLink();
+      }
+    });
+  }
+}
+
 async function loadJSON(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error(response.statusText);
@@ -746,4 +829,5 @@ async function start() {
   }
 }
 
+setupCoverViewer();
 start().catch(() => status('The notebook could not open. Reload the page to try again.'));

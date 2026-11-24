@@ -17,14 +17,14 @@
   <header class="masthead"><div class="shell brand">The Blue Staircase <span>Companion App</span></div></header>
   <main id="notebook-view" class="shell">
     <section class="intro" aria-labelledby="title">
-      <a class="cover-link" href="books/The%20Blue%20Staircase%20-%20Review%20Draft%20%28Chapters%201-4%29%20v3.epub" aria-label="Download The Blue Staircase Review Draft v3 EPUB, Chapters 1–4">
-        <img src="assets/the-blue-staircase-front-cover.jpg" alt="The Blue Staircase cover artwork" width="600" height="900">
-      </a>
+      <button class="cover-link" id="open-cover" type="button" aria-label="View book covers">
+        <img src="assets/the-blue-staircase-front-cover.jpg" alt="" width="600" height="900">
+      </button>
       <div>
         <p class="eyebrow">A Mystery in Playa del Carmen</p>
-        <h1 id="title">The Blue Staircase Companion App</h1>
+        <h1 id="title">Sally’s Detective Notebook</h1>
       </div>
-      <p class="lede">Follow Sally’s Detective Notebook, listen to the Spanish she encounters, and track your vocabulary as you go.</p>
+      <p class="lede">Follow Sally’s case notes, listen to the Spanish she encounters, and practice the phrases you’ve mastered.</p>
     </section>
     <section class="notebook-options" aria-label="Notebook display options">
       <div class="chapter-picker">
@@ -39,6 +39,7 @@
             <option value="through">Through Chapter 1</option>
           </select>
         </label>
+        <p id="scope-evidence-note" hidden>Untranslated phrases are grouped at the end.</p>
       </div>
       <div class="display-switches">
         <button id="vocabulary-sort" class="display-switch" type="button" role="switch"
@@ -67,7 +68,7 @@
     <section id="notebook" aria-label="Chapter notebook"></section>
     <footer>
       <p id="offline" role="status"></p>
-      <p class="app-version">Review Draft v3 · Chapters 1–4<br>TBS Companion App v__APP_VERSION__ · Build __BUILD_REVISION__</p>
+      <p class="app-version">Review Draft v4 · Chapters 1–4<br>TBS Companion App v__APP_VERSION__ · Build __BUILD_REVISION__</p>
     </footer>
     <div id="mastery-notice" class="mastery-notice" hidden>
       <div id="mastery-message" role="status"></div>
@@ -80,5 +81,22 @@
     <section id="quiz-panel" class="quiz-panel" aria-labelledby="quiz-title"></section>
     <p id="quiz-status" role="status"></p>
   </main>
+  <dialog id="cover-viewer" aria-label="The Blue Staircase covers">
+    <header class="cover-viewer-bar">
+      <h2 id="cover-side" aria-live="polite">Front cover</h2>
+      <button id="close-cover" type="button" autofocus>Close</button>
+    </header>
+    <div class="cover-viewer-image">
+      <img id="viewer-cover" src="assets/the-blue-staircase-front-cover.jpg" alt="The Blue Staircase front cover" draggable="false">
+    </div>
+    <div class="cover-viewer-actions">
+      <button id="flip-cover" type="button">Show Back Cover</button>
+      <button id="copy-book-link" type="button">Copy Link</button>
+      <button id="share-book-link" type="button" hidden>Share</button>
+      <a id="book-repository" href="https://github.com/natsteff/the-blue-staircase-companion" target="_blank" rel="noopener">Open Repository</a>
+    </div>
+    <p id="cover-share-status" role="status"></p>
+    <input id="manual-book-link" type="url" aria-label="Book and companion repository link" readonly hidden>
+  </dialog>
 </body>
 </html>
