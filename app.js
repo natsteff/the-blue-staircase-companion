@@ -692,6 +692,9 @@ function setupCoverViewer() {
   const manual = byId('manual-book-link');
   let side = 'front';
   let gesture;
+  let tapTimer;
+  let feedbackTimer;
+  let swiped = false;
 
   function showSide(next) {
     side = next;
@@ -700,7 +703,15 @@ function setupCoverViewer() {
     byId('cover-side').textContent = side === 'front' ? 'Front cover' : 'Back cover';
     flip.textContent = side === 'front' ? 'Show Back Cover' : 'Show Front Cover';
   }
-  const flipSide = () => showSide(side === 'front' ? 'back' : 'front');
+  function cancelTap() {
+    clearTimeout(tapTimer);
+    tapTimer = undefined;
+  }
+
+  const flipSide = () => {
+    cancelTap();
+    showSide(side === 'front' ? 'back' : 'front');
+  };
 
   byId('open-cover').addEventListener('click', () => {
     showSide('front');
@@ -709,6 +720,11 @@ function setupCoverViewer() {
     viewer.showModal();
   });
   byId('close-cover').addEventListener('click', () => viewer.close());
+  viewer.addEventListener('close', () => {
+    cancelTap();
+    clearTimeout(feedbackTimer);
+    swiped = false;
+  });
   flip.addEventListener('click', flipSide);
   viewer.addEventListener('keydown', event => {
     if (event.target === manual || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
@@ -718,6 +734,7 @@ function setupCoverViewer() {
   const imageArea = cover.parentElement;
   imageArea.addEventListener('pointerdown', event => {
     if (event.isPrimary && event.button === 0) {
+      swiped = false;
       gesture = {id: event.pointerId, x: event.clientX, y: event.clientY};
       imageArea.setPointerCapture(event.pointerId);
     }
@@ -727,15 +744,31 @@ function setupCoverViewer() {
     const dx = Math.abs(event.clientX - gesture.x);
     const dy = Math.abs(event.clientY - gesture.y);
     gesture = undefined;
-    if (dx >= 45 && dx > dy * 1.3) flipSide();
+    if (dx >= 45 && dx > dy * 1.3) {
+      swiped = true;
+      flipSide();
+    }
   });
   imageArea.addEventListener('lostpointercapture', () => { gesture = undefined; });
 
+  imageArea.addEventListener('click', () => {
+    if (swiped) return;
+    if (tapTimer !== undefined) {
+      cancelTap();
+      void copyLink();
+      return;
+    }
+    tapTimer = setTimeout(flipSide, 320);
+  });
+
   async function copyLink() {
+    cancelTap();
+    clearTimeout(feedbackTimer);
     try {
       await navigator.clipboard.writeText(link);
       manual.hidden = true;
       feedback.textContent = 'Link copied.';
+      feedbackTimer = setTimeout(() => { feedback.textContent = ''; }, 2000);
     } catch {
       manual.value = link;
       manual.hidden = false;
