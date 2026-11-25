@@ -43,6 +43,12 @@ body {
 }
 .shell { width: min(100% - 2rem, 58rem); margin-inline: auto; }
 .masthead { flex: none; padding-top: env(safe-area-inset-top); background: var(--navy); color: #f8f0e4; border-bottom: 3px solid #9b3554; }
+/* Keep the controls below iOS's top-edge blur in the installed app. */
+@supports (-webkit-touch-callout: none) {
+  @media (display-mode: standalone) and (orientation: portrait) and (max-width: 600px) {
+    .masthead { padding-top: calc(env(safe-area-inset-top, 0px) + 36px); }
+  }
+}
 .brand { padding-block: .35rem; font: 1.2rem Georgia, serif; display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
 .brand span, .eyebrow { font: 700 .75rem system-ui, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
 .brand span { color: #e6b8a6; }
