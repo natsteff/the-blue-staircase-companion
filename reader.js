@@ -1,8 +1,8 @@
 'use strict';
 
 const root = document.documentElement;
-const chapterPicker = document.querySelector('#chapters');
-const article = document.querySelector('#chapter-text');
+const sectionPicker = document.querySelector('#sections');
+const article = document.querySelector('#book-text');
 const status = document.querySelector('#reader-status');
 const feedback = document.querySelector('#reader-feedback');
 const appearance = document.querySelector('#appearance');
@@ -28,9 +28,9 @@ try {
   // The reader also runs when storage is unavailable.
 }
 let bookmarks = Array.isArray(settings.bookmarks) ? settings.bookmarks : [];
-let chapters = [];
+let sections = [];
 let passages = [];
-let chapter;
+let section;
 let playing;
 let feedbackTimer;
 let page = 0;
@@ -73,8 +73,8 @@ function currentAnchor() {
 }
 
 function savePosition() {
-  if (!chapter) return;
-  settings.position = {chapter: chapter.number, ...currentAnchor()};
+  if (!section) return;
+  settings.position = {chapter: section.id, ...currentAnchor()};
   persist();
 }
 
@@ -82,10 +82,10 @@ function showPage(number) {
   page = Math.max(0, Math.min(number, pageCount - 1));
   viewport.scrollLeft = page * pageStride;
   pageNumber.value = `Page ${page + 1} of ${pageCount}`;
-  previous.disabled = page === 0 && chapter === chapters[0];
-  next.disabled = page === pageCount - 1 && chapter === chapters.at(-1);
-  previous.setAttribute('aria-label', page === 0 && !previous.disabled ? 'Previous chapter' : 'Previous page');
-  next.setAttribute('aria-label', page === pageCount - 1 && !next.disabled ? 'Next chapter' : 'Next page');
+  previous.disabled = page === 0 && section === sections[0];
+  next.disabled = page === pageCount - 1 && section === sections.at(-1);
+  previous.setAttribute('aria-label', page === 0 && !previous.disabled ? 'Previous section' : 'Previous page');
+  next.setAttribute('aria-label', page === pageCount - 1 && !next.disabled ? 'Next section' : 'Next page');
   savePosition();
 }
 
@@ -93,9 +93,13 @@ function paginate(anchor = {}) {
   const width = viewport.getBoundingClientRect().width;
   root.style.setProperty('--page-width', `${width}px`);
   pageStride = width + parseFloat(getComputedStyle(article).columnGap);
+  root.style.setProperty('--page-height', `${viewport.clientHeight}px`);
+  const last = passages.at(-1);
   const end = document.createRange();
-  end.selectNodeContents(passages.at(-1));
-  const lastFragments = [...end.getClientRects()].filter(rect => rect.width && rect.height);
+  if (last) end.selectNode(last);
+  const lastFragments = last
+    ? [...end.getClientRects()].filter(rect => rect.width && rect.height)
+    : [];
   pageCount = 1 + Math.max(0, ...lastFragments.map(pageOf));
   const passage = anchor.passage && document.getElementById(anchor.passage);
   const rects = passage && article.contains(passage) ? [...passage.getClientRects()] : [];
@@ -103,27 +107,37 @@ function paginate(anchor = {}) {
   showPage(rect ? pageOf(rect) : anchor.page === 'last' ? pageCount - 1 : anchor.page || 0);
 }
 
-function showChapter(number, anchor) {
-  const selected = chapters.find(item => item.number === number);
+function findSection(id) {
+  return sections.find(item => String(item.id) === String(id));
+}
+
+function showSection(id, anchor) {
+  const selected = findSection(id);
   if (!selected) return;
   stopAudio();
-  chapter = selected;
-  chapterPicker.value = String(number);
+  section = selected;
+  sectionPicker.value = String(id);
+  article.dataset.kind = section.kind;
+  article.setAttribute('aria-label', section.title);
   // The build emits allowlisted HTML from the published EPUB.
-  article.innerHTML = chapter.html;
+  article.innerHTML = section.html;
   passages = [...article.querySelectorAll('[data-passage]')];
   viewport.scrollLeft = 0;
+  if (location.hash && location.hash !== `#${section.id}`) {
+    history.replaceState(null, '', `#${section.id}`);
+  }
   paginate(anchor);
 }
 
 function turnPage(direction) {
-  if (!chapter) return;
+  if (!section) return;
   const target = page + direction;
   if (target >= 0 && target < pageCount) {
     stopAudio();
     showPage(target);
   } else {
-    showChapter(chapter.number + direction, direction < 0 ? {page: 'last'} : undefined);
+    const adjacent = sections[sections.indexOf(section) + direction];
+    if (adjacent) showSection(adjacent.id, direction < 0 ? {page: 'last'} : undefined);
   }
 }
 
@@ -135,10 +149,11 @@ function renderBookmarks() {
     const jump = document.createElement('button');
     jump.type = 'button';
     jump.className = 'bookmark-jump';
-    jump.textContent = `Chapter ${bookmark.chapter} · ${bookmark.label}`;
+    const title = findSection(bookmark.chapter)?.title || 'Bookmark';
+    jump.textContent = `${title} · ${bookmark.label}`;
     jump.addEventListener('click', () => {
       bookmarkMenu.open = false;
-      showChapter(bookmark.chapter, bookmark);
+      showSection(bookmark.chapter, bookmark);
       bookmarkMenu.querySelector('summary').focus({preventScroll: true});
     });
     const remove = document.createElement('button');
@@ -171,16 +186,16 @@ textSize.addEventListener('input', () => {
   const anchor = currentAnchor();
   settings.size = textSize.value;
   root.style.setProperty('--reading-size', `${Number(textSize.value) / 16}rem`);
-  if (chapter) paginate(anchor);
+  if (section) paginate(anchor);
   else persist();
 });
 
 new ResizeObserver(() => {
-  if (chapter) paginate(settings.position);
+  if (section) paginate(settings.position);
 }).observe(viewport);
 
 article.addEventListener('focusin', event => {
-  if (event.target.matches('button.spoken')) {
+  if (event.target.matches('button.spoken, a')) {
     const targetPage = pageOf(event.target.getBoundingClientRect());
     if (targetPage !== page) showPage(targetPage);
   }
@@ -225,7 +240,8 @@ document.querySelector('#back-to-companion').addEventListener('click', event => 
   }
 });
 
-chapterPicker.addEventListener('change', () => showChapter(Number(chapterPicker.value)));
+window.addEventListener('hashchange', () => showSection(location.hash.slice(1)));
+sectionPicker.addEventListener('change', () => showSection(sectionPicker.value));
 previous.addEventListener('click', () => turnPage(-1));
 next.addEventListener('click', () => turnPage(1));
 
@@ -244,16 +260,16 @@ for (const menu of [appearance, bookmarkMenu]) {
 }
 
 addBookmark.addEventListener('click', () => {
-  if (!chapter) return;
+  if (!section) return;
   const anchor = currentAnchor();
   const passage = anchor.passage && document.getElementById(anchor.passage);
-  if (bookmarks.some(item => item.chapter === chapter.number &&
+  if (bookmarks.some(item => item.chapter === section.id &&
       item.passage === anchor.passage && (item.fragment || 0) === (anchor.fragment || 0) && item.page === anchor.page)) {
     announce('This passage is already bookmarked.');
     return;
   }
-  const text = passage ? passage.textContent.trim().replace(/\s+/g, ' ') : `Page ${page + 1}`;
-  bookmarks.unshift({chapter: chapter.number, ...anchor,
+  const text = passage?.textContent.trim().replace(/\s+/g, ' ') || `Page ${page + 1}`;
+  bookmarks.unshift({chapter: section.id, ...anchor,
     label: text.length > 72 ? `${text.slice(0, 72)}…` : text});
   persist();
   renderBookmarks();
@@ -262,6 +278,13 @@ addBookmark.addEventListener('click', () => {
 
 audio.addEventListener('ended', stopAudio);
 article.addEventListener('click', async event => {
+  const sectionLink = event.target.closest('a[data-section]');
+  if (sectionLink && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+    event.preventDefault();
+    showSection(sectionLink.dataset.section);
+    sectionPicker.focus({preventScroll: true});
+    return;
+  }
   const phrase = event.target.closest('button[data-audio]');
   if (!phrase) return;
   stopAudio();
@@ -279,18 +302,20 @@ article.addEventListener('click', async event => {
 
 async function openBook() {
   try {
-    const response = await fetch('data/reader-chapters.json');
-    if (!response.ok) throw new Error('Could not load chapter data');
-    chapters = await response.json();
-    for (const item of chapters) {
-      chapterPicker.add(new Option(`Chapter ${item.number} · ${item.title}`, item.number));
+    const response = await fetch('data/reader-book.json');
+    if (!response.ok) throw new Error('Could not load book data');
+    sections = await response.json();
+    for (const item of sections) {
+      sectionPicker.add(new Option(item.title, item.id));
     }
     const position = settings.position;
-    const saved = chapters.find(item => item.number === position?.chapter);
+    const saved = findSection(position?.chapter);
+    const linked = findSection(location.hash.slice(1));
     status.hidden = true;
     navigation.hidden = false;
-    showChapter((saved || chapters[0]).number, saved ? position : undefined);
-    chapterPicker.disabled = false;
+    const initial = linked || saved || sections[0];
+    showSection(initial.id, initial === saved ? position : undefined);
+    sectionPicker.disabled = false;
     addBookmark.disabled = false;
     renderBookmarks();
     if ('serviceWorker' in navigator) {
