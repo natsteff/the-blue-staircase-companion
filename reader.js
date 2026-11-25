@@ -1,7 +1,6 @@
 'use strict';
 
 const root = document.documentElement;
-const header = document.querySelector('#reader-header');
 const chapterPicker = document.querySelector('#chapters');
 const article = document.querySelector('#chapter-text');
 const status = document.querySelector('#reader-status');
@@ -13,8 +12,11 @@ const bookmarkMenu = document.querySelector('#bookmark-menu');
 const addBookmark = document.querySelector('#add-bookmark');
 const bookmarkList = document.querySelector('#bookmark-list');
 const noBookmarks = document.querySelector('#no-bookmarks');
-const previous = document.querySelector('#previous-chapter');
-const next = document.querySelector('#next-chapter');
+const viewport = document.querySelector('#page-viewport');
+const navigation = document.querySelector('#page-navigation');
+const pageNumber = document.querySelector('#page-number');
+const previous = document.querySelector('#previous-page');
+const next = document.querySelector('#next-page');
 const storageKey = 'blue-staircase-reader';
 const audio = new Audio();
 audio.preload = 'none';
@@ -31,7 +33,10 @@ let passages = [];
 let chapter;
 let playing;
 let feedbackTimer;
-let saveTimer;
+let page = 0;
+let pageCount = 1;
+let pageStride = 1;
+let touchStart;
 
 function persist() {
   try {
@@ -53,41 +58,73 @@ function stopAudio() {
   playing = undefined;
 }
 
-function currentPassage() {
-  const line = header.getBoundingClientRect().bottom + 12;
-  return passages.find(passage => passage.getBoundingClientRect().bottom > line) || passages.at(-1);
+function pageOf(rect) {
+  const offset = rect.left - viewport.getBoundingClientRect().left + viewport.scrollLeft;
+  return Math.max(0, Math.floor((offset + 1) / pageStride));
+}
+
+function currentAnchor() {
+  for (const passage of passages) {
+    const fragments = [...passage.getClientRects()];
+    const fragment = fragments.findIndex(rect => rect.width && rect.height && pageOf(rect) === page);
+    if (fragment !== -1) return {passage: passage.id, fragment};
+  }
+  return {page};
 }
 
 function savePosition() {
-  clearTimeout(saveTimer);
   if (!chapter) return;
-  settings.position = {chapter: chapter.number, passage: currentPassage()?.id};
+  settings.position = {chapter: chapter.number, ...currentAnchor()};
   persist();
 }
 
-function jumpTo(passageId) {
-  const passage = passageId && document.getElementById(passageId);
-  if (passage && article.contains(passage)) {
-    passage.scrollIntoView({block: 'start'});
-  } else {
-    window.scrollTo(0, 0);
-  }
+function showPage(number) {
+  page = Math.max(0, Math.min(number, pageCount - 1));
+  viewport.scrollLeft = page * pageStride;
+  pageNumber.value = `Page ${page + 1} of ${pageCount}`;
+  previous.disabled = page === 0 && chapter === chapters[0];
+  next.disabled = page === pageCount - 1 && chapter === chapters.at(-1);
+  previous.setAttribute('aria-label', page === 0 && !previous.disabled ? 'Previous chapter' : 'Previous page');
+  next.setAttribute('aria-label', page === pageCount - 1 && !next.disabled ? 'Next chapter' : 'Next page');
+  savePosition();
 }
 
-function showChapter(number, passageId) {
+function paginate(anchor = {}) {
+  const width = viewport.getBoundingClientRect().width;
+  root.style.setProperty('--page-width', `${width}px`);
+  pageStride = width + parseFloat(getComputedStyle(article).columnGap);
+  const end = document.createRange();
+  end.selectNodeContents(passages.at(-1));
+  const lastFragments = [...end.getClientRects()].filter(rect => rect.width && rect.height);
+  pageCount = 1 + Math.max(0, ...lastFragments.map(pageOf));
+  const passage = anchor.passage && document.getElementById(anchor.passage);
+  const rects = passage && article.contains(passage) ? [...passage.getClientRects()] : [];
+  const rect = rects[Math.min(anchor.fragment || 0, rects.length - 1)];
+  showPage(rect ? pageOf(rect) : anchor.page === 'last' ? pageCount - 1 : anchor.page || 0);
+}
+
+function showChapter(number, anchor) {
   const selected = chapters.find(item => item.number === number);
   if (!selected) return;
-  clearTimeout(saveTimer);
   stopAudio();
   chapter = selected;
   chapterPicker.value = String(number);
   // The build emits allowlisted HTML from the published EPUB.
   article.innerHTML = chapter.html;
   passages = [...article.querySelectorAll('[data-passage]')];
-  previous.hidden = !chapters.some(item => item.number === number - 1);
-  next.hidden = !chapters.some(item => item.number === number + 1);
-  jumpTo(passageId);
-  savePosition();
+  viewport.scrollLeft = 0;
+  paginate(anchor);
+}
+
+function turnPage(direction) {
+  if (!chapter) return;
+  const target = page + direction;
+  if (target >= 0 && target < pageCount) {
+    stopAudio();
+    showPage(target);
+  } else {
+    showChapter(chapter.number + direction, direction < 0 ? {page: 'last'} : undefined);
+  }
 }
 
 function renderBookmarks() {
@@ -101,7 +138,7 @@ function renderBookmarks() {
     jump.textContent = `Chapter ${bookmark.chapter} · ${bookmark.label}`;
     jump.addEventListener('click', () => {
       bookmarkMenu.open = false;
-      showChapter(bookmark.chapter, bookmark.passage);
+      showChapter(bookmark.chapter, bookmark);
       bookmarkMenu.querySelector('summary').focus({preventScroll: true});
     });
     const remove = document.createElement('button');
@@ -131,21 +168,46 @@ theme.addEventListener('change', () => {
 });
 
 textSize.addEventListener('input', () => {
-  const passage = currentPassage();
+  const anchor = currentAnchor();
   settings.size = textSize.value;
   root.style.setProperty('--reading-size', `${Number(textSize.value) / 16}rem`);
-  if (passage) jumpTo(passage.id);
-  savePosition();
+  if (chapter) paginate(anchor);
+  else persist();
 });
 
 new ResizeObserver(() => {
-  root.style.setProperty('--header-height', `${header.offsetHeight}px`);
-}).observe(header);
+  if (chapter) paginate(settings.position);
+}).observe(viewport);
 
-window.addEventListener('scroll', () => {
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(savePosition, 160);
+article.addEventListener('focusin', event => {
+  if (event.target.matches('button.spoken')) {
+    const targetPage = pageOf(event.target.getBoundingClientRect());
+    if (targetPage !== page) showPage(targetPage);
+  }
+});
+
+viewport.addEventListener('touchstart', event => {
+  const touch = event.touches[0];
+  touchStart = event.touches.length === 1 ? {x: touch.clientX, y: touch.clientY} : undefined;
 }, {passive: true});
+viewport.addEventListener('touchend', event => {
+  if (!touchStart || event.touches.length) return;
+  const touch = event.changedTouches[0];
+  const x = touch.clientX - touchStart.x;
+  const y = touch.clientY - touchStart.y;
+  touchStart = undefined;
+  if (Math.abs(x) > 42 && Math.abs(x) > Math.abs(y) * 1.5) turnPage(x < 0 ? 1 : -1);
+}, {passive: true});
+viewport.addEventListener('touchcancel', () => { touchStart = undefined; });
+
+document.addEventListener('keydown', event => {
+  if (event.altKey || event.ctrlKey || event.metaKey || appearance.open || bookmarkMenu.open ||
+      event.target.matches?.('input, select, textarea, [contenteditable]')) return;
+  if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+  event.preventDefault();
+  turnPage(event.key === 'ArrowLeft' ? -1 : 1);
+});
+
 window.addEventListener('pagehide', () => {
   savePosition();
   stopAudio();
@@ -164,14 +226,8 @@ document.querySelector('#back-to-companion').addEventListener('click', event => 
 });
 
 chapterPicker.addEventListener('change', () => showChapter(Number(chapterPicker.value)));
-function navigateChapter(number) {
-  showChapter(number);
-  const heading = passages[0];
-  heading?.setAttribute('tabindex', '-1');
-  heading?.focus({preventScroll: true});
-}
-previous.addEventListener('click', () => navigateChapter(chapter.number - 1));
-next.addEventListener('click', () => navigateChapter(chapter.number + 1));
+previous.addEventListener('click', () => turnPage(-1));
+next.addEventListener('click', () => turnPage(1));
 
 for (const menu of [appearance, bookmarkMenu]) {
   menu.addEventListener('toggle', () => {
@@ -188,14 +244,16 @@ for (const menu of [appearance, bookmarkMenu]) {
 }
 
 addBookmark.addEventListener('click', () => {
-  const passage = currentPassage();
-  if (!passage) return;
-  if (bookmarks.some(item => item.chapter === chapter.number && item.passage === passage.id)) {
+  if (!chapter) return;
+  const anchor = currentAnchor();
+  const passage = anchor.passage && document.getElementById(anchor.passage);
+  if (bookmarks.some(item => item.chapter === chapter.number &&
+      item.passage === anchor.passage && (item.fragment || 0) === (anchor.fragment || 0) && item.page === anchor.page)) {
     announce('This passage is already bookmarked.');
     return;
   }
-  const text = passage.textContent.trim().replace(/\s+/g, ' ');
-  bookmarks.unshift({chapter: chapter.number, passage: passage.id,
+  const text = passage ? passage.textContent.trim().replace(/\s+/g, ' ') : `Page ${page + 1}`;
+  bookmarks.unshift({chapter: chapter.number, ...anchor,
     label: text.length > 72 ? `${text.slice(0, 72)}…` : text});
   persist();
   renderBookmarks();
@@ -230,13 +288,25 @@ async function openBook() {
     const position = settings.position;
     const saved = chapters.find(item => item.number === position?.chapter);
     status.hidden = true;
-    showChapter((saved || chapters[0]).number, saved && position.passage);
+    navigation.hidden = false;
+    showChapter((saved || chapters[0]).number, saved ? position : undefined);
     chapterPicker.disabled = false;
     addBookmark.disabled = false;
-    document.querySelector('#chapter-navigation').hidden = false;
     renderBookmarks();
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js', {updateViaCache: 'none'}).catch(() => {});
+      const previousController = navigator.serviceWorker.controller;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (previousController && navigator.serviceWorker.controller !== previousController) {
+          savePosition();
+          location.reload();
+        }
+      });
+      navigator.serviceWorker.register('sw.js', {updateViaCache: 'none'}).then(registration => {
+        document.addEventListener('visibilitychange', () => {
+          if (!document.hidden) registration.update().catch(() => {});
+        });
+        window.addEventListener('online', () => registration.update().catch(() => {}));
+      }).catch(() => {});
     }
   } catch {
     status.hidden = false;

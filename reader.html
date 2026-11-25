@@ -40,12 +40,15 @@
     </div>
   </header>
   <main class="reading-page">
-    <p class="reader-edition">The Blue Staircase · Review Draft 01</p>
+    <p class="reader-edition">The Blue Staircase · Review Draft 02</p>
     <p id="reader-status" role="status">Opening the book…</p>
-    <article id="chapter-text" aria-label="Chapter text"></article>
-    <nav id="chapter-navigation" aria-label="Adjacent chapters" hidden>
-      <button id="previous-chapter" type="button">← Previous chapter</button>
-      <button id="next-chapter" type="button">Next chapter →</button>
+    <div id="page-viewport">
+      <article id="chapter-text" aria-label="Chapter text"></article>
+    </div>
+    <nav id="page-navigation" aria-label="Page navigation" hidden>
+      <button id="previous-page" type="button" aria-label="Previous page">←</button>
+      <output id="page-number" aria-live="polite"></output>
+      <button id="next-page" type="button" aria-label="Next page">→</button>
     </nav>
     <footer><a href="__EPUB_DOWNLOAD__" download>Download EPUB</a></footer>
   </main>
