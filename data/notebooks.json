@@ -1,6 +1,6 @@
 {
-  "bookVersion": "blue-staircase-chapters-1-8-review-draft-01",
-  "latestReleasedChapter": 8,
+  "bookVersion": "blue-staircase-chapters-1-10-review-draft-01",
+  "latestReleasedChapter": 10,
   "chapters": [
     {
       "number": 1,
@@ -478,6 +478,69 @@
       ],
       "evidence": [],
       "notes": "**What I know:** Whitmore asked Clara to meet him at eight on the morning he died. He had told Evelyn what he intended to disclose, and Evelyn asked him to wait. Clara did not know the full accusation. She has chosen to preserve both conversations and obtain her own papers directly.\n\n**What I wonder:** What were Whitmore and Evelyn arguing about that morning? What did Whitmore want Isabel to do the night before?"
+    },
+    {
+      "number": 9,
+      "title": "The Cost of a Question",
+      "intro": "Day Four, afternoon.",
+      "vocabulary": [
+        [
+          "Buenas tardes",
+          "Good afternoon",
+          "Uses familiar greeting with Rosa"
+        ],
+        [
+          "¿Puedo sentarme?",
+          "May I sit down?",
+          "Practiced question; Lucía confirms meaning"
+        ],
+        [
+          "Mi hermana",
+          "My sister",
+          "Lucía repeats and translates the expression"
+        ],
+        [
+          "Despacio, por favor",
+          "Slowly, please",
+          "Uses familiar request again with Rosa"
+        ],
+        [
+          "El señor Whitmore",
+          "Mr. Whitmore",
+          "Recognizes name and familiar title"
+        ],
+        [
+          "Gracias",
+          "Thank you",
+          "Recognizes Rosa's reply"
+        ],
+        [
+          "Gracias a usted",
+          "Thank you, too",
+          "Lucía supplies the courteous response"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Rosa meant Whitmore. He wanted access to the storeroom without permission. Isabel independently describes his demand for an inspection and her refusal. Rosa contacted the police herself. I corrected my suggestion about Tomás to Isabel, but Tomás does not want to help me investigate.\n\n**What I do not know:** Whether the silver key I saw was the storeroom key; what the folded paper contained; who closed the door or made the other sounds that night. The access dispute does not establish what happened at the stairs."
+    },
+    {
+      "number": 10,
+      "title": "The View from the Gallery",
+      "intro": "Day Five, morning.",
+      "vocabulary": [
+        [
+          "Buenos días",
+          "Good morning",
+          "Uses familiar greeting with Diego"
+        ],
+        [
+          "Gracias",
+          "Thank you",
+          "Uses independently"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Clara reports Evelyn said Whitmore was already losing his balance when she tried to catch him. Diego permitted me to discuss his account with Salazar and clarified where he stood. From that position today I could see the stairhead and a person's feet and upper body, but not the lower flight. Salazar's earlier checks support the view and consistency of Diego's account.\n\n**What I conclude:** The rescue explanation does not fit the order Diego described, if his account is accurate. This does not establish every detail of the event or Evelyn's motive. I gave Salazar my reasoning in writing, distinguishing the sources."
     }
   ],
   "travelers": {

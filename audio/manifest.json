@@ -484,6 +484,41 @@
       "file": "audio/3d80da80025ad04a101e.wav",
       "status": "generated"
     },
+    "5722377e0e75a53337f6": {
+      "text": "¿Puedo sentarme?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/5722377e0e75a53337f6.wav",
+      "status": "generated"
+    },
+    "a332a1278211cfd17443": {
+      "text": "Mi hermana",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/a332a1278211cfd17443.wav",
+      "status": "generated"
+    },
+    "ec878e1fd84d8f2695d2": {
+      "text": "Despacio, por favor",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/ec878e1fd84d8f2695d2.wav",
+      "status": "generated"
+    },
+    "3c7883ad3277dbaebeda": {
+      "text": "El señor Whitmore",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/3c7883ad3277dbaebeda.wav",
+      "status": "generated"
+    },
+    "c79cd6e425525dcf2ed3": {
+      "text": "Gracias a usted",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/c79cd6e425525dcf2ed3.wav",
+      "status": "generated"
+    },
     "5eca0e174620e72290fa": {
       "text": "No entiendo.",
       "voice": "Paulina",
