@@ -25,9 +25,13 @@
 body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.55; }
 .shell { width: min(100% - 2rem, 58rem); margin-inline: auto; }
 .masthead { background: var(--navy); color: #f8f0e4; border-bottom: 3px solid #9b3554; }
-.brand { padding-block: 1rem; font: 1.2rem Georgia, serif; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.brand { padding-block: 1rem; font: 1.2rem Georgia, serif; display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
 .brand span, .eyebrow { font: 700 .75rem system-ui, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
 .brand span { color: #e6b8a6; }
+.reader-link { flex: none; min-height: 44px; display: grid; place-items: center; padding: .35rem .85rem; border: 1px solid #e6b8a6; border-radius: .4rem; color: #fff5e8; font: 650 1rem system-ui, sans-serif; }
+.reader-link:focus-visible { outline-color: #fff5e8; }
+.reading-options { color: var(--muted); margin-bottom: 0; }
+.reading-options a { color: var(--blue); }
 .intro { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: clamp(1rem, 5vw, 3rem); padding-block: 2rem; }
 .intro img { width: clamp(5.2rem, 22vw, 12rem); height: auto; border-radius: .2rem; box-shadow: 0 .45rem 1.4rem #07182145; }
 .eyebrow { color: var(--accent); }

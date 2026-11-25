@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="reader.css">
+  <title>Reader · The Blue Staircase</title>
+  <script defer src="reader.js"></script>
+</head>
+<body>
+  <header id="reader-header">
+    <div class="reader-bar">
+      <a id="back-to-companion" href="./">← Back to Companion App</a>
+      <details class="reader-menu" id="appearance">
+        <summary aria-label="Reading appearance">Aa</summary>
+        <div class="menu-panel">
+          <label for="theme">Theme</label>
+          <select id="theme">
+            <option value="system">Use device setting</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+          <label for="text-size">Font size</label>
+          <input id="text-size" type="range" min="16" max="32" step="1" value="20">
+        </div>
+      </details>
+    </div>
+    <div class="reader-bar">
+      <select id="chapters" aria-label="Chapter" disabled></select>
+      <details class="reader-menu" id="bookmark-menu">
+        <summary>Bookmarks</summary>
+        <div class="menu-panel">
+          <button id="add-bookmark" type="button" disabled>Bookmark this passage</button>
+          <p id="no-bookmarks">No bookmarks yet.</p>
+          <ul id="bookmark-list" aria-label="Saved bookmarks"></ul>
+        </div>
+      </details>
+    </div>
+  </header>
+  <main class="reading-page">
+    <p class="reader-edition">The Blue Staircase · Review Draft 01</p>
+    <p id="reader-status" role="status">Opening the book…</p>
+    <article id="chapter-text" aria-label="Chapter text"></article>
+    <nav id="chapter-navigation" aria-label="Adjacent chapters" hidden>
+      <button id="previous-chapter" type="button">← Previous chapter</button>
+      <button id="next-chapter" type="button">Next chapter →</button>
+    </nav>
+    <footer><a href="__EPUB_DOWNLOAD__" download>Download EPUB</a></footer>
+  </main>
+  <div id="reader-feedback" class="reader-feedback" role="status"></div>
+  <noscript>The interactive Reader requires JavaScript.</noscript>
+</body>
+</html>

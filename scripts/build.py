@@ -9,8 +9,10 @@ import sys
 import tempfile
 import unicodedata
 import wave
+from urllib.parse import quote
 from zipfile import ZipFile
 from array import array
+from reader import reader_chapters
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/notebooks.json"
@@ -106,19 +108,25 @@ def main():
         with ZipFile(ROOT / name) as epub:
             if epub.read("mimetype") != b"application/epub+zip" or epub.testzip() is not None:
                 raise SystemExit(f"Invalid EPUB: {name}")
+    reader = reader_chapters(ROOT / PUBLISHED_BOOKS[0], book["chapters"], {
+        speech_key(manifest[i]["text"]): manifest[i]["file"] for i in entries
+    })
     if "--check" in sys.argv:
-        print(f"Verified chapter sequence and {len(entries)} audio assets. EPUB integrity passed.")
+        print(f"Verified chapter sequence and {len(entries)} audio assets. EPUB integrity and reader chapter checks passed.")
         return
     dist = ROOT / "dist"
     dist.mkdir(exist_ok=True)
     files = ["index.html", "app.js", "style.css", "app.webmanifest", "icon-192.png", "icon-512.png",
              "apple-touch-icon.png",
-             "data/notebooks.json", "audio/manifest.json", "assets/the-blue-staircase-front-cover.jpg",
+             "reader.html", "reader.css", "reader.js", "data/notebooks.json", "audio/manifest.json", "assets/the-blue-staircase-front-cover.jpg",
              "assets/the-blue-staircase-back-cover.jpg"]
     files += [manifest[i]["file"] for i in entries]
     worker = (ROOT / "scripts/service-worker.js").read_text()
     payloads = {name: (ROOT / name).read_bytes() for name in files}
     payloads["index.html"] = payloads["index.html"].replace(b"__APP_VERSION__", version.encode())
+    for page in ("index.html", "reader.html"):
+        payloads[page] = payloads[page].replace(b"__EPUB_DOWNLOAD__", quote(PUBLISHED_BOOKS[0]).encode())
+    payloads["data/reader-chapters.json"] = json.dumps(reader, ensure_ascii=False).encode()
     digest = hashlib.sha256()
     for name, payload in payloads.items():
         digest.update(name.encode() + payload)
@@ -133,7 +141,7 @@ def main():
         target = dist / name
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / name, target)
-    (dist / "sw.js").write_text(worker.replace("__REVISION__", revision).replace("__FILES__", json.dumps(files)))
+    (dist / "sw.js").write_text(worker.replace("__REVISION__", revision).replace("__FILES__", json.dumps(list(payloads))))
     (dist / ".nojekyll").touch()
     print(f"Built app {version} ({revision}), book {book['bookVersion']}, with {len(entries)} recordings.")
 
