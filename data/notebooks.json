@@ -1,6 +1,6 @@
 {
-  "bookVersion": "blue-staircase-review-draft-02",
-  "latestReleasedChapter": 6,
+  "bookVersion": "blue-staircase-chapters-1-8-review-draft-01",
+  "latestReleasedChapter": 8,
   "chapters": [
     {
       "number": 1,
@@ -440,6 +440,44 @@
       ],
       "evidence": [],
       "notes": "Clara showed me her own dated refusal and Evelyn's acknowledgment the following day. She says she never agreed afterward. Clara wants to speak to Salazar herself.\n\nWhat account of Clara's wishes did Whitmore receive?"
+    },
+    {
+      "number": 7,
+      "title": "The Story That Changed",
+      "intro": "Day Four, morning.",
+      "vocabulary": [
+        [
+          "Antes / después",
+          "Before / after",
+          "Applies the distinction learned in Chapter Four to the order of two English messages; no new spoken encounter"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Clara's coordinator said they understood she had decided to go ahead and expected to settle practical details at the meeting. Separately, the inspector verified a later message from Evelyn to Whitmore saying Clara had approved and he could proceed. Clara says she gave no such approval. She intends to contact the person arranging the paperwork herself.\n\n**What I wonder:** What had Whitmore intended to tell me? What did he intend to tell Clara?"
+    },
+    {
+      "number": 8,
+      "title": "Eight O'Clock",
+      "intro": "Day Four, continued.",
+      "vocabulary": [
+        [
+          "Perdón",
+          "Excuse me",
+          "Uses to attract Isabel's attention politely"
+        ],
+        [
+          "¿A qué hora?",
+          "At what time?",
+          "Tomás translates Isabel's question; Sally recognizes the context"
+        ],
+        [
+          "Gracias",
+          "Thank you",
+          "Uses independently"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Whitmore asked Clara to meet him at eight on the morning he died. He had told Evelyn what he intended to disclose, and Evelyn asked him to wait. Clara did not know the full accusation. She has chosen to preserve both conversations and obtain her own papers directly.\n\n**What I wonder:** What were Whitmore and Evelyn arguing about that morning? What did Whitmore want Isabel to do the night before?"
     }
   ],
   "travelers": {

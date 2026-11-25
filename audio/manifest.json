@@ -477,6 +477,13 @@
       "file": "audio/a49b4353119ad1778794.wav",
       "status": "generated"
     },
+    "3d80da80025ad04a101e": {
+      "text": "¿A qué hora?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/3d80da80025ad04a101e.wav",
+      "status": "generated"
+    },
     "5eca0e174620e72290fa": {
       "text": "No entiendo.",
       "voice": "Paulina",
