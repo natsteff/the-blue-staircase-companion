@@ -17,8 +17,9 @@ const notebookPositions = new Map();
 const notebookScroll = byId('notebook-scroll');
 const progress = readStore(progressKey);
 let useSansSerif = readStore(notesFontKey).sansSerif === true;
-let hideMastered = readStore(vocabularyFilterKey).hideMastered === true;
-let sortAlphabetically = false;
+const vocabularySettings = readStore(vocabularyFilterKey);
+let hideMastered = vocabularySettings.hideMastered === true;
+let sortAlphabetically = vocabularySettings.sortAlphabetically === true;
 let playback = 0;
 const player = new Audio();
 
@@ -233,7 +234,7 @@ function renderVocabulary(chapters, target, cumulative, entries = vocabularyEntr
       if (hideMastered && mastered.checked && document.activeElement === mastered) {
         const remaining = [...list.querySelectorAll('.entry:not(.mastered) input')];
         const next = remaining.find(input => mastered.compareDocumentPosition(input) & Node.DOCUMENT_POSITION_FOLLOWING);
-        (next ?? remaining.at(-1) ?? byId('hide-mastered')).focus();
+        (next ?? remaining.at(-1) ?? notebookScroll).focus();
       }
       update();
       if (hideMastered && mastered.checked) {
@@ -414,9 +415,6 @@ function render() {
   byId('scope').closest('label').hidden = traveler;
   byId('scope-evidence-note').hidden = true;
   byId('scope').removeAttribute('aria-describedby');
-  byId('vocabulary-sort').hidden = section !== 'spanish';
-  byId('hide-mastered').hidden = section === 'case';
-  byId('notes-font').hidden = section !== 'case';
   for (const id of ['travelers', 'spanish', 'case']) byId(id).setAttribute('aria-pressed', String(section === id));
   target.replaceChildren();
   if (traveler) {
@@ -697,7 +695,6 @@ function setupCoverViewer() {
   const viewer = byId('cover-viewer');
   const cover = byId('viewer-cover');
   const flip = byId('flip-cover');
-  const howTo = byId('how-to');
   const link = byId('book-repository').href;
   const feedback = byId('cover-share-status');
   const manual = byId('manual-book-link');
@@ -736,12 +733,7 @@ function setupCoverViewer() {
     clearTimeout(feedbackTimer);
     swiped = false;
   });
-  byId('open-how-to').addEventListener('click', () => {
-    cancelTap();
-    howTo.scrollTop = 0;
-    howTo.showModal();
-  });
-  byId('close-how-to').addEventListener('click', () => howTo.close());
+  byId('open-how-to').addEventListener('click', cancelTap);
   viewer.addEventListener('keydown', event => {
     if (event.target === manual || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
     event.preventDefault();
@@ -811,6 +803,20 @@ function setupCoverViewer() {
   }
 }
 
+function setupHelpAndSettings() {
+  const settings = byId('settings');
+  const howTo = byId('how-to');
+  const openHelp = () => {
+    howTo.scrollTop = 0;
+    howTo.showModal();
+  };
+  byId('open-settings').addEventListener('click', () => settings.showModal());
+  byId('close-settings').addEventListener('click', () => settings.close());
+  byId('open-how-to').addEventListener('click', openHelp);
+  byId('settings-how-to').addEventListener('click', openHelp);
+  byId('close-how-to').addEventListener('click', () => howTo.close());
+}
+
 async function loadJSON(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error(response.statusText);
@@ -835,10 +841,12 @@ async function start() {
   byId('travelers').hidden = !book.travelers;
   byId('scope').addEventListener('change', render);
   const sort = byId('vocabulary-sort');
+  sort.setAttribute('aria-checked', String(sortAlphabetically));
   sort.addEventListener('click', () => {
     sortAlphabetically = !sortAlphabetically;
     sort.setAttribute('aria-checked', String(sortAlphabetically));
-    render();
+    saveStore(vocabularyFilterKey, {hideMastered, sortAlphabetically});
+    if (section === 'spanish') render();
   });
   for (const id of ['travelers', 'spanish', 'case']) byId(id).addEventListener('click', () => { section = id; render(); });
   const filter = byId('hide-mastered');
@@ -847,7 +855,7 @@ async function start() {
     hideMastered = !hideMastered;
     filter.setAttribute('aria-checked', String(hideMastered));
     if (section !== 'case') render();
-    saveStore(vocabularyFilterKey, {hideMastered});
+    saveStore(vocabularyFilterKey, {hideMastered, sortAlphabetically});
   });
   byId('notes-font').addEventListener('click', () => {
     setNotesFont(!useSansSerif);
@@ -883,4 +891,5 @@ async function start() {
 }
 
 setupCoverViewer();
+setupHelpAndSettings();
 start().catch(() => status('The notebook could not open. Reload the page to try again.'));

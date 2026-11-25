@@ -17,7 +17,12 @@
   <header class="masthead">
     <div class="shell brand">
       <div>The Blue Staircase <span>Companion App</span></div>
-      <a class="reader-link" href="reader.html">Reader</a>
+      <div class="header-actions">
+        <a class="reader-link" href="reader.html">Reader</a>
+        <button id="open-settings" type="button" aria-label="Settings" aria-haspopup="dialog">
+          <span aria-hidden="true">⚙︎</span>
+        </button>
+      </div>
     </div>
   </header>
   <main id="notebook-view" class="shell">
@@ -44,23 +49,6 @@
             <option value="through">Through Chapter 1</option>
           </select>
         </label>
-      </div>
-      <div class="display-switches">
-        <button id="vocabulary-sort" class="display-switch" type="button" role="switch"
-          aria-checked="false" aria-label="Sort vocabulary A–Z">
-          <span aria-hidden="true">Story Order</span>
-          <span aria-hidden="true">A–Z</span>
-        </button>
-        <button id="hide-mastered" class="display-switch" type="button" role="switch"
-          aria-checked="false" aria-label="Hide mastered vocabulary">
-          <span aria-hidden="true">Show All</span>
-          <span aria-hidden="true">Hide Mastered</span>
-        </button>
-        <button id="notes-font" class="display-switch" type="button" role="switch"
-          aria-checked="false" aria-label="Use standard font for Case Notes" hidden>
-          <span aria-hidden="true">Handwritten</span>
-          <span aria-hidden="true">Standard Font</span>
-        </button>
       </div>
     </section>
     <div class="notebook-group">
@@ -106,7 +94,43 @@
     <p id="cover-share-status" role="status"></p>
     <input id="manual-book-link" type="url" aria-label="Book and companion repository link" readonly hidden>
   </dialog>
-  <dialog id="how-to" aria-labelledby="how-to-title">
+  <dialog id="settings" class="app-dialog" aria-labelledby="settings-title">
+    <header class="cover-viewer-bar">
+      <h2 id="settings-title">Settings</h2>
+      <button id="close-settings" type="button" autofocus>Close</button>
+    </header>
+    <div class="display-switches">
+      <div>
+        <p>Chapter vocabulary order</p>
+        <button id="vocabulary-sort" class="display-switch" type="button" role="switch"
+          aria-checked="false" aria-label="Sort vocabulary A–Z">
+          <span aria-hidden="true">Story Order</span>
+          <span aria-hidden="true">A–Z</span>
+        </button>
+      </div>
+      <div>
+        <p>Vocabulary display</p>
+        <button id="hide-mastered" class="display-switch" type="button" role="switch"
+          aria-checked="false" aria-label="Hide mastered vocabulary">
+          <span aria-hidden="true">Show All</span>
+          <span aria-hidden="true">Hide Mastered</span>
+        </button>
+      </div>
+      <div>
+        <p>Case Notes font</p>
+        <button id="notes-font" class="display-switch" type="button" role="switch"
+          aria-checked="false" aria-label="Use standard font for Case Notes">
+          <span aria-hidden="true">Handwritten</span>
+          <span aria-hidden="true">Standard Font</span>
+        </button>
+      </div>
+    </div>
+    <button id="settings-how-to" type="button">How to Use</button>
+    <footer>
+      <p class="app-version">Chapters 1–6 · Review Draft 02<br>TBS Companion App v__APP_VERSION__ · Build __BUILD_REVISION__</p>
+    </footer>
+  </dialog>
+  <dialog id="how-to" class="app-dialog" aria-labelledby="how-to-title">
     <header class="cover-viewer-bar">
       <h2 id="how-to-title">How to Use</h2>
       <button id="close-how-to" type="button" autofocus>Close</button>

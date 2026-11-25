@@ -8,7 +8,7 @@
   <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open TBS Companion App" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Companion v0.8.0 · Notebook for Chapters 1–6 · Review Draft 02**
+**WORK IN PROGRESS · Companion v0.8.1 · Notebook for Chapters 1–6 · Review Draft 02**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion app for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
@@ -36,13 +36,13 @@ This free preview is an unfinished manuscript. The chapters, translations, and c
 
 Follow the mystery with **Sally’s Detective Notebook**, hear the Mexican Spanish she encounters, and track the words and phrases you’ve mastered.
 
-Scroll inside the active notebook tab to keep the chapter controls and tabs in view. Tap the book cover to open it, then tap or swipe to flip. **How to Use** has the Reader and EPUB links, offline status, and version details. Double-tap the cover or use **Copy Link** to copy this project page.
+Scroll inside the active notebook tab to keep the chapter controls and tabs in view. Tap the book cover to open it, then tap or swipe to flip. **How to Use** has the Reader and EPUB links, offline status, and version details. Open the **Settings** gear next to Reader for display preferences or to get to **How to Use** directly. Double-tap the cover or use **Copy Link** to copy this project page.
 
 Start with **Travel Spanish** for 22 practical Mexican Spanish phrases and a quick guide to masculine and feminine nouns and *ser* and *estar*.
 
-Select the last chapter you’ve read. **This Chapter** shows that chapter’s vocabulary and case notes, while **Through Chapter** includes earlier chapters. In **Spanish**, toggle **Story Order / A–Z**. **This Chapter → Story Order** places selected evidence where Sally encounters it. Meanings stay hidden until the story reveals them.
+Select the last chapter you’ve read. **This Chapter** shows that chapter’s vocabulary and case notes, while **Through Chapter** includes earlier chapters. In **Settings**, choose **Story Order / A–Z** for the Spanish tab. **This Chapter → Story Order** places selected evidence where Sally encounters it. Meanings stay hidden until the story reveals them.
 
-Practice with **Listen** at regular speed or **Slow** at 70% speed. Use **Hide Mastered** in Spanish or Traveler Phrases. In **Case Notes**, switch between **Handwritten** and **Standard Font**.
+Practice with **Listen** at regular speed or **Slow** at 70% speed. Use **Settings** to hide mastered phrases in Spanish and Travel Spanish or switch Case Notes between **Handwritten** and **Standard Font**.
 
 Choose **Quiz Me** at the top of **Spanish** or **Travel Spanish** to review mastered phrases from both tabs. Pick English to Spanish, Spanish to English, or Mixed, select up to 50 questions per round, then choose **Multiple Choice** or **Type or Speak**. The quiz includes setup help for iPhone and Android with Gboard.
 
