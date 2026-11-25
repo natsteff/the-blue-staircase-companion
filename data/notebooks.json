@@ -1,6 +1,6 @@
 {
-  "bookVersion": "blue-staircase-chapters-1-10-review-draft-01",
-  "latestReleasedChapter": 10,
+  "bookVersion": "blue-staircase-chapters-1-12-review-draft-01",
+  "latestReleasedChapter": 12,
   "chapters": [
     {
       "number": 1,
@@ -541,6 +541,49 @@
       ],
       "evidence": [],
       "notes": "**What I know:** Clara reports Evelyn said Whitmore was already losing his balance when she tried to catch him. Diego permitted me to discuss his account with Salazar and clarified where he stood. From that position today I could see the stairhead and a person's feet and upper body, but not the lower flight. Salazar's earlier checks support the view and consistency of Diego's account.\n\n**What I conclude:** The rescue explanation does not fit the order Diego described, if his account is accurate. This does not establish every detail of the event or Evelyn's motive. I gave Salazar my reasoning in writing, distinguishing the sources."
+    },
+    {
+      "number": 11,
+      "title": "Before Clara Could Know",
+      "intro": "Day Five, afternoon.",
+      "vocabulary": [
+        [
+          "¿Algo más?",
+          "Anything else?",
+          "Understands the café attendant without help"
+        ],
+        [
+          "No, gracias",
+          "No, thank you",
+          "Uses independently"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I conclude:** The appointment at eight threatened Evelyn's ability to control what Clara heard and what she decided. Evelyn's later attempts to enlist my reassurance show that this concern continued after Whitmore's death. The authenticated communications and Diego's account support a deliberate push rather than the rescue explanation. I gave Salazar my reasoning and distinguished it from what I know firsthand.\n\n**What remains uncertain:** Whitmore's precise intentions, the folded paper, the unidentified sounds and Evelyn's precise intention regarding the fatal result. The inspector will assess the evidence and refer it for the appropriate decision."
+    },
+    {
+      "number": 12,
+      "title": "What Belongs to Clara",
+      "intro": "Day Six.",
+      "vocabulary": [
+        [
+          "Buenas tardes",
+          "Good afternoon",
+          "Returns Rosa's greeting independently"
+        ],
+        [
+          "¿Dónde está la playa?",
+          "Where is the beach?",
+          "Uses a familiar traveler question with Tomás"
+        ],
+        [
+          "De nada, señora",
+          "You're welcome, ma'am",
+          "Understands the reply"
+        ]
+      ],
+      "evidence": [],
+      "notes": "Clara has received the papers directly and will obtain independent advice before deciding. Rosa chose to return to work. The investigation has been referred for further consideration; its legal outcome is not known to me."
     }
   ],
   "travelers": {

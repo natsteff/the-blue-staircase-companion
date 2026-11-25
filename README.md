@@ -8,7 +8,7 @@
   <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open TBS Companion App" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Companion v0.10.0 · Notebook for Chapters 1–10 · Review Draft 01**
+**COMPLETE REVIEW DRAFT · Companion v0.11.0 · Notebook for Chapters 1–12 · Review Draft 01**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion app for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
@@ -24,11 +24,11 @@ A long-overdue vacation in Playa del Carmen turns into a mystery surrounding a g
 ## Read the Working Draft
 
 - **Read in the companion.** Open the [interactive Reader](https://natsteff.github.io/the-blue-staircase-companion/reader.html) and tap underlined Spanish words and phrases to hear them in context. Use the section menu to jump to any part of the EPUB, including the traveler phrases, cast, and glossary. Turn pages with the arrows, a swipe, or the left and right arrow keys. Use **Aa** for font size and theme. The Reader saves your place and bookmarks in your browser.
-- **Read in your preferred app.** [Download The Blue Staircase — Chapters 1–10 · Review Draft 01](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-10%20-%20Review%20Draft%2001.epub) for Apple Books, Kindle, or another reading app. Switch back to the companion whenever you want to listen or practice.
+- **Read in your preferred app.** [Download The Blue Staircase — Chapters 1–12 · Review Draft 01](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-12%20-%20Review%20Draft%2001.epub) for Apple Books, Kindle, or another reading app. Switch back to the companion whenever you want to listen or practice.
 
-The EPUB and companion are synchronized to Chapters 1–10, Review Draft 01. The EPUB includes edition-matched covers and a **Back Cover** entry at the end of the table of contents. The [earlier Chapters 1–2 preview](https://natsteff.github.io/the-blue-staircase-companion/books/The_Last_Witness_-_Working_Draft_v02.epub) is available under its former title, *The Last Witness*.
+The EPUB and companion are synchronized to Chapters 1–12, Review Draft 01. The EPUB includes edition-matched covers and a **Back Cover** entry at the end of the table of contents. The [earlier Chapters 1–2 preview](https://natsteff.github.io/the-blue-staircase-companion/books/The_Last_Witness_-_Working_Draft_v02.epub) is available under its former title, *The Last Witness*.
 
-This free preview is an unfinished manuscript. The chapters, translations, and covers may change substantially.
+This free review edition contains the complete novel. The chapters, translations, and covers may change substantially.
 
 **Read on iPhone or iPad.** Download the EPUB, find it in **Files → Downloads**, then choose **Share → Books** for Apple Books or **Share → Kindle** for Kindle. Kindle may ask you to edit the title and author before sending. [Step-by-step Apple Books and Kindle guide](docs/READING_ON_IPHONE.md)
 

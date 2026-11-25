@@ -43,7 +43,7 @@ def main():
     data_path = ROOT / "data/notebooks.json"
     previous = json.loads(data_path.read_text()) if data_path.exists() else {}
     current = {chapter["number"]: chapter for chapter in previous.get("chapters", [])}
-    front, *sections = re.split(r"^# Chapter (?:One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten): ", source, flags=re.M)
+    front, *sections = re.split(r"^# Chapter (?:One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve): ", source, flags=re.M)
     traveler = front.split("# Spanish Phrases for Travelers\n", 1)[1]
     traveler = traveler.split("\n---", 1)[0]
     chapters = []

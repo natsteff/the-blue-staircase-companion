@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/notebooks.json"
 MANIFEST = ROOT / "audio/manifest.json"
 PUBLISHED_BOOKS = (
+    "books/The Blue Staircase - Chapters 1-12 - Review Draft 01.epub",
     "books/The Blue Staircase - Chapters 1-10 - Review Draft 01.epub",
     "books/The Blue Staircase - Chapters 1-8 - Review Draft 01.epub",
     "books/The Blue Staircase - Review Draft (Chapters 1-4) v3.epub",
