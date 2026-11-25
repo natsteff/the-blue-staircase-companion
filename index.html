@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0e2435">
   <meta name="description" content="Follow Sally’s Detective Notebook, listen to Mexican Spanish, and track vocabulary mastery in The Blue Staircase Companion App.">
   <link rel="manifest" href="app.webmanifest">
@@ -21,23 +21,21 @@
     </div>
   </header>
   <main id="notebook-view" class="shell">
-    <p class="reading-options">Open <strong>Reader</strong> to read the book here and tap underlined Spanish to hear it as you go.
-      Or <a href="__EPUB_DOWNLOAD__" download>download the EPUB</a> for Apple Books, Kindle, or another reading app and switch back here for audio and practice.</p>
     <section class="intro" aria-labelledby="title">
-      <button class="cover-link" id="open-cover" type="button" aria-label="View book covers">
+      <button class="cover-link" id="open-cover" type="button" aria-label="View book covers and help" aria-describedby="cover-help">
         <img src="assets/the-blue-staircase-front-cover.jpg" alt="" width="600" height="900">
       </button>
       <div>
         <p class="eyebrow">A Mystery in Playa del Carmen</p>
         <h1 id="title">Sally’s Detective Notebook</h1>
+        <p id="cover-help" class="cover-help">Click book cover for help &amp; more information</p>
       </div>
-      <p class="lede">Follow Sally’s case notes, listen to the Spanish she encounters, and practice the phrases you’ve mastered.</p>
     </section>
     <section class="notebook-options" aria-label="Notebook display options">
       <div class="chapter-picker">
         <label for="chapter">Your chapter</label>
         <select id="chapter" aria-describedby="selected-chapter-title" disabled></select>
-        <p id="selected-chapter-title"></p>
+        <p id="selected-chapter-title" class="visually-hidden"></p>
       </div>
       <div class="reference-options">
         <label>Scope
@@ -46,7 +44,6 @@
             <option value="through">Through Chapter 1</option>
           </select>
         </label>
-        <p id="scope-evidence-note" hidden>Untranslated phrases are grouped at the end.</p>
       </div>
       <div class="display-switches">
         <button id="vocabulary-sort" class="display-switch" type="button" role="switch"
@@ -66,17 +63,18 @@
         </button>
       </div>
     </section>
-    <nav aria-label="Notebook sections">
-      <button id="travelers" type="button" aria-pressed="false">Travel Spanish</button>
-      <button id="spanish" type="button" aria-pressed="true">Spanish</button>
-      <button id="case" type="button" aria-pressed="false">Case Notes</button>
-    </nav>
-    <p id="status" role="status">Opening notebook…</p>
-    <section id="notebook" aria-label="Chapter notebook"></section>
-    <footer>
-      <p id="offline" role="status"></p>
-      <p class="app-version">Chapters 1–6 · Review Draft 02<br>TBS Companion App v__APP_VERSION__ · Build __BUILD_REVISION__</p>
-    </footer>
+    <div class="notebook-group">
+      <nav aria-label="Notebook sections">
+        <button id="travelers" type="button" aria-pressed="false">Travel Spanish</button>
+        <button id="spanish" type="button" aria-pressed="true">Spanish</button>
+        <button id="case" type="button" aria-pressed="false">Case Notes</button>
+      </nav>
+      <div id="notebook-scroll" class="notebook-scroll" tabindex="0" role="region" aria-label="Notebook tab content">
+        <p id="status" role="status">Opening notebook…</p>
+        <p id="scope-evidence-note" hidden>Untranslated phrases are grouped at the end.</p>
+        <section id="notebook" aria-label="Chapter notebook"></section>
+      </div>
+    </div>
     <div id="mastery-notice" class="mastery-notice" hidden>
       <div id="mastery-message" role="status"></div>
       <div id="mastery-action"></div>
@@ -94,16 +92,32 @@
       <button id="close-cover" type="button" autofocus>Close</button>
     </header>
     <div class="cover-viewer-image">
-      <img id="viewer-cover" src="assets/the-blue-staircase-front-cover.jpg" alt="The Blue Staircase front cover" draggable="false">
+      <button id="flip-cover" class="cover-art" type="button" aria-label="Flip to back cover">
+        <img id="viewer-cover" src="assets/the-blue-staircase-front-cover.jpg" alt="The Blue Staircase front cover" draggable="false">
+        <span aria-hidden="true">Tap to flip</span>
+      </button>
     </div>
     <div class="cover-viewer-actions">
-      <button id="flip-cover" type="button">Show Back Cover</button>
+      <button id="open-how-to" type="button">How to Use</button>
       <button id="copy-book-link" type="button">Copy Link</button>
       <button id="share-book-link" type="button" hidden>Share</button>
       <a id="book-repository" href="https://github.com/natsteff/the-blue-staircase-companion" target="_blank" rel="noopener">Open Repository</a>
     </div>
     <p id="cover-share-status" role="status"></p>
     <input id="manual-book-link" type="url" aria-label="Book and companion repository link" readonly hidden>
+  </dialog>
+  <dialog id="how-to" aria-labelledby="how-to-title">
+    <header class="cover-viewer-bar">
+      <h2 id="how-to-title">How to Use</h2>
+      <button id="close-how-to" type="button" autofocus>Close</button>
+    </header>
+    <p>Follow Sally’s case notes, listen to the Spanish she encounters, and practice the phrases you’ve mastered.</p>
+    <p class="reading-options">Open <a href="reader.html">Reader</a> to read the book here and tap underlined Spanish to hear it as you go.
+      Or <a href="__EPUB_DOWNLOAD__" download>download the EPUB</a> for Apple Books, Kindle, or another reading app and switch back here for audio and practice.</p>
+    <footer>
+      <p id="offline" role="status"></p>
+      <p class="app-version">Chapters 1–6 · Review Draft 02<br>TBS Companion App v__APP_VERSION__ · Build __BUILD_REVISION__</p>
+    </footer>
   </dialog>
 </body>
 </html>

@@ -12,6 +12,9 @@ const alternatives = text => text.split(' / ');
 let book;
 let recordings;
 let section = 'spanish';
+let previousNotebookView;
+const notebookPositions = new Map();
+const notebookScroll = byId('notebook-scroll');
 const progress = readStore(progressKey);
 let useSansSerif = readStore(notesFontKey).sansSerif === true;
 let hideMastered = readStore(vocabularyFilterKey).hideMastered === true;
@@ -398,6 +401,10 @@ function render() {
   const target = byId('notebook');
   const traveler = section === 'travelers';
   const cumulative = byId('scope').value === 'through';
+  const view = traveler ? section : `${section}:${chapter.number}:${cumulative}`;
+  if (previousNotebookView) notebookPositions.set(previousNotebookView, notebookScroll.scrollTop);
+  previousNotebookView = view;
+  const restoreScroll = () => { notebookScroll.scrollTop = notebookPositions.get(view) || 0; };
   const chapters = cumulative ? book.chapters.filter(item => item.number <= chapter.number) : [chapter];
   target.classList.toggle('case-page', section === 'case');
   target.classList.toggle('spanish-page', section === 'spanish');
@@ -414,6 +421,7 @@ function render() {
   target.replaceChildren();
   if (traveler) {
     renderTravelers(target);
+    restoreScroll();
     return;
   }
   const margin = node('header', '', 'chapter-margin');
@@ -443,6 +451,7 @@ function render() {
       renderNotes(item, page);
     }
   }
+  restoreScroll();
 }
 
 function shuffle(items) {
@@ -483,7 +492,7 @@ function openQuiz() {
   const view = byId('quiz-view');
   const notebook = byId('notebook-view');
   const panel = byId('quiz-panel');
-  const scroll = window.scrollY;
+  const scroll = notebookScroll.scrollTop;
   let masteryChanged = false;
   const travel = book.travelers?.vocabulary ?? [];
   const chapters = book.chapters.filter(chapter => chapter.number <= book.latestReleasedChapter);
@@ -505,7 +514,8 @@ function openQuiz() {
     heading.tabIndex = -1;
     status();
     panel.replaceChildren(heading, ...content);
-    heading.focus();
+    heading.focus({preventScroll: true});
+    view.scrollTop = 0;
   }
 
   function startRound(cards) {
@@ -642,9 +652,9 @@ function openQuiz() {
     status();
     view.hidden = true;
     notebook.hidden = false;
+    notebookScroll.scrollTop = scroll;
     if (masteryChanged) render();
     byId('quiz-me').focus({preventScroll: true});
-    window.scrollTo(0, scroll);
   }
 
   stopAudio();
@@ -687,6 +697,7 @@ function setupCoverViewer() {
   const viewer = byId('cover-viewer');
   const cover = byId('viewer-cover');
   const flip = byId('flip-cover');
+  const howTo = byId('how-to');
   const link = byId('book-repository').href;
   const feedback = byId('cover-share-status');
   const manual = byId('manual-book-link');
@@ -701,7 +712,7 @@ function setupCoverViewer() {
     cover.src = 'assets/the-blue-staircase-' + side + '-cover.jpg';
     cover.alt = 'The Blue Staircase ' + side + ' cover';
     byId('cover-side').textContent = side === 'front' ? 'Front cover' : 'Back cover';
-    flip.textContent = side === 'front' ? 'Show Back Cover' : 'Show Front Cover';
+    flip.setAttribute('aria-label', side === 'front' ? 'Flip to back cover' : 'Flip to front cover');
   }
   function cancelTap() {
     clearTimeout(tapTimer);
@@ -725,13 +736,18 @@ function setupCoverViewer() {
     clearTimeout(feedbackTimer);
     swiped = false;
   });
-  flip.addEventListener('click', flipSide);
+  byId('open-how-to').addEventListener('click', () => {
+    cancelTap();
+    howTo.scrollTop = 0;
+    howTo.showModal();
+  });
+  byId('close-how-to').addEventListener('click', () => howTo.close());
   viewer.addEventListener('keydown', event => {
     if (event.target === manual || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
     event.preventDefault();
     flipSide();
   });
-  const imageArea = cover.parentElement;
+  const imageArea = flip;
   imageArea.addEventListener('pointerdown', event => {
     if (event.isPrimary && event.button === 0) {
       swiped = false;
@@ -751,7 +767,11 @@ function setupCoverViewer() {
   });
   imageArea.addEventListener('lostpointercapture', () => { gesture = undefined; });
 
-  imageArea.addEventListener('click', () => {
+  imageArea.addEventListener('click', event => {
+    if (event.detail === 0) {
+      flipSide();
+      return;
+    }
     if (swiped) return;
     if (tapTimer !== undefined) {
       cancelTap();

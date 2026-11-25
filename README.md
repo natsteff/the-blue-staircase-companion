@@ -8,7 +8,7 @@
   <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open TBS Companion App" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**WORK IN PROGRESS · Companion v0.7.1 · Notebook for Chapters 1–6 · Review Draft 02**
+**WORK IN PROGRESS · Companion v0.8.0 · Notebook for Chapters 1–6 · Review Draft 02**
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion app for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
@@ -36,7 +36,7 @@ This free preview is an unfinished manuscript. The chapters, translations, and c
 
 Follow the mystery with **Sally’s Detective Notebook**, hear the Mexican Spanish she encounters, and track the words and phrases you’ve mastered.
 
-Tap the book cover in the app to view both covers. Tap or swipe the cover to flip it. Double-tap the cover or use **Copy Link** to copy this project page.
+Scroll inside the active notebook tab to keep the chapter controls and tabs in view. Tap the book cover to open it, then tap or swipe to flip. **How to Use** has the Reader and EPUB links, offline status, and version details. Double-tap the cover or use **Copy Link** to copy this project page.
 
 Start with **Travel Spanish** for 22 practical Mexican Spanish phrases and a quick guide to masculine and feminine nouns and *ser* and *estar*.
 
