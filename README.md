@@ -10,6 +10,8 @@
 
 **COMPLETE REVIEW DRAFT · Companion v0.11.0 · Notebook for Chapters 1–12 · Review Draft 01**
 
+The Companion App includes a built-in e-reader for the complete novel. Tap underlined Spanish words and phrases to hear them in Mexican Spanish as you read.
+
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion app for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
 ## About the book
