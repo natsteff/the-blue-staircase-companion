@@ -1,589 +1,189 @@
 {
-  "bookVersion": "blue-staircase-chapters-1-12-review-draft-01",
-  "latestReleasedChapter": 12,
+  "bookVersion": "redevelopment-draft-01",
+  "latestReleasedChapter": 3,
   "chapters": [
     {
       "number": 1,
-      "title": "The Hotel with the Blue Staircase",
-      "intro": "Selected Spanish from Chapter One. Sally recognizes some phrases and hears others whose meaning she has yet to learn.",
-      "vocabulary": [
-        [
-          "Perdón",
-          "Excuse me"
-        ],
-        [
-          "Sí",
-          "Yes; the driver's response"
-        ],
-        [
-          "Señora",
-          "Polite address for a woman"
-        ],
-        [
-          "¿Dónde está...?",
-          "Where is...?"
-        ],
-        [
-          "El hotel",
-          "The hotel"
-        ],
-        [
-          "Buenas tardes",
-          "Good afternoon"
-        ],
-        [
-          "¿Tienen una reservación?",
-          "Do you have a reservation? (understood from context)"
-        ],
-        [
-          "Tenemos una reservación",
-          "We have a reservation"
-        ],
-        [
-          "¿A nombre de quién?",
-          "In whose name? (reader help; Sally offers her surname without fully translating the question)"
-        ],
-        [
-          "Mucho gusto",
-          "Nice to meet you"
-        ],
-        [
-          "Tía",
-          "Aunt; Tomás addresses Isabel this way, though Sally does not yet translate it herself"
-        ],
-        [
-          "La llave",
-          "The key; which key remains uncertain"
-        ],
-        [
-          "Ahora",
-          "Now; heard in Tomás's request, not independently understood by Sally"
-        ],
-        [
-          "Una cerveza",
-          "A beer"
-        ],
-        [
-          "Por favor",
-          "Please"
-        ],
-        [
-          "Gracias",
-          "Thank you"
-        ],
-        [
-          "De nada",
-          "You're welcome"
-        ],
-        [
-          "Picante",
-          "Spicy"
-        ],
-        [
-          "Un poco",
-          "A little"
-        ],
-        [
-          "Buenas noches",
-          "Good evening / Good night"
-        ],
-        [
-          "Señor",
-          "Mr. / sir"
-        ],
-        [
-          "¿Usted habla español?",
-          "Do you speak Spanish?"
-        ],
-        [
-          "Un momento",
-          "One moment"
-        ],
-        [
-          "Despacio",
-          "Slowly"
-        ]
-      ],
-      "evidence": [
-        [
-          "¿Dónde está la llave del almacén?",
-          null,
-          "Tomás's question to Isabel; Sally does not understand the full question."
-        ],
-        [
-          "Después.",
-          null,
-          "Isabel's response; Sally learns its meaning only in Chapter Four."
-        ],
-        [
-          "Pero la necesito ahora.",
-          null,
-          "Tomás's request; Sally does not grasp the full sentence."
-        ],
-        [
-          "Hay algo que debe saber.",
-          null,
-          ""
-        ],
-        [
-          "No confíe en él. La llave no es suya.",
-          null,
-          ""
-        ],
-        [
-          "Por favor. Escúcheme.",
-          null,
-          "*Por favor* is familiar; the rest is not."
-        ]
-      ],
-      "notes": "**What I saw:** Tomás placed a small silver key on the reception desk. Isabel picked it up and put it in a drawer. Whitmore held a folded paper while arguing with her. An upset housekeeper called to me from below the balcony. A door closed on the upper gallery, but I did not see who closed it.\n\n**What I need to know:** What was on Whitmore's paper? Which key did the housekeeper mean? Where did she go?",
-      "evidenceBefore": {
-        "La llave": [
-          "¿Dónde está la llave del almacén?"
-        ],
-        "Ahora": [
-          "Después.",
-          "Pero la necesito ahora."
-        ],
-        "Un momento": [
-          "Hay algo que debe saber.",
-          "No confíe en él. La llave no es suya.",
-          "Por favor. Escúcheme."
-        ]
-      }
-    },
-    {
-      "number": 2,
-      "title": "A Word for Dead",
-      "intro": "Day Two. Spanish in order of first encounter in this chapter; some expressions return from yesterday.",
-      "vocabulary": [
-        [
-          "Por favor",
-          "Please",
-          "Recognizes from yesterday"
-        ],
-        [
-          "La policía",
-          "The police",
-          "Recognizes immediately"
-        ],
-        [
-          "Una ambulancia",
-          "An ambulance",
-          "Recognizes by similarity"
-        ],
-        [
-          "Buenos días",
-          "Good morning",
-          "Recognizes in context"
-        ],
-        [
-          "Muerto / muerta",
-          "Dead (masculine / feminine)",
-          "Learns *muerto* from Diego; *muerta* is a useful variant"
-        ],
-        [
-          "Está muerto",
-          "He is dead",
-          "Understands from Diego's response"
-        ],
-        [
-          "Lo siento",
-          "I'm sorry",
-          "Uses with Diego"
-        ],
-        [
-          "¿Qué pasó?",
-          "What happened?",
-          "Infers from context"
-        ],
-        [
-          "¡Dios mío!",
-          "My God!",
-          "Infers from Tomás's reaction"
-        ],
-        [
-          "Anoche",
-          "Last night",
-          "Nate suggests; Sally marks it as tentative"
-        ],
-        [
-          "Fue un accidente",
-          "It was an accident",
-          "Sally infers the phrase; Isabel's claim is not proof"
-        ],
-        [
-          "¿Dónde está Rosa?",
-          "Where is Rosa?",
-          "Sally builds it from a phrase she used yesterday"
-        ]
-      ],
-      "evidence": [
-        [
-          "No confíe en él",
-          "Don't trust him",
-          "Lucía's first translation"
-        ],
-        [
-          "La llave no es suya",
-          "The key isn't his (Lucía's contextual reading; owner unknown)",
-          "Lucía's first translation"
-        ],
-        [
-          "Él",
-          "He / him",
-          "Lucía explains the pronoun"
-        ],
-        [
-          "No confíe en él. La llave no es suya.",
-          "Don't trust him. The key isn't his.",
-          "Lucía’s contextual reading; owner unknown"
-        ]
-      ],
-      "notes": "**What I know:** Whitmore wanted to show me something about documents. He argued with Isabel while holding a folded paper. Rosa warned me in Spanish; Lucía translated the two sentences I wrote down. The police haven't found Rosa.\n\n**What I wonder:** Whom did Rosa mean? Was it the silver key I saw, or another one? What was Whitmore trying to tell me?\n\n*No answer yet to the question I can finally ask in Spanish: ¿Dónde está Rosa?*",
-      "evidenceBefore": {
-        "¿Dónde está Rosa?": [
-          "No confíe en él",
-          "La llave no es suya",
-          "Él",
-          "No confíe en él. La llave no es suya."
-        ]
-      }
-    },
-    {
-      "number": 3,
-      "title": "The Room Across the Gallery",
-      "intro": "Day Two, continued (Chapter Three). Selected Spanish in order of first encounter in this chapter.",
-      "vocabulary": [
-        [
-          "Un momento, por favor",
-          "One moment, please",
-          "Recognizes *un momento* from yesterday; hears Isabel use the fuller phrase"
-        ],
-        [
-          "¿Dónde está Rosa?",
-          "Where is Rosa?",
-          "Uses the question she worked out earlier that morning"
-        ],
-        [
-          "No sé",
-          "I don't know",
-          "Tomás supplies the meaning after Sally infers it from his reaction"
-        ]
-      ],
-      "evidence": [],
-      "notes": "**What I know:** At about eleven fifteen I saw a door close upstairs, without seeing who closed it. While Rosa spoke I heard another sound, which I could not locate. Afterward I heard footsteps in the lower passage, without seeing who made them. I told Salazar about the middle sound today. Evelyn says she heard a door and footsteps late last night but cannot say when or identify the door. Tomás says he doesn't know where Rosa is.\n\n**What I wonder:** Was the middle sound the service door? Did anyone actually see Rosa leave? Why did Tomás seem so upset by the question?"
-    },
-    {
-      "number": 4,
-      "title": "What the Dates Mean",
-      "intro": "Day Two, continued (Chapter Four). Selected Spanish in order of first encounter in this chapter.",
-      "vocabulary": [
-        [
-          "Fecha",
-          "Date",
-          "Lucía explains the reusable word before the full labels"
-        ],
-        [
-          "Fecha de firma",
-          "Date of signing; *firma* = signing",
-          "Lucía explains a common date label in conversation"
-        ],
-        [
-          "Fecha de presentación",
-          "Date submitted/filed; *presentación* = filing or submission",
-          "Lucía explains the submission date"
-        ],
-        [
-          "Fecha de inscripción",
-          "Date registered/recorded; *inscripción* = registration",
-          "Lucía explains the registration date"
-        ],
-        [
-          "Antes",
-          "Before",
-          "Lucía explains a date-order word"
-        ],
-        [
-          "Después",
-          "After / later",
-          "Lucía explains both senses; Sally recognizes Isabel meant “Later” when she said it to Tomás, though Sally did not know the word then"
-        ],
-        [
-          "¿Un mensaje?",
-          "A message?",
-          "Diego asks at reception; Sally sees him pick up a pen and redirects him toward the pigeonholes"
-        ],
-        [
-          "No, gracias",
-          "No, thank you",
-          "Uses it at reception without help; *gracias* was familiar"
-        ],
-        [
-          "Lo siento",
-          "I'm sorry",
-          "Recognizes Diego's familiar phrase in a calmer context"
-        ]
-      ],
-      "evidence": [],
-      "notes": "**What I know:** Whitmore asked about dates, but showed me no documents. Lucía explained how signing, submission and registration dates may differ. I asked Salazar about the paper I saw Whitmore hold at the stair head; he would not say whether it was recovered. Isabel says she did not know about his invitation.\n\n**What I wonder:** Which dates did Whitmore mean, and whose account of events was he testing? What was on the folded paper? Would Diego want to speak with Lucía's help?"
-    },
-    {
-      "number": 5,
-      "title": "The Waiter's Account",
-      "intro": "Day Three. Selected Spanish in encounter order.",
-      "vocabulary": [
-        [
-          "Buenos días",
-          "Good morning",
-          "Uses independently with Diego"
-        ],
-        [
-          "¿Tiene un momento?",
-          "Do you have a moment?",
-          "Recognizes the purpose of Lucía's question from her own request"
-        ],
-        [
-          "Ahora no",
-          "Not now",
-          "First reliable recognition of the full phrase in context"
-        ],
-        [
-          "Después",
-          "Later / after",
-          "Recognizes Diego's reply; hears it again in his account"
-        ],
-        [
-          "Gracias",
-          "Thank you",
-          "Uses with Diego"
-        ],
-        [
-          "Ya tengo tiempo",
-          "I have time now",
-          "Lucía translates Diego's return"
-        ],
-        [
-          "Yo vi lo que pasó",
-          "I saw what happened",
-          "Lucía translates"
-        ],
-        [
-          "Con las dos manos",
-          "With both hands",
-          "Lucía translates during Diego's account"
-        ],
-        [
-          "Sí. Todo.",
-          "Yes. Everything.",
-          "Lucía translates Diego's confirmation"
-        ],
-        [
-          "Mi hijo",
-          "My son",
-          "Learns from Diego's photograph and Lucía's translation"
-        ],
-        [
-          "Cada vez que cierro los ojos",
-          "Every time I close my eyes",
-          "Lucía translates; Diego leaves the thought unfinished"
-        ],
-        [
-          "De nada, señora",
-          "You're welcome, ma'am",
-          "Recognizes familiar words in Diego's reply"
-        ]
-      ],
-      "evidence": [
-        [
-          "No. Primero ella lo empujó. Después cayó.",
-          "No. First she pushed him. Then he fell."
-        ]
-      ],
-      "notes": "Diego says he saw Evelyn push Whitmore as Whitmore walked toward the staircase. He told Salazar yesterday. I apologized to Tomás for making too much of the key, but that hasn't undone the trouble.\n\nWhy did Whitmore want someone to look at dates? What did Evelyn mean by Clara's arrangement?"
-    },
-    {
-      "number": 6,
-      "title": "Clara's Refusal",
-      "intro": "Day Three, continued. Selected Spanish in encounter order.",
-      "vocabulary": [
-        [
-          "¿Con hielo?",
-          "With ice?",
-          "Clara translates at the café"
-        ],
-        [
-          "Sí, por favor",
-          "Yes, please",
-          "Uses familiar words in reply"
-        ],
-        [
-          "Antes / después",
-          "Before / after",
-          "Recalls the distinction from Chapter Four while comparing two English messages; no new spoken encounter"
-        ],
-        [
-          "¿Algo más?",
-          "Anything else?",
-          "Clara translates when the attendant returns"
-        ],
-        [
-          "No, gracias",
-          "No, thank you",
-          "Uses independently"
-        ],
-        [
-          "Muy bien",
-          "Very well / all right",
-          "Infers from the attendant's response"
-        ]
-      ],
-      "evidence": [],
-      "notes": "Clara showed me her own dated refusal and Evelyn's acknowledgment the following day. She says she never agreed afterward. Clara wants to speak to Salazar herself.\n\nWhat account of Clara's wishes did Whitmore receive?"
-    },
-    {
-      "number": 7,
-      "title": "The Story That Changed",
-      "intro": "Day Four, morning.",
-      "vocabulary": [
-        [
-          "Antes / después",
-          "Before / after",
-          "Applies the distinction learned in Chapter Four to the order of two English messages; no new spoken encounter"
-        ]
-      ],
-      "evidence": [],
-      "notes": "**What I know:** Clara's coordinator said they understood she had decided to go ahead and expected to settle practical details at the meeting. Separately, the inspector verified a later message from Evelyn to Whitmore saying Clara had approved and he could proceed. Clara says she gave no such approval. She intends to contact the person arranging the paperwork herself.\n\n**What I wonder:** What had Whitmore intended to tell me? What did he intend to tell Clara?"
-    },
-    {
-      "number": 8,
-      "title": "Eight O'Clock",
-      "intro": "Day Four, continued.",
+      "title": "The House of Flowers",
+      "intro": "Day One. Spanish in order of encounter.",
       "vocabulary": [
         [
           "Perdón",
           "Excuse me",
-          "Uses to attract Isabel's attention politely"
+          "Uses to address the driver"
         ],
         [
-          "¿A qué hora?",
-          "At what time?",
-          "Tomás translates Isabel's question; Sally recognizes the context"
+          "¿Está cerca el hotel?",
+          "Is the hotel nearby?",
+          "Can ask; misses most of the answer"
         ],
-        [
-          "Gracias",
-          "Thank you",
-          "Uses independently"
-        ]
-      ],
-      "evidence": [],
-      "notes": "**What I know:** Whitmore asked Clara to meet him at eight on the morning he died. He had told Evelyn what he intended to disclose, and Evelyn asked him to wait. Clara did not know the full accusation. She has chosen to preserve both conversations and obtain her own papers directly.\n\n**What I wonder:** What were Whitmore and Evelyn arguing about that morning? What did Whitmore want Isabel to do the night before?"
-    },
-    {
-      "number": 9,
-      "title": "The Cost of a Question",
-      "intro": "Day Four, afternoon.",
-      "vocabulary": [
         [
           "Buenas tardes",
           "Good afternoon",
-          "Uses familiar greeting with Rosa"
+          "Recognizes and returns the greeting"
         ],
         [
-          "¿Puedo sentarme?",
-          "May I sit down?",
-          "Practiced question; Lucía confirms meaning"
+          "¿Tienen una reservación?",
+          "Do you have a reservation?",
+          "Recognizes reservation from context"
         ],
         [
-          "Mi hermana",
-          "My sister",
-          "Lucía repeats and translates the expression"
+          "Tenemos una reservación",
+          "We have a reservation",
+          "Uses at reception"
         ],
         [
-          "Despacio, por favor",
-          "Slowly, please",
-          "Uses familiar request again with Rosa"
+          "¿A nombre de quién?",
+          "In whose name?",
+          "Tomás translates"
         ],
         [
-          "El señor Whitmore",
-          "Mr. Whitmore",
-          "Recognizes name and familiar title"
+          "Mucho gusto",
+          "Nice to meet you",
+          "Remembers from school"
         ],
         [
-          "Gracias",
-          "Thank you",
-          "Recognizes Rosa's reply"
+          "Una cerveza, por favor",
+          "A beer, please",
+          "Hears Nate order"
         ],
         [
-          "Gracias a usted",
-          "Thank you, too",
-          "Lucía supplies the courteous response"
-        ]
-      ],
-      "evidence": [],
-      "notes": "**What I know:** Rosa meant Whitmore. He wanted access to the storeroom without permission. Isabel independently describes his demand for an inspection and her refusal. Rosa contacted the police herself. I corrected my suggestion about Tomás to Isabel, but Tomás does not want to help me investigate.\n\n**What I do not know:** Whether the silver key I saw was the storeroom key; what the folded paper contained; who closed the door or made the other sounds that night. The access dispute does not establish what happened at the stairs."
-    },
-    {
-      "number": 10,
-      "title": "The View from the Gallery",
-      "intro": "Day Five, morning.",
-      "vocabulary": [
+          "¿Está picante?",
+          "Is it spicy?",
+          "Uses at dinner"
+        ],
         [
-          "Buenos días",
-          "Good morning",
-          "Uses familiar greeting with Diego"
+          "Un poco",
+          "A little",
+          "Understands from the waiter's gesture"
         ],
         [
           "Gracias",
           "Thank you",
-          "Uses independently"
-        ]
-      ],
-      "evidence": [],
-      "notes": "**What I know:** Clara reports Evelyn said Whitmore was already losing his balance when she tried to catch him. Diego permitted me to discuss his account with Salazar and clarified where he stood. From that position today I could see the stairhead and a person's feet and upper body, but not the lower flight. Salazar's earlier checks support the view and consistency of Diego's account.\n\n**What I conclude:** The rescue explanation does not fit the order Diego described, if his account is accurate. This does not establish every detail of the event or Evelyn's motive. I gave Salazar my reasoning in writing, distinguishing the sources."
-    },
-    {
-      "number": 11,
-      "title": "Before Clara Could Know",
-      "intro": "Day Five, afternoon.",
-      "vocabulary": [
-        [
-          "¿Algo más?",
-          "Anything else?",
-          "Understands the café attendant without help"
-        ],
-        [
-          "No, gracias",
-          "No, thank you",
-          "Uses independently"
-        ]
-      ],
-      "evidence": [],
-      "notes": "**What I conclude:** The appointment at eight threatened Evelyn's ability to control what Clara heard and what she decided. Evelyn's later attempts to enlist my reassurance show that this concern continued after Whitmore's death. The authenticated communications and Diego's account support a deliberate push rather than the rescue explanation. I gave Salazar my reasoning and distinguished it from what I know firsthand.\n\n**What remains uncertain:** Whitmore's precise intentions, the folded paper, the unidentified sounds and Evelyn's precise intention regarding the fatal result. The inspector will assess the evidence and refer it for the appropriate decision."
-    },
-    {
-      "number": 12,
-      "title": "What Belongs to Clara",
-      "intro": "Day Six.",
-      "vocabulary": [
-        [
-          "Buenas tardes",
-          "Good afternoon",
-          "Returns Rosa's greeting independently"
-        ],
-        [
-          "¿Dónde está la playa?",
-          "Where is the beach?",
-          "Uses a familiar traveler question with Tomás"
+          "Uses at the hotel"
         ],
         [
           "De nada, señora",
           "You're welcome, ma'am",
-          "Understands the reply"
+          "Recognizes the reply"
         ]
       ],
       "evidence": [],
-      "notes": "Clara has received the papers directly and will obtain independent advice before deciding. Rosa chose to return to work. The investigation has been referred for further consideration; its legal outcome is not known to me."
+      "notes": "**What I know:** Evelyn used to teach literature. Isabel's family has owned this lovely hotel for years. The foundation on the flyer is familiar from the office.\n\n**What I wonder:** Whether Nate's definition of “a little spicy” will improve. Must remember the beach bar."
+    },
+    {
+      "number": 2,
+      "title": "A Familiar Face",
+      "intro": "Days Two and Three. Spanish in order of encounter.",
+      "vocabulary": [
+        [
+          "¿Más café?",
+          "More coffee?",
+          "Understands from Diego's coffee pot"
+        ],
+        [
+          "Sí, por favor",
+          "Yes, please",
+          "Uses at breakfast"
+        ],
+        [
+          "Buenos días",
+          "Good morning",
+          "Mariana translates the greeting"
+        ],
+        [
+          "¿Otra cerveza?",
+          "Another beer?",
+          "Mariana translates"
+        ],
+        [
+          "Agua, por favor",
+          "Water, please",
+          "Uses at the beach bar"
+        ],
+        [
+          "La llave",
+          "The key",
+          "Tomás translates"
+        ],
+        [
+          "Después",
+          "Later",
+          "Tomás translates"
+        ],
+        [
+          "Claro",
+          "Of course / sure",
+          "Lucía supplies the meaning"
+        ]
+      ],
+      "evidence": [
+        [
+          "¿Ahora?",
+          null,
+          "I heard Tomás ask this, but I don't know the meaning yet."
+        ],
+        [
+          "Pero, tía…",
+          null,
+          "Tomás said this while talking to Isabel. I didn't catch the meaning."
+        ]
+      ],
+      "notes": "**What I know:** Clara is Evelyn's daughter. Mariana has a lovely hummingbird tattoo she doesn't want her parents to know about. Isabel took a small silver key from Tomás.\n\n**What I wonder:** Whether Clara is enjoying her visit as much as she'd hoped. Also, why does that bakery have to be so far from our hotel?"
+    },
+    {
+      "number": 3,
+      "title": "Things Best Left Alone",
+      "intro": "Wednesday, Day Four. Spanish in order of encounter.",
+      "vocabulary": [
+        [
+          "Dos cafés, por favor",
+          "Two coffees, please",
+          "Uses at the café"
+        ],
+        [
+          "¿Para aquí?",
+          "For here?",
+          "Clara helps with the meaning"
+        ],
+        [
+          "Sí, aquí",
+          "Yes, here",
+          "Replies at the counter"
+        ],
+        [
+          "¿Me puede ayudar?",
+          "Can you help me?",
+          "Recognizes Rosa's request"
+        ],
+        [
+          "Sí, claro",
+          "Yes, of course",
+          "Responds to Rosa"
+        ],
+        [
+          "Gracias, señora",
+          "Thank you, ma'am",
+          "Recognizes the expression"
+        ],
+        [
+          "Mi tía está ocupada",
+          "My aunt is busy",
+          "Tomás explains"
+        ],
+        [
+          "Tía",
+          "Aunt",
+          "Tomás explains the word used earlier when he was talking to Isabel."
+        ],
+        [
+          "Buenas noches",
+          "Good evening / good night",
+          "Returns Diego's greeting"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Graham helped Clara's family when her father died. Charles intends to send a statement to a solicitor tomorrow. Evelyn wanted them to do something together instead. Lucía has written about New Horizons before.\n\n**What I wonder:** What made Clara so unhappy at the reception? Perhaps a day at the beach would do her good."
     }
   ],
   "travelers": {

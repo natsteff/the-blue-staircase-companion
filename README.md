@@ -8,15 +8,15 @@
   <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open TBS Companion App" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**COMPLETE REVIEW DRAFT · Companion v0.11.1 · Review Draft 01**
+**CHAPTERS 1–3 · Companion v0.11.2 · Redevelopment Draft 01**
 
-The Companion App includes a built-in e-reader for the complete novel. Tap underlined Spanish words and phrases to hear them in Mexican Spanish as you read.
+The Companion App includes a built-in e-reader for the current draft. Tap underlined Spanish words and phrases to hear them in Mexican Spanish as you read.
 
 I started this as a personal project for fun and to help my wife learn Spanish in a fun way based on a wish she had to learn Spanish while reading a mystery. I’m sharing the draft and companion app for anyone curious about the story and the ideas behind it. The preview is free, and I have no plans to market it commercially.
 
 ## About the book
 
-A long-overdue vacation in Playa del Carmen turns into a mystery surrounding a guest's death for Sally Mercer and her husband Nate. The Mexican Spanish Sally came to practice becomes part of how she follows clues and makes sense of what people tell her. *The Blue Staircase: A Mystery in Playa del Carmen* is a cozy mystery with Spanish woven into the story.
+A vacation in Playa del Carmen brings Sally Mercer to a hotel with a blue staircase and a family whose past is catching up with them.
 
 <p align="center">
   <img src="assets/the-blue-staircase-front-cover.jpg" width="240" alt="The Blue Staircase front cover artwork">
@@ -26,11 +26,11 @@ A long-overdue vacation in Playa del Carmen turns into a mystery surrounding a g
 ## Read the Working Draft
 
 - **Read in the companion.** Open the [interactive Reader](https://natsteff.github.io/the-blue-staircase-companion/reader.html) and tap underlined Spanish words and phrases to hear them in context. Use the section menu to jump to any part of the EPUB, including the traveler phrases, cast, and glossary. Turn pages with the arrows, a swipe, or the left and right arrow keys. Use **Aa** for font size and theme. The Reader saves your place and bookmarks in your browser.
-- **Read in your preferred app.** [Download The Blue Staircase — Review Draft 01](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-12%20-%20Review%20Draft%2001.epub) for Apple Books, Kindle, or another reading app. Switch back to the companion whenever you want to listen or practice.
+- **Read in your preferred app.** [Download The Blue Staircase — Redevelopment Draft 01](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-3%20-%20Redevelopment%20Draft%2001.epub) for Apple Books, Kindle, or another reading app. Switch back to the companion whenever you want to listen or practice.
 
-The EPUB and companion are synchronized to Review Draft 01. The EPUB includes edition-matched covers and a **Back Cover** entry at the end of the table of contents.
+The EPUB and companion are synchronized to Redevelopment Draft 01. The EPUB includes edition-matched covers and a **Back Cover** entry at the end of the table of contents.
 
-This free review edition contains the complete novel. The chapters, translations, and covers may change substantially.
+This free review edition contains the first three chapters. The chapters, translations, and covers may change substantially.
 
 **Read on iPhone or iPad.** Download the EPUB, find it in **Files → Downloads**, then choose **Share → Books** for Apple Books or **Share → Kindle** for Kindle. Kindle may ask you to edit the title and author before sending. [Step-by-step Apple Books and Kindle guide](docs/READING_ON_IPHONE.md)
 
