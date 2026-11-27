@@ -319,9 +319,12 @@ async function openBook() {
     addBookmark.disabled = false;
     renderBookmarks();
     if ('serviceWorker' in navigator) {
-      const previousController = navigator.serviceWorker.controller;
+      let previousController = navigator.serviceWorker.controller;
       navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (previousController && navigator.serviceWorker.controller !== previousController) {
+        const controller = navigator.serviceWorker.controller;
+        const replaced = previousController && controller !== previousController;
+        previousController = controller;
+        if (replaced) {
           savePosition();
           location.reload();
         }

@@ -179,3 +179,7 @@ button, summary { cursor: pointer; }
   background: var(--surface);
   color: var(--ink);
 }
+
+/* The Spanish subtitle sits directly below the English heading. */
+#book-text h1:has(+ .chapter-title-es) { margin-bottom: .25em; }
+#book-text .chapter-title-es { font-size: .85em; }

@@ -55,6 +55,10 @@ def render_section(content, audio, section_id, link, image):
             fingerprint = sha256(passage.encode()).hexdigest()[:16]
             occurrences[fingerprint] += 1
             attributes = f' id="p-{fingerprint}-{occurrences[fingerprint]}" data-passage'
+        if tag == 'div' and 'chapter-title-es' in element.get('class', '').split():
+            # Keep the subtitle independent of chapter navigation and audio cards.
+            subtitle = escape(''.join(element.itertext()).strip())
+            return f'<div class="chapter-title-es" lang="es-MX"><p><em>{subtitle}</em></p></div>'
         if tag == 'a':
             return f'<a{link(element.attrib["href"])}>{escape("".join(element.itertext()))}</a>'
         text = render_text(element.text)

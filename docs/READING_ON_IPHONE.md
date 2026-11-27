@@ -1,10 +1,10 @@
 # Read *The Blue Staircase* on iPhone, iPad, or Kindle
 
-> **Working draft:** This edition contains Chapters 1–6 for review. The current EPUB is *The Blue Staircase*, Redevelopment Draft 02. Later drafts may revise earlier chapters. The EPUB is a book file; **The Blue Staircase Companion App** is a separate optional web app.
+> **Working draft:** This edition contains Chapters 1–6 for review. The current EPUB is *The Blue Staircase*, Redevelopment Draft 03. Later drafts may revise earlier chapters. The EPUB is a book file; **The Blue Staircase Companion App** is a separate optional web app.
 
 ## Quick start: iPhone
 
-1. Download the [Redevelopment Draft 02](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-6%20-%20Redevelopment%20Draft%2002.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
+1. Download the [Redevelopment Draft 03](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-6%20-%20Redevelopment%20Draft%2003.epub). The [project README](../README.md#read-the-working-draft) also has the current download.
 2. If Safari displays a download arrow, tap it to find the downloaded EPUB. Otherwise open the **Files** app, choose **Browse → Downloads** (often under **iCloud Drive** or **On My iPhone**), and locate the `.epub` file. The exact download location depends on Safari settings.
 3. In **Files**, touch and hold the EPUB and choose **Share** (or open the file and tap the Share icon). Choose your reading app:
    - **Books** to read in Apple Books.
@@ -32,7 +32,7 @@
 2. Download the EPUB and locate it in **Files → Downloads**.
 3. Touch and hold the EPUB, tap **Share**, then select **Kindle**. If Kindle is not listed, choose **More** in the share sheet; ensure the Kindle app is installed and has been opened at least once.
 4. The **Send to Kindle** screen may show the **filename** as the title and an account-based default author rather than the EPUB's embedded metadata. Before tapping **Send**, edit the fields:
-   - **Title:** `The Blue Staircase - Redevelopment Draft 02`
+   - **Title:** `The Blue Staircase - Redevelopment Draft 03`
    - **Author:** `Nate and OpenAI`
    - Turn **Add to your library** **on** if offered, so the document is stored in your Kindle library rather than sent only to a particular device.
 5. Tap **Send** and wait for processing. Open the Kindle app's **Library**. Use **All** rather than only **Downloaded** if necessary, refresh/sync, and search for **The Blue Staircase**, or the title you entered. Processing and delivery may take a few minutes.
