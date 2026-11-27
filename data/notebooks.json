@@ -1,6 +1,6 @@
 {
-  "bookVersion": "redevelopment-draft-01",
-  "latestReleasedChapter": 3,
+  "bookVersion": "redevelopment-draft-02",
+  "latestReleasedChapter": 6,
   "chapters": [
     {
       "number": 1,
@@ -183,7 +183,125 @@
         ]
       ],
       "evidence": [],
-      "notes": "**What I know:** Graham helped Clara's family when her father died. Charles intends to send a statement to a solicitor tomorrow. Evelyn wanted them to do something together instead. Lucía has written about New Horizons before.\n\n**What I wonder:** What made Clara so unhappy at the reception? Perhaps a day at the beach would do her good."
+      "notes": "**What I know:** Graham helped Clara's family when her father died. Charles intends to send a statement to a solicitor tomorrow. Evelyn wanted them to do something together instead. Lucía has written about New Horizons before.\n\n**What I wonder:** What made Clara so unhappy at the reception? I hope she and Evelyn manage to talk. Nate and I have a new beach to explore tomorrow."
+    },
+    {
+      "number": 4,
+      "title": "The First Death",
+      "intro": "Thursday, Day Five. Spanish in order of encounter.",
+      "vocabulary": [
+        [
+          "No se acerquen, por favor",
+          "Please don't come closer",
+          "Understands Isabel's gesture; meaning confirmed by context"
+        ],
+        [
+          "¿Está bien?",
+          "Are you all right?",
+          "Uses with Diego"
+        ],
+        [
+          "Yo lo vi",
+          "I saw it",
+          "Tomás translates Diego's words"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Charles Whitmore died this morning. Diego says he witnessed a push and heard Charles say, “You promised me she would never have to read it.” He could not identify the other person. Diego saw Charles with the repaired leather case earlier. He told the police. I told Inspector Salazar what I heard yesterday and what Graham said about intending to meet Charles today but not seeing him.\n\n**What I wonder:** Who was Charles speaking about? Was his disagreement with Evelyn connected to what happened? I hope Diego has someone to talk to."
+    },
+    {
+      "number": 5,
+      "title": "The Woman in the Photograph",
+      "intro": "Friday, Day Six. Spanish in order of encounter.",
+      "vocabulary": [
+        [
+          "¿Cuánto cuesta?",
+          "How much does it cost?",
+          "Uses at the shop"
+        ],
+        [
+          "Ciento veinte pesos",
+          "One hundred and twenty pesos",
+          "Understands after the price is written down"
+        ],
+        [
+          "Dos vasos de agua, por favor",
+          "Two glasses of water, please",
+          "Uses at lunch"
+        ],
+        [
+          "Buenas tardes",
+          "Good afternoon",
+          "Returns Mariana's greeting"
+        ],
+        [
+          "No quiero hablar de eso",
+          "I don't want to talk about that",
+          "Recognizes part; Mariana supplies full meaning"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** The foundation's public display shows a woman with Mariana's tattoo and face. It claims her birthmark was entirely cleared six months ago. Mariana still has a visible mark. She did not want to discuss the photograph. Graham had a leather case with a repaired handle like the one Charles carried.\n\n**What I wonder:** Is there an innocent explanation for the photograph? Lucía may know something about the foundation's earlier publicity. I will not press Mariana."
+    },
+    {
+      "number": 6,
+      "title": "A Different Picture",
+      "intro": "Saturday, Day Seven. Spanish in order of encounter.",
+      "vocabulary": [
+        [
+          "¿Más café?",
+          "More coffee?",
+          "Recognizes Diego's question"
+        ],
+        [
+          "Sí, por favor",
+          "Yes, please",
+          "Uses independently"
+        ],
+        [
+          "Una limonada, por favor",
+          "A lemonade, please",
+          "Uses at lunch"
+        ],
+        [
+          "¿Con agua mineral o natural?",
+          "With sparkling or still water?",
+          "Waiter explains the choice"
+        ],
+        [
+          "Natural, por favor",
+          "Still water, please",
+          "Answers the waiter"
+        ],
+        [
+          "Tía",
+          "Aunt",
+          "Recognizes from Chapter Three"
+        ],
+        [
+          "En el almacén",
+          "In the storage room",
+          "Understands retrospectively after Tomás explains the cupboard"
+        ],
+        [
+          "La llave del almacén",
+          "The storage-room key",
+          "Rosa identifies it; Tomás explains"
+        ]
+      ],
+      "evidence": [
+        [
+          "¿Dónde guardo esto?",
+          null,
+          "Tomás asked Isabel something about the papers. I recognized *dónde*."
+        ]
+      ],
+      "notes": "**What I know:** Lucía obtained the earlier original photograph and showed me that the two images on the foundation display come from the same picture. The supposed after image was altered. This does not establish whether Mariana received treatment. Rosa used the silver key for the event-supplies cupboard. Evelyn seems to regret something about the past.\n\n**What I wonder:** Who decided to use the altered photograph, and why? Does the foundation's dishonesty have anything to do with Charles's death, or are these separate matters?",
+      "evidenceBefore": {
+        "En el almacén": [
+          "¿Dónde guardo esto?"
+        ]
+      }
     }
   ],
   "travelers": {
