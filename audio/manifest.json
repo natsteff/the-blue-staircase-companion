@@ -337,6 +337,139 @@
       "file": "audio/27bb2c0b1fdb68b81227.wav",
       "status": "generated"
     },
+    "af8fce12ff9fe5aa9037": {
+      "text": "¿Cuál es la diferencia?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/af8fce12ff9fe5aa9037.wav",
+      "status": "generated"
+    },
+    "70f4536aa3e158303fe7": {
+      "text": "Este tiene azúcar. Este no",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/70f4536aa3e158303fe7.wav",
+      "status": "generated"
+    },
+    "61ccb667918a32a3ba0e": {
+      "text": "Prefiero este, sin azúcar",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/61ccb667918a32a3ba0e.wav",
+      "status": "generated"
+    },
+    "a49b4353119ad1778794": {
+      "text": "Muy bien",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/a49b4353119ad1778794.wav",
+      "status": "generated"
+    },
+    "53b001e938a0d424af91": {
+      "text": "Es más tranquilo por la mañana",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/53b001e938a0d424af91.wav",
+      "status": "generated"
+    },
+    "208b49bfd42d63ec0bf6": {
+      "text": "Por la mañana",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/208b49bfd42d63ec0bf6.wav",
+      "status": "generated"
+    },
+    "9cd485ff2e814aeaf5b2": {
+      "text": "¿Puede repetirlo más despacio, por favor?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/9cd485ff2e814aeaf5b2.wav",
+      "status": "generated"
+    },
+    "5312263296f4cf1fb278": {
+      "text": "Este es más resistente",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/5312263296f4cf1fb278.wav",
+      "status": "generated"
+    },
+    "311fa934ad3acb253c89": {
+      "text": "Creo que hay un error",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/311fa934ad3acb253c89.wav",
+      "status": "generated"
+    },
+    "444f36512ae9e3313123": {
+      "text": "Eso es solo la correa",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/444f36512ae9e3313123.wav",
+      "status": "generated"
+    },
+    "9d5575cbadd0e2fe22b6": {
+      "text": "¿Está incluido en el precio?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/9d5575cbadd0e2fe22b6.wav",
+      "status": "generated"
+    },
+    "a4ce88485801eddd65d6": {
+      "text": "¿Está bien así?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/a4ce88485801eddd65d6.wav",
+      "status": "generated"
+    },
+    "30011fa19cd0aa621b5b": {
+      "text": "Sí, mucho mejor. Gracias",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/30011fa19cd0aa621b5b.wav",
+      "status": "generated"
+    },
+    "3686284644b533c58841": {
+      "text": "Dos cafés, por favor. Y uno sin azúcar",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/3686284644b533c58841.wav",
+      "status": "generated"
+    },
+    "61cc4cd1d3e4ecc776c8": {
+      "text": "¿Algo más?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/61cc4cd1d3e4ecc776c8.wav",
+      "status": "generated"
+    },
+    "18d03fe8145c4ee71508": {
+      "text": "No, gracias. Eso es todo",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/18d03fe8145c4ee71508.wav",
+      "status": "generated"
+    },
+    "e94c0074c1b4f4e8fda8": {
+      "text": "¿Qué pasó?",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/e94c0074c1b4f4e8fda8.wav",
+      "status": "generated"
+    },
+    "f55c3ea6cb1abc44b940": {
+      "text": "No sé qué hacer",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/f55c3ea6cb1abc44b940.wav",
+      "status": "generated"
+    },
+    "087a3f227642582bde5b": {
+      "text": "Lo siento mucho",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/087a3f227642582bde5b.wav",
+      "status": "generated"
+    },
     "87d73033cc7339318cae": {
       "text": "Por favor",
       "voice": "Paulina",
@@ -363,13 +496,6 @@
       "voice": "Paulina",
       "locale": "es-MX",
       "file": "audio/26f3d7a1cc33980d6e92.wav",
-      "status": "generated"
-    },
-    "9cd485ff2e814aeaf5b2": {
-      "text": "¿Puede repetirlo más despacio, por favor?",
-      "voice": "Paulina",
-      "locale": "es-MX",
-      "file": "audio/9cd485ff2e814aeaf5b2.wav",
       "status": "generated"
     },
     "adda9bd0c15fe90839e4": {
@@ -489,6 +615,27 @@
       "voice": "Paulina",
       "locale": "es-MX",
       "file": "audio/95e47988c51cb564c666.wav",
+      "status": "generated"
+    },
+    "99c4d610f4dfa005f32e": {
+      "text": "Entre amigos",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/99c4d610f4dfa005f32e.wav",
+      "status": "generated"
+    },
+    "eeeee3b6a464820a633c": {
+      "text": "Un día de mandados",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/eeeee3b6a464820a633c.wav",
+      "status": "generated"
+    },
+    "e1bc31499b431a528b97": {
+      "text": "Otra mañana",
+      "voice": "Paulina",
+      "locale": "es-MX",
+      "file": "audio/e1bc31499b431a528b97.wav",
       "status": "generated"
     }
   }

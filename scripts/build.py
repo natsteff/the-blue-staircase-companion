@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data/notebooks.json"
 MANIFEST = ROOT / "audio/manifest.json"
 PUBLISHED_BOOKS = (
+    "books/The Blue Staircase - Chapters 1-9 - Redevelopment Draft 05.epub",
     "books/The Blue Staircase - Chapters 1-6 - Redevelopment Draft 04.epub",
     "books/The Blue Staircase - Chapters 1-6 - Redevelopment Draft 03.epub",
     "books/The Blue Staircase - Chapters 1-6 - Redevelopment Draft 03.epub",
@@ -99,6 +100,7 @@ def main():
     phrases = [phrase for row in rows for phrase in row[0].split(" / ") + (row[3] if len(row) > 3 else [])]
     phrases.extend(chapter["spanishTitle"] for chapter in book["chapters"]
                    if chapter.get("spanishTitle"))
+    phrases.extend(book.get("glossaryPhrases", []))
     if any("evidence" not in chapter and WARNING in chapter["notes"] for chapter in book["chapters"]):
         phrases.append(WARNING)
     previous = read(MANIFEST)["recordings"] if MANIFEST.exists() else {}

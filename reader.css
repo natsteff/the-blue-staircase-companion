@@ -184,8 +184,4 @@ button, summary { cursor: pointer; }
 #book-text h1:has(+ .chapter-title-es) { margin-bottom: .25em; }
 #book-text .chapter-title-es { font-size: .85em; }
 
-#book-text .title-audio {
-  margin-inline-start: .45em;
-  padding: .2em .35em;
-  min-height: 2.2em;
-}
+#book-text .title-audio { font-style: inherit; }

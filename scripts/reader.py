@@ -19,7 +19,7 @@ def resolve(source, href):
     return posixpath.normpath(posixpath.join(posixpath.dirname(source), unquote(href))) if href else source
 
 
-def render_section(content, audio, section_id, link, image, title_recording=None):
+def render_section(content, audio, section_id, link, image, title_recording=None, glossary_audio=None):
     choices = '|'.join(re.escape(phrase) for phrase in sorted(audio, key=len, reverse=True))
     pattern = re.compile(rf'(?<!\w)(?:{choices})(?!\w)', re.IGNORECASE) if choices else None
     occurrences = Counter()
@@ -65,12 +65,18 @@ def render_section(content, audio, section_id, link, image, title_recording=None
                 expected_title, recording = title_recording
                 if title != expected_title:
                     raise ValueError(f'Chapter subtitle mismatch in {section_id}')
-                listen = (f' <button class="spoken title-audio" type="button" lang="en" '
-                          f'data-audio="{escape(recording)}" aria-pressed="false" '
-                          f'aria-label="Listen to the Spanish chapter title">▶ Listen</button>')
-            return f'<div class="chapter-title-es" lang="es-MX"><p><em>{subtitle}</em>{listen}</p></div>'
+                listen = (f'<button class="spoken title-audio" type="button" '
+                          f'data-audio="{escape(recording)}" aria-pressed="false">{subtitle}</button>')
+                subtitle = listen
+            return f'<div class="chapter-title-es" lang="es-MX"><p><em>{subtitle}</em></p></div>'
         if tag == 'a':
             return f'<a{link(element.attrib["href"])}>{escape("".join(element.itertext()))}</a>'
+        if glossary_audio is not None and tag == 'tr' and len(element) and element[0].tag.rsplit('}', 1)[-1] == 'td':
+            term = ''.join(element[0].itertext()).strip()
+            recording = glossary_audio[re.sub(r'(?<!\.)\.$', '', term.casefold())]
+            button = (f'<button class="spoken" type="button" lang="es-MX" '
+                      f'data-audio="{escape(recording)}" aria-pressed="false">{escape(term)}</button>')
+            return f'<tr{attributes}><td>{button}</td>{"".join(render(cell) for cell in list(element)[1:])}</tr>'
         text = render_text(element.text)
         text += ''.join(render(child) + render_text(child.tail) for child in element)
         if tag == 'table':
@@ -178,8 +184,9 @@ def reader_book(path, chapters, travelers, recordings):
                 cover = body.find('.//{http://www.w3.org/2000/svg}image')
                 html = image(cover.attrib[XLINK_HREF], 'The Blue Staircase front cover')
             else:
+                glossary_audio = recordings if entry['id'] == 'spanishenglish-glossary' else None
                 html = render_section([toc] if entry['kind'] == 'contents' else body,
-                                      audio, entry['id'], link, image, title_recording)
+                                      audio, entry['id'], link, image, title_recording, glossary_audio)
             if entry['kind'] == 'chapter' and 'data-audio=' not in html:
                 raise ValueError(f"No tappable passages in chapter {entry['id']}")
             sections.append({**entry, 'html': html})

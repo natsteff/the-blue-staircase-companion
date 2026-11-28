@@ -449,6 +449,20 @@ function render() {
     } else if (!renderVocabulary(chapters, page, cumulative)) {
       renderEvidence(chapters, page, cumulative);
     }
+    if (chapter.travelTips?.length) {
+      const tips = node('details', '', 'traveler-grammar');
+      const label = cumulative ? 'Using Spanish in Your Travels · Chapter ' + chapter.number
+        : 'Using Spanish in Your Travels';
+      tips.append(node('summary', label));
+      const examples = node('ul');
+      for (const example of chapter.travelTips) {
+        const item = node('li');
+        addInline(item, example);
+        examples.append(item);
+      }
+      tips.append(examples);
+      page.append(tips);
+    }
   } else {
     for (const item of chapters) {
       if (cumulative) page.append(node('h3', 'Chapter ' + item.number + ' · ' + item.title));

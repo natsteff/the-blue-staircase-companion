@@ -1,6 +1,6 @@
 {
-  "bookVersion": "redevelopment-draft-04",
-  "latestReleasedChapter": 6,
+  "bookVersion": "redevelopment-draft-05",
+  "latestReleasedChapter": 9,
   "chapters": [
     {
       "number": 1,
@@ -332,6 +332,171 @@
       ],
       "evidence": [],
       "notes": "**What I know:** Lucía obtained the earlier original photograph and showed me that the two images on the foundation display come from the same picture. The supposed after image was altered. This does not establish whether Mariana received treatment. Rosa used the silver key for the event-supplies cupboard. Evelyn seems to regret something about the past.\n\n**What I wonder:** Who decided to use the altered photograph, and why? Does the foundation's dishonesty have anything to do with Charles's death, or are these separate matters?"
+    },
+    {
+      "number": 7,
+      "title": "Between Friends",
+      "spanishTitle": "Entre amigos",
+      "intro": "Sunday, Day Eight. Spanish in order of encounter.",
+      "vocabulary": [
+        [
+          "¿Cuál es la diferencia?",
+          "What's the difference?",
+          "Uses to compare two drinks"
+        ],
+        [
+          "Este tiene azúcar. Este no",
+          "This one has sugar. This one doesn't",
+          "Recognizes azúcar and infers the contrast; shopkeeper confirms"
+        ],
+        [
+          "Prefiero este, sin azúcar",
+          "I prefer this one, without sugar",
+          "Combines preference and ingredient vocabulary"
+        ],
+        [
+          "Muy bien",
+          "Very good / all right",
+          "Recognizes approval"
+        ],
+        [
+          "Es más tranquilo por la mañana",
+          "It's quieter in the morning",
+          "Mariana confirms time and meaning"
+        ],
+        [
+          "Por la mañana",
+          "In the morning",
+          "Repeats in context"
+        ],
+        [
+          "¿Dónde guardo esto?",
+          "Where do I put this?",
+          "Reuses the Chapter Six question independently"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Clara says Graham promised her and Evelyn that she would never have to read her father's papers. I told Salazar about the promise with Clara's permission. Mariana remembers Graham carrying the leather case on Friday. Edward admitted in a letter to signing documents he knew were wrong, but denied taking some missing money, according to Clara.\n\n**What I wonder:** Was Charles speaking about Clara when Diego heard him? Did someone make a promise to Charles as well?",
+      "travelTips": [
+        "**Prefiero este…** — I prefer this one. Point to your choice, then explain why or add a preference.",
+        "**Sin azúcar** — without sugar. The pattern *sin* plus an ingredient is useful when ordering food or drinks.",
+        "Listen for contrasts such as *este tiene… este no*. You may understand the choice even if you miss a word."
+      ]
+    },
+    {
+      "number": 8,
+      "title": "A Day of Errands",
+      "spanishTitle": "Un día de mandados",
+      "intro": "Monday, Day Nine. Spanish in order of encounter.",
+      "vocabulary": [
+        [
+          "¿Cuál es la diferencia?",
+          "What's the difference?",
+          "Reuses independently"
+        ],
+        [
+          "¿Puede repetirlo más despacio, por favor?",
+          "Could you repeat that more slowly, please?",
+          "Uses a traveler-sheet expression to clarify a reply"
+        ],
+        [
+          "Este es más resistente",
+          "This one is stronger / more durable",
+          "Understands from demonstration and Nate's suggestion"
+        ],
+        [
+          "Creo que hay un error",
+          "I think there's a mistake",
+          "Uses politely to question a price"
+        ],
+        [
+          "Eso es solo la correa",
+          "That's just the strap",
+          "Infers from the label, pointing and later explanation"
+        ],
+        [
+          "¿Está incluido en el precio?",
+          "Is it included in the price?",
+          "Asks a follow-up question"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Evelyn says she and Charles intended to disclose past wrongdoing, but disagreed about doing it together. Lucía has confirmed foundation payments to businesses connected to a criminal investigation. Graham returned the repaired case to Evelyn and said he had kept it with him since Wednesday evening. I told Salazar about the discrepancy with Diego's Thursday sighting. Evelyn intends to give evidence at Thursday's trustee meeting and has independent advice and copies with her solicitor. She says a letter Charles sent after Edward died records Graham's assurance that Clara wouldn't need to read the papers.\n\n**What I wonder:** Why would Graham say he had kept the case since Wednesday if Charles still had it Thursday? Does he have an explanation I haven't considered?",
+      "travelTips": [
+        "**Creo que hay un error.** This is a polite way to raise a concern without accusing someone.",
+        "**¿Está incluido en el precio?** Use this when checking whether a service, charge or extra item is included.",
+        "**¿Puede repetirlo más despacio, por favor?** Ask for a slower reply before giving up on a conversation. A gesture, label or written number can help you understand the answer."
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Another Morning",
+      "spanishTitle": "Otra mañana",
+      "intro": "Tuesday, Day Ten. Spanish in order of encounter.",
+      "vocabulary": [
+        [
+          "¿Está bien así?",
+          "Is it all right like this?",
+          "Understands from shopkeeper showing the repair"
+        ],
+        [
+          "Sí, mucho mejor. Gracias",
+          "Yes, much better. Thank you",
+          "Responds independently"
+        ],
+        [
+          "Dos cafés, por favor. Y uno sin azúcar",
+          "Two coffees, please. And one without sugar",
+          "Combines familiar ordering and ingredient patterns"
+        ],
+        [
+          "¿Algo más?",
+          "Anything else?",
+          "Infers from familiar más and ordering context"
+        ],
+        [
+          "No, gracias. Eso es todo",
+          "No, thank you. That's everything",
+          "Uses to finish an order"
+        ],
+        [
+          "¿Qué pasó?",
+          "What happened?",
+          "Asks Tomás about the emergency"
+        ],
+        [
+          "Sí, por favor",
+          "Yes, please",
+          "Recognizes Isabel's reply"
+        ],
+        [
+          "¿Está bien?",
+          "Are you all right?",
+          "Reuses with Rosa"
+        ],
+        [
+          "No sé qué hacer",
+          "I don't know what to do",
+          "Recognizes no sé; Tomás explains full meaning"
+        ],
+        [
+          "Lo siento mucho",
+          "I'm very sorry",
+          "Expresses sympathy"
+        ],
+        [
+          "Gracias, señora",
+          "Thank you, ma'am",
+          "Recognizes Tomás's reply"
+        ]
+      ],
+      "evidence": [],
+      "notes": "**What I know:** Evelyn said she had changed her mind when she woke up this morning and wanted Clara to have Edward's original letter. Clara wasn't ready to take it. Rosa heard a disagreement about the letter, saw a man leave and found Evelyn injured. She did not see the injury happen. Rosa told the police, and I told Salazar what I personally heard at breakfast. Evelyn died at the hospital. Graham said he had not spoken to her today. Nate and I have moved to another hotel and provided our contact information.\n\n**What I wonder:** Who was Evelyn arguing with? I hope Clara has the support she needs. Nothing else seems particularly important tonight.",
+      "travelTips": [
+        "**¿Algo más?** is a common follow-up when ordering or shopping. Listen for it rather than assuming the conversation is finished.",
+        "**Eso es todo** is a useful way to finish an order.",
+        "**Lo siento mucho** expresses sympathy. A short, sincere phrase can be more appropriate than trying to say something complicated."
+      ]
     }
   ],
   "travelers": {
@@ -452,5 +617,74 @@
     "Pero": 5,
     "Pero, tía…": 5,
     "¿Dónde guardo esto?": 6
-  }
+  },
+  "glossaryPhrases": [
+    "¿A nombre de quién?",
+    "Agua, por favor",
+    "¿Ahora o después?",
+    "¿Ahora?",
+    "¿Algo más?",
+    "Buenas noches",
+    "Buenas tardes",
+    "Buenos días",
+    "Ciento veinte pesos",
+    "Claro",
+    "¿Con agua mineral o natural?",
+    "Creo que hay un error",
+    "¿Cuál es la diferencia?",
+    "¿Cuánto cuesta?",
+    "De nada, señora",
+    "Después",
+    "Después, por favor",
+    "¿Dónde guardo esto?",
+    "Dos cafés, por favor",
+    "Dos cafés, por favor. Y uno sin azúcar",
+    "Dos vasos de agua, por favor",
+    "En el almacén",
+    "Es más tranquilo por la mañana",
+    "Eso es solo la correa",
+    "¿Está bien así?",
+    "¿Está bien?",
+    "¿Está cerca el hotel?",
+    "¿Está incluido en el precio?",
+    "¿Está picante?",
+    "Este es más resistente",
+    "Este tiene azúcar. Este no",
+    "Gracias",
+    "Gracias, señora",
+    "La llave",
+    "La llave del almacén",
+    "Lo siento mucho",
+    "¿Más café?",
+    "¿Me puede ayudar?",
+    "Mi tía está ocupada",
+    "Mucho gusto",
+    "Muy bien",
+    "Natural, por favor",
+    "No quiero hablar de eso",
+    "No se acerquen, por favor",
+    "No sé qué hacer",
+    "No, gracias. Eso es todo",
+    "¿Otra cerveza?",
+    "¿Para aquí?",
+    "Perdón",
+    "Pero",
+    "Pero, tía…",
+    "Por la mañana",
+    "Prefiero este, sin azúcar",
+    "¿Puede repetirlo más despacio, por favor?",
+    "¿Qué pasó?",
+    "Sí, aquí",
+    "Sí, claro",
+    "Sí, mucho mejor. Gracias",
+    "Sí, pero tarda un poco",
+    "Sí, por favor",
+    "Tenemos una reservación",
+    "Tía",
+    "¿Tienen una reservación?",
+    "Un poco",
+    "Una cerveza, por favor",
+    "Una limonada, por favor",
+    "Yo lo vi"
+  ]
 }
