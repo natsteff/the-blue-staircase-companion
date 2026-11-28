@@ -19,7 +19,7 @@ def resolve(source, href):
     return posixpath.normpath(posixpath.join(posixpath.dirname(source), unquote(href))) if href else source
 
 
-def render_section(content, audio, section_id, link, image):
+def render_section(content, audio, section_id, link, image, title_recording=None):
     choices = '|'.join(re.escape(phrase) for phrase in sorted(audio, key=len, reverse=True))
     pattern = re.compile(rf'(?<!\w)(?:{choices})(?!\w)', re.IGNORECASE) if choices else None
     occurrences = Counter()
@@ -33,10 +33,12 @@ def render_section(content, audio, section_id, link, image):
         start = 0
         for match in pattern.finditer(value):
             phrase = match.group()
-            file = audio[phrase.casefold()]
+            file, meaning = audio[phrase.casefold()]
             parts.append(escape(value[start:match.start()]))
+            definition = escape(meaning or 'Not yet translated in this chapter.')
             parts.append(f'<button class="spoken" type="button" lang="es-MX" '
-                         f'data-audio="{escape(file)}" aria-pressed="false">{escape(phrase)}</button>')
+                         f'data-audio="{escape(file)}" data-meaning="{definition}" '
+                         f'aria-pressed="false">{escape(phrase)}</button>')
             start = match.end()
         parts.append(escape(value[start:]))
         return ''.join(parts)
@@ -56,9 +58,17 @@ def render_section(content, audio, section_id, link, image):
             occurrences[fingerprint] += 1
             attributes = f' id="p-{fingerprint}-{occurrences[fingerprint]}" data-passage'
         if tag == 'div' and 'chapter-title-es' in element.get('class', '').split():
-            # Keep the subtitle independent of chapter navigation and audio cards.
-            subtitle = escape(''.join(element.itertext()).strip())
-            return f'<div class="chapter-title-es" lang="es-MX"><p><em>{subtitle}</em></p></div>'
+            title = ''.join(element.itertext()).strip()
+            subtitle = escape(title)
+            listen = ''
+            if title_recording:
+                expected_title, recording = title_recording
+                if title != expected_title:
+                    raise ValueError(f'Chapter subtitle mismatch in {section_id}')
+                listen = (f' <button class="spoken title-audio" type="button" lang="en" '
+                          f'data-audio="{escape(recording)}" aria-pressed="false" '
+                          f'aria-label="Listen to the Spanish chapter title">▶ Listen</button>')
+            return f'<div class="chapter-title-es" lang="es-MX"><p><em>{subtitle}</em>{listen}</p></div>'
         if tag == 'a':
             return f'<a{link(element.attrib["href"])}>{escape("".join(element.itertext()))}</a>'
         text = render_text(element.text)
@@ -148,8 +158,11 @@ def reader_book(path, chapters, travelers, recordings):
                 raise ValueError(f'Unsupported EPUB link: {href}')
 
             audio = {}
+            title_recording = None
             if entry['kind'] == 'chapter':
                 chapter = chapters[entry['id'] - 1]
+                if spanish_title := chapter.get('spanishTitle'):
+                    title_recording = (spanish_title, recordings[spanish_title.casefold()])
                 rows = chapter['vocabulary'] + chapter.get('evidence', [])
             elif entry['id'] == 'spanish-phrases-for-travelers':
                 rows = travelers
@@ -159,13 +172,14 @@ def reader_book(path, chapters, travelers, recordings):
                 for phrase in row[0].split(' / '):
                     normalized = re.sub(r'(?<!\.)\.$', '', phrase.casefold())
                     if normalized in recordings:
-                        audio[normalized] = recordings[normalized]
+                        audio[normalized] = recordings[normalized], row[1]
 
             if entry['kind'] == 'cover':
                 cover = body.find('.//{http://www.w3.org/2000/svg}image')
                 html = image(cover.attrib[XLINK_HREF], 'The Blue Staircase front cover')
             else:
-                html = render_section([toc] if entry['kind'] == 'contents' else body, audio, entry['id'], link, image)
+                html = render_section([toc] if entry['kind'] == 'contents' else body,
+                                      audio, entry['id'], link, image, title_recording)
             if entry['kind'] == 'chapter' and 'data-audio=' not in html:
                 raise ValueError(f"No tappable passages in chapter {entry['id']}")
             sections.append({**entry, 'html': html})

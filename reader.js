@@ -115,6 +115,7 @@ function showSection(id, anchor) {
   const selected = findSection(id);
   if (!selected) return;
   stopAudio();
+  feedback.textContent = "";
   section = selected;
   sectionPicker.value = String(id);
   article.dataset.kind = section.kind;
@@ -290,6 +291,7 @@ article.addEventListener('click', async event => {
   stopAudio();
   playing = phrase;
   phrase.setAttribute('aria-pressed', 'true');
+  if (phrase.dataset.meaning) announce(phrase.dataset.meaning);
   audio.src = phrase.dataset.audio;
   try {
     await audio.play();

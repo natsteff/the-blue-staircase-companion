@@ -8,7 +8,7 @@
   <a href="https://natsteff.github.io/the-blue-staircase-companion/"><img alt="Open TBS Companion App" src="https://img.shields.io/badge/Open%20Companion-205275?style=for-the-badge"></a>
 </p>
 
-**CHAPTERS 1–6 · Companion v0.11.4 · Redevelopment Draft 03**
+**CHAPTERS 1–6 · Companion v0.11.5 · Redevelopment Draft 04**
 
 The Companion App includes a built-in e-reader for the current draft. Tap underlined Spanish words and phrases to hear them in Mexican Spanish as you read.
 
@@ -26,9 +26,9 @@ A vacation in Playa del Carmen brings Sally Mercer to a hotel with a blue stairc
 ## Read the Working Draft
 
 - **Read in the companion.** Open the [interactive Reader](https://natsteff.github.io/the-blue-staircase-companion/reader.html) and tap underlined Spanish words and phrases to hear them in context. Use the section menu to jump to any part of the EPUB, including the traveler phrases, cast, and glossary. Turn pages with the arrows, a swipe, or the left and right arrow keys. Use **Aa** for font size and theme. The Reader saves your place and bookmarks in your browser.
-- **Read in your preferred app.** [Download The Blue Staircase — Redevelopment Draft 03](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-6%20-%20Redevelopment%20Draft%2003.epub) for Apple Books, Kindle, or another reading app. Switch back to the companion whenever you want to listen or practice.
+- **Read in your preferred app.** [Download The Blue Staircase — Redevelopment Draft 04](https://natsteff.github.io/the-blue-staircase-companion/books/The%20Blue%20Staircase%20-%20Chapters%201-6%20-%20Redevelopment%20Draft%2004.epub) for Apple Books, Kindle, or another reading app. Switch back to the companion whenever you want to listen or practice.
 
-The EPUB and companion are synchronized to Redevelopment Draft 03. The EPUB includes edition-matched covers and a **Back Cover** entry at the end of the table of contents.
+The EPUB and companion are synchronized to Redevelopment Draft 04. The EPUB includes edition-matched covers and a **Back Cover** entry at the end of the table of contents.
 
 This free review edition contains the first six chapters. The chapters, translations, and covers may change substantially.
 

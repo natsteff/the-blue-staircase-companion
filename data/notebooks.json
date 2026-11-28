@@ -1,10 +1,11 @@
 {
-  "bookVersion": "redevelopment-draft-03",
+  "bookVersion": "redevelopment-draft-04",
   "latestReleasedChapter": 6,
   "chapters": [
     {
       "number": 1,
       "title": "The House of Flowers",
+      "spanishTitle": "La casa de las flores",
       "intro": "Day One. Spanish in order of encounter.",
       "vocabulary": [
         [
@@ -74,6 +75,7 @@
     {
       "number": 2,
       "title": "A Familiar Face",
+      "spanishTitle": "Una cara conocida",
       "intro": "Days Two and Three. Spanish in order of encounter.",
       "vocabulary": [
         [
@@ -134,6 +136,7 @@
     {
       "number": 3,
       "title": "Things Best Left Alone",
+      "spanishTitle": "Cosas que es mejor dejar en paz",
       "intro": "Wednesday, Day Four. Spanish in order of encounter.",
       "vocabulary": [
         [
@@ -150,6 +153,16 @@
           "Sí, aquí",
           "Yes, here",
           "Replies at the counter"
+        ],
+        [
+          "¿Ahora o después?",
+          "Now or later?",
+          "Works out ahora from the familiar después and the paper bag"
+        ],
+        [
+          "Después, por favor",
+          "Later, please",
+          "Answers independently"
         ],
         [
           "¿Me puede ayudar?",
@@ -172,14 +185,19 @@
           "Tomás explains"
         ],
         [
-          "Tía",
-          "Aunt",
-          "Tomás explains the word used earlier when he was talking to Isabel."
-        ],
-        [
           "Buenas noches",
           "Good evening / good night",
           "Returns Diego's greeting"
+        ],
+        [
+          "¿Ahora?",
+          "Now?",
+          "Now? The question from Chapter Two made sense when the woman at the bakery offered to pack Nate's pastry now or later."
+        ],
+        [
+          "Tía",
+          "Aunt",
+          "aunt. Tomás explained this today. I had heard it when Isabel and Tomás were discussing the key. I still haven't worked out *pero*."
         ]
       ],
       "evidence": [],
@@ -188,6 +206,7 @@
     {
       "number": 4,
       "title": "A Change of Plans",
+      "spanishTitle": "Un cambio de planes",
       "intro": "Thursday, Day Five. Spanish in order of encounter.",
       "vocabulary": [
         [
@@ -212,6 +231,7 @@
     {
       "number": 5,
       "title": "Beyond the Hotel",
+      "spanishTitle": "Más allá del hotel",
       "intro": "Friday, Day Six. Spanish in order of encounter.",
       "vocabulary": [
         [
@@ -230,6 +250,11 @@
           "Uses at lunch"
         ],
         [
+          "Sí, pero tarda un poco",
+          "Yes, but it takes a little while",
+          "Waiter explains; recognizes un poco from Chapter One"
+        ],
+        [
           "Buenas tardes",
           "Good afternoon",
           "Returns Mariana's greeting"
@@ -238,6 +263,16 @@
           "No quiero hablar de eso",
           "I don't want to talk about that",
           "Recognizes part; Mariana supplies full meaning"
+        ],
+        [
+          "Pero",
+          "But",
+          "But. The waiter explained that the fish would take a little while."
+        ],
+        [
+          "Pero, tía…",
+          "But, Aunt…",
+          "But, Aunt… I can finally understand what Tomás was saying to Isabel in Chapter Two."
         ]
       ],
       "evidence": [],
@@ -246,6 +281,7 @@
     {
       "number": 6,
       "title": "An Old Acquaintance",
+      "spanishTitle": "Una vieja conocida",
       "intro": "Saturday, Day Seven. Spanish in order of encounter.",
       "vocabulary": [
         [
@@ -279,6 +315,11 @@
           "Recognizes from Chapter Three"
         ],
         [
+          "¿Dónde guardo esto?",
+          "Where do I put this?",
+          "Infers the question from the papers and Rosa's actions; Tomás confirms"
+        ],
+        [
           "En el almacén",
           "In the storage room",
           "Understands retrospectively after Tomás explains the cupboard"
@@ -289,19 +330,8 @@
           "Rosa identifies it; Tomás explains"
         ]
       ],
-      "evidence": [
-        [
-          "¿Dónde guardo esto?",
-          null,
-          "Tomás asked Isabel something about the papers. I recognized *dónde*."
-        ]
-      ],
-      "notes": "**What I know:** Lucía obtained the earlier original photograph and showed me that the two images on the foundation display come from the same picture. The supposed after image was altered. This does not establish whether Mariana received treatment. Rosa used the silver key for the event-supplies cupboard. Evelyn seems to regret something about the past.\n\n**What I wonder:** Who decided to use the altered photograph, and why? Does the foundation's dishonesty have anything to do with Charles's death, or are these separate matters?",
-      "evidenceBefore": {
-        "En el almacén": [
-          "¿Dónde guardo esto?"
-        ]
-      }
+      "evidence": [],
+      "notes": "**What I know:** Lucía obtained the earlier original photograph and showed me that the two images on the foundation display come from the same picture. The supposed after image was altered. This does not establish whether Mariana received treatment. Rosa used the silver key for the event-supplies cupboard. Evelyn seems to regret something about the past.\n\n**What I wonder:** Who decided to use the altered photograph, and why? Does the foundation's dishonesty have anything to do with Charles's death, or are these separate matters?"
     }
   ],
   "travelers": {
@@ -415,5 +445,12 @@
       "La cuenta, por favor.": "Paying"
     },
     "tip": "Tip: Learn nouns with their articles. **El hotel** means “the hotel”; **la llave** means “the key.” For grammar explanations, examples, and pronunciation practice, use the companion app."
+  },
+  "translationReveals": {
+    "¿Ahora?": 3,
+    "Tía": 3,
+    "Pero": 5,
+    "Pero, tía…": 5,
+    "¿Dónde guardo esto?": 6
   }
 }

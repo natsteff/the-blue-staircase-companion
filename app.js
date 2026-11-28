@@ -425,6 +425,13 @@ function render() {
   const margin = node('header', '', 'chapter-margin');
   const label = (cumulative ? 'Through Chapter ' : 'Chapter ') + chapter.number;
   margin.append(node('p', label, 'chapter-number'), node('h2', chapter.title));
+  if (section === 'spanish' && chapter.spanishTitle) {
+    const subtitle = node('em', chapter.spanishTitle);
+    subtitle.lang = 'es-MX';
+    const titleAudio = node('div', '', 'chapter-title-audio');
+    titleAudio.append(subtitle, playButton(chapter.spanishTitle));
+    margin.append(titleAudio);
+  }
   const page = node('div', '', 'chapter-page');
   if (section === 'spanish') target.append(quizLauncher());
   target.append(margin, page);
@@ -494,7 +501,11 @@ function openQuiz() {
   let masteryChanged = false;
   const travel = book.travelers?.vocabulary ?? [];
   const chapters = book.chapters.filter(chapter => chapter.number <= book.latestReleasedChapter);
-  const cards = quizCards([...travel, ...chapters.flatMap(chapter => chapter.vocabulary)]);
+  const currentChapter = selectedChapter().number;
+  const reveals = new Map(Object.entries(book.translationReveals ?? {})
+    .map(([phrase, number]) => [speechKey(phrase), number]));
+  const cards = quizCards([...travel, ...chapters.flatMap(chapter => chapter.vocabulary)])
+    .filter(card => !reveals.has(card.id) || reveals.get(card.id) <= currentChapter);
   const pool = [...new Map(cards.filter(card => progress[card.id] === 'Mastered')
     .reverse().map(card => [card.id, card])).values()];
   const travelCards = quizCards(travel);

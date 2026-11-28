@@ -576,3 +576,11 @@ html:has(#cover-viewer[open]), body:has(#cover-viewer[open]) {
   .intro img { width: 2.25rem; }
   #title { font-size: clamp(1.25rem, 4vw, 1.75rem); }
 }
+
+.chapter-title-audio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  margin-top: .3rem;
+}
